@@ -1,0 +1,37 @@
+
+\documentclass[12pt]{article}
+\usepackage[letterpaper,textwidth=5.5in,right=0.6in,textheight=9in,left=0.6in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\begin{document}
+	\noindent Xinshi Wang\\
+	661975305\\
+	quiz07\\
+	
+	\noindent 1.\\
+	
+	First we compute the proportion of infected population with assumption $s_0 = 1$:\\
+	$$s(\infty) - s(0) = \dfrac{log(s(\infty))}{R_0},s(0) = 1, R_0 = 3$$
+	$$s(\infty) = \dfrac{log(s(\infty))}{3}+1$$
+	
+	Then we have $S(\infty) = 0.05962$. Thus we have $r(\infty) = 1 - s(\infty) = 0.9404$Thus there are in total $2.8212 \times 10^8$ people being infected. By multiplying a death rate of $2\%$ we know there are $5.64*10^6$ expected death cases.\\ 
+	
+	\noindent 2.\\
+	
+	First we compute $i_max$:
+	$$i_max = 1 - \dfrac{1}{R_0} - \dfrac{log(R_0)}{R_0}$$
+	$$i_max = 1 - \dfrac{1}{3} - \dfrac{ln(3)}{3}$$
+	
+	Then we have $i_max$ is approximately $0.3$. Thus there are in total $9\times10^7$ patients at the peak. Since there are $1000000$ hospitals beds and only $50\%$ are available and only $20\%$ of the patiences need a bed. There are in total $9\times 10^7*0.2-10000000 \times 0.5 = 1.75 \times 10^7$ extra beds needed.
+
+	\noindent 3.\\
+	
+	We compute $R_0$ using:\\
+	$$R_0 = \dfrac{log(\dfrac{s(\infty)}{s(0)})}{s(\infty)-s(0)}$$
+	$$R_0 = \dfrac{log(\dfrac{0.9-0.4)}{0.9})}{0.5-0.9}$$
+	
+	Thus we get $R_0 \approx 1.469$.
+\end{document}

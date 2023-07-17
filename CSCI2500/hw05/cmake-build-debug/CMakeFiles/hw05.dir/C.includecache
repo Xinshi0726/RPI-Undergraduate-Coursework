@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Micha/OneDrive - Rensselaer Polytechnic Institute/CSCI2500/hw05/hw05.c
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+

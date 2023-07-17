@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{fullpage}
+\usepackage{mathrsfs}
+
+\pagestyle{empty}
+
+\newcommand{\cl}{\text{cl}}
+\newcommand{\intt}{\text{int}}
+
+\begin{document}
+\noindent{\bf Homework 9}\\
+Wang Xinshi\\
+661975305\\
+\medskip
+
+
+
+\begin{enumerate}
+\item Let $\displaystyle \overline{N}(x;\epsilon) = \{ y \in X: d(x,y)\le \epsilon \}$ denote a {\bf closed neighborhood} in $X$. \\[.05in] Using the lecture definitions of open and closed sets, prove that $\displaystyle \overline{N}(x;\epsilon)$ is a closed set in $X$.\\\\
+   
+\text{\bf Proof:} In order to show $\bar{N}(x;\epsilon)$ is a closed set in $X$, we need to show $X \setminus \bar{N}(x;\epsilon)$ is an open set in $X$.\\
+
+Let $x_1 \in X \setminus \bar{N}(x; \epsilon)$. Then $x_1 \in X$ and $x_1 \notin \bar{N}(x; \epsilon)$ which means $d(x,x_1) > \epsilon $. We pick $\epsilon_1 = d(x,x_1) - \epsilon$ and note $\epsilon_1>0$ since $d(x,x_1) > \epsilon $. Next, we need to prove $N(x_1; \epsilon_1) \subseteq X \setminus \bar{N}(x; \epsilon)$.\\
+
+Let $x_2 \in N(x_1; \epsilon_1)$, then we have $x_2 \in X$ and $d(x_1,x_2) < \epsilon_1$. By the triangle inequality we have 
+\begin{align*}
+	d(x,x_1) &\leq d(x,x_2) + d(x_2,x_1)\\
+	d(x,x_2) &\geq d(x,x_1) - d(x_1,x_2)\\
+	d(x,x_2) &> d(x,x_1) - \epsilon_1\\
+			 &> d(x,x_1) - d(x,x_1) + \epsilon\\
+			 &> \epsilon\\
+\end{align*}
+Thus we have $d(x,x_2)> \epsilon$ which implies $x_2 \notin \bar{N}(x;\epsilon)$. Therefore, $x_2 \in X$ and $x_2 \notin \bar{N}(x;\epsilon)$ which means $x_2 \in X \setminus \bar{N}(x;\epsilon)$. Hence $N(x_1; \epsilon_1) \subseteq X \setminus \bar{N}(x;\epsilon)$.\\
+
+Since our choice of $x_1$ and $x_2$ are arbitrary, we have proved $X \setminus \bar{N}(x;\epsilon)$ is an open set in $X$, and therefore $\bar{N}(x;\epsilon)$ is a closed set in $X$.\\\\
+
+\item Let $(X,d)$ be a non-empty metric space and let $A \subseteq X$ be non-empty. Prove that  $X \setminus \intt(A) = \cl(X\setminus A)$.\\
+
+In order to prove $X \setminus \intt(A) = \cl(X \setminus A)$, we need to show $(i). X \setminus \intt(A) \subseteq \cl(X  \setminus A)$ $(ii). \cl(X \setminus A) \subseteq X \setminus \intt(A)$.\\
+
+First we need to prove $X \setminus \intt(A) \subseteq \cl(X  \setminus A)$. Let $x \in  X \setminus \intt(A)$. Thus we have $x \in X$ and $x \notin \intt(A)$. Consider two exhaustive cases, $x \in A$ or $x \notin A$. If $x \in A$, we have $x \in bd(A) \cup \intt(A)$ since $A \subseteq bd(A) \cup \intt(A)$. Since $x \notin \intt(A)$, $x \in  bd(A)$. Thus $N(x;\epsilon) \cap A \neq  \emptyset$ and $N(x;\epsilon) \cap (X \setminus A) \neq  \emptyset$. Hence $x \in bd(X \setminus A)$. Thus $x \in (X \setminus A) \cup bd(X \setminus A)$ which means $X \in \cl(A)$ if $x \in A$. If $x \notin A$, then $x \in X \setminus A$ since $x \in X$. Thus $x \in (X \setminus A) \cup bd(A)$ which means $X \in \cl(A)$ if $x \notin A$. Therefore, we have $X \in \cl(A)$ if $x \in  X \setminus \intt(A)$. Thus we have shown $X \setminus \intt(A) \subseteq \cl(X  \setminus A)$.\\
+
+Next we need to prove $\cl(X \setminus A) \subseteq X \setminus \intt(A)$. Let $x \in \cl(X \setminus A)$ and we have $x \in (X \setminus A) \cup bd(X \setminus A)$. Consider two exhaustive cases, $x \in (X \setminus A)$ or $x \in bd(X \setminus A)$. If $x \in (X \setminus A)$, we have $x \in X$ and $x \notin A$. Since $\intt(A) \subseteq A$, we have $x \notin \intt(A)$. Thus $x \in X \setminus \intt(A)$. Therefore we have $\cl(X \setminus A) \subseteq X \setminus \intt(A)$ if $x \in (X \setminus A)$. If $x \in bd(X \setminus A)$, we have $x \in X \setminus A$. With the same reasoing in case 1 above, we have $\cl(X \setminus A) \subseteq X \setminus \intt(A)$ if $x \in bd(X \setminus A)$. Thus we have shown $\cl(X \setminus A) \subseteq X \setminus \intt(A)$.\\
+
+Since we have shown $X \setminus \intt(A) \subseteq \cl(X  \setminus A)$ and $\cl(X \setminus A) \subseteq X \setminus \intt(A)$, we have therefore proved $X \setminus \intt(A) = \cl(X \setminus A)$.
+
+
+\item Consider the metric space $(\mathbb{R}^2,d)$ where $d =  |x_1 -y_1| + |x_2 -y_2|$.  Use the definition of compactness to prove that the set 
+$$S = \left\{ (x_1,x_2) \in \mathbb{R}^2: x_1^2+x_2^2 < 1 \right\} $$
+is not a compact subset    of $\mathbb{R}^2$.\\\\
+
+\text{\bf Proof:} In order to show the set $S$ is not a compact subset of $\mathbb{R}^2$, we need to prove there exists an open cover of S that has no finite subcovers.\\
+
+Let $\mathscr{F}$ be the set $\{N((0,0),\sqrt{2}-\dfrac{1}{n})|n \in \mathbb{N} \}$. We need to prove $\mathscr{F}$ is an open cover of $S$, which means $S \subseteq \cup_{j \in \mathscr{F}} A_j = N((0,0), \sqrt{2})$. \\
+
+Let $(x_1,x_2) \in S$, then we have $x_1^2+x_2^2<1$. We need to prove $(x_1,x_2) \in N((0,0), \sqrt{2})$. Let us assume $x \notin  N((0,0), \sqrt{2})$. Then we know $|x_1|+|x_2| \geq 2$ by definition. Then we have  $\sqrt{|x_1|^2+|x_2|^2} \leq \sqrt{||x_1|+|x_2||^2}$ by Minkowski's inequality. Thus we have $|x_1| + |x_2| \geq \sqrt{|x_1+x_2|^2} \geq \sqrt{2}$. Consider two exhaustive cases: $|x_1| \geq 1$ or $|x_1|<1$. If $x_1 \geq 1$, then $|x_1|^2+|x_2|^2 = (x_1)^2+(x_2)^2 \geq 1$. Thus we found a contradiction when $x_1 \geq 1$. If $|x_1|<1$, we have $|x_2| = \sqrt{2} - |x_1| \geq 1$. Thus $|x_1|^2+|x_2|^2 = (x_1)^2+(x_2)^2 \geq 1$. Then we found a contradiction when $x<1$. Therefore it must be the case $(x_1,x_2) \in N((0,0), \sqrt{2})$. Thus $S \subseteq \cup_{j \in \mathscr{F}} A_j = N((0,0), \sqrt{2})$ and $\mathscr{F}$ is an open cover for $S$.\\
+
+Next, we prove there does not exist a finite subcover $\mathscr{F'}$ for $\mathscr{F}$ by contradiction. We need to find a point $(x_1,x_2) \in S$ such that is not covered by $\mathscr{F}'$. There exists a largest numgber $n$ such that $N((0,0), \sqrt{2} - \dfrac{1}{n}) \in \mathscr{F}'$. Thus for all $N \leq n$, we have $N((0,0), \sqrt{2}-\dfrac{1}{N}) \in \mathscr{F}'$ and $ \cup_{j \in \mathscr{F}'} A_j = N((0,0), \sqrt{2}-\dfrac{1}{N})$. Since $N \leq n$, we have $N((0,0), \sqrt{2}-\dfrac{1}{N}) \subset N((0,0), \sqrt{2}-\dfrac{1}{n})$ which means $\mathscr{F}'$ is a subset of $\mathscr{F}$. let $(x_1,x_2)$ be the point $(\dfrac{\sqrt{2}}{2}-\epsilon,\dfrac{\sqrt{2}}{2})$ and $\epsilon < \dfrac{1}{N}$, Then we have $x_1^2 + x_2^2 = \dfrac{2}{4} + \dfrac{2}{4} + \epsilon^2 <1$. Thus $(x_1,x_2) \in S$. However, $(x_1,x_2) \notin \mathscr{F}'$ since $|x_1|+|x_2| = \sqrt{2}-\epsilon > \sqrt{2} - \dfrac{1}{N}$. Thus we have point $(x_1,x_2) \in S$ but $(x_1,x_2) \notin \mathscr{F}'$.\\
+
+Since our choice of $(x_1,x_2)$ is arbitarry and we have shown there exists an open cover of S that has no finite subcovers, S is not compact
+\end{enumerate}
+
+\end{document}
+
+
+
+
+  

@@ -1,0 +1,3 @@
+PID 884695: Solving Sonny's knight's tour problem for a 6x5 board
+PID 884695: Sonny starts at row 0 and column 0 (move #1)
+PID 884695: Search complete; found 4526 open tours and 16 closed tours

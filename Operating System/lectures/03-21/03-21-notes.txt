@@ -1,0 +1,76 @@
+[03/21/2023]
+
+ TO DO: add synchronization to shm-count.c code to GUARANTEE that
+         the final sum is always correct
+
+ TO DO: write a multi-threaded version of shm-count.c
+        -- global variable sum = 0;
+
+ HOMEWORK 3 --- pthreads --- redo Homework 2 (Knight's tour problem)
+
+
+
+
+
+  <PARENT PROCESS>                 p = fork()    <CHILD PROCESS>
+  organized into pages of memory
+ +------------------------------+             +------------------------------+  
+ |HEAP |HEAP |HEAP |HEAP |HEAP  |             |                              |
+ |  0  |  1  |  2  |  3  |  4   |             |                              |
+ |     |     |     |     |      |             |                              |
+ |------------------------------|             |           -------            |
+ |HEAP |STACK|int p|STACK|STACK |             |           |int p|            |
+ |  5  |  6  |  7  |  8  |  9   |             |           |  7  |            |
+ |     |     |     |     |      |             |           |     |            |
+ |------------------------------|             |           -------            |
+ |STACK|STACK|STACK|STACK|STACK |             |                              |
+ | 10  | 11  | 12  | 13  | 14   |             |                              |
+ |     |     |  [.....]  |      |             |                              |
+ |------------------------------|             |                              |
+ |STACK|CODE |CODE |CODE |CODE  |             |                              |
+ | ... |     |     |     |      |             |                              |
+ |     |     |     |     |      |             |                              |
+ +------------------------------+             +------------------------------+  
+
+ POLICY: use copy-on-write (COW), i.e., when a write occurs, e.g. changing
+          a variable, (de)allocating dynamic memory, calling a function, etc.,
+           then we copy the page to the child process
+
+
+
+
+
+
+
+
+
+   ONE PROCESS ./a.out
+  +---------------------------------+
+  |           main()                |
+  |             |                   |
+  |             |                   | ADVANTAGES:
+  |             v                   | -- faster runtime?
+  |                                 | -- parallel programming
+  |      create a few threads...    | -- less overall OS memory usage
+  |                                 | -- larger CPU bursts...?
+  | thread1   thread2     thread3   |
+  |   |          |           |      | DISADVANTAGES:
+  |   |         /            |      | -- increased need for synchronization
+  |   |        |              \     | -- complexity
+  |  /          \              \    | -- thread2 seg-faults, then ALL threads
+  | |            \              |   |     are dead....
+  | |             v             v   |
+  | v        int*x=NULL;            |
+  |          *x=12345;              |
+  |                                 |
+  | these threads might join() back |
+  |  in to the parent thread        |
+  |                                 |
+  |              |                  |
+  |              |                  |
+  |              v                  |
+  |                                 |
+  +---------------------------------+
+
+
+

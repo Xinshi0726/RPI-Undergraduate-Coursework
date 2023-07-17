@@ -1,0 +1,33 @@
+[02/03/2023]
+
+This is a "pseudo-code" example of how platform-specific or
+ architecture-specific coding would work --- we rely on the
+  preprocessor directives to pick the correct underlying
+   pipe() call...
+
+#ifdef __MIPS_
+  struct fd_pair p = pipe();
+#else
+  /* create a pipe */
+  int rc = pipe( pipefd );  /* the input argument pipefd will be
+                               populated with the OS-assigned
+                               read and write pipe/file descriptors */
+
+  if ( rc == -1 )
+  {
+    perror( "pipe() failed" );
+    return EXIT_FAILURE;
+  }
+#endif
+
+
+    char alpha[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  /* implied '\0' in memory */
+
+    int len = strlen( alpha );   /* 26 */
+
+    int rc = write( pipefd[1], alpha, len );
+
+
+
+    char data[30] = "goldsd3@rpi.edu|smithj5@rpi.edu";
+

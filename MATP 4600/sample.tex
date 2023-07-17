@@ -1,0 +1,101 @@
+%LaTeX sample file for Foundations of Analysis
+%Everything following a % sign on a line is a comment
+%LaTeX commands start with a \
+%The delimiters {,} are used to group text together
+%The delimiters [,] are frequently used for optional arguments
+
+%The next line specifies the style of document to produce and asks for 12pt type
+\documentclass[12pt]{article}   
+
+
+%This specifies a larger left margin to permit grader remarks to be added.
+\usepackage[letterpaper,textwidth=5in,right=2.5in,textheight=9in]{geometry}
+
+\usepackage{amsmath,amssymb}
+
+
+
+
+
+%The \begin{document} starts the actual document itself. Everthing above this line is just to set styling.
+
+\begin{document}
+%So here is where we start the document
+
+
+\noindent{\bf Your Name}   % \noindent means to not indent this line.
+
+\noindent{\bf Homework 1, Foundations of Analysis, Fall 2016}  %\bf means what is in the { } is bold face
+
+
+You just type whatever you want here. Generally, LaTeX doesn't care
+where you break lines in a paragraph. It will align things correctly
+automatically. It also could care less about how many spaces you leave
+between words. It will treat repeated spaces as just one space.
+
+A blank line will start start a new paragraph, and multiple blank
+lines are treated as just one blank line.
+
+
+LaTeX automatically determines spacing and styling. Just concentrate
+on content and let LaTeX make it look right. 
+
+Text inbetween dollar signs are in ``math mode'' where math commands that
+make a variety of math symbols are recognized. Here is how you might type the
+some problem statements.
+
+
+\noindent {\bf Suggested Problem} Suppose $a,b,c,d$ are real numbers.
+Prove that if  $a< b < c < d$ then $(a,c) \cap (b,d) = (b,c).$
+
+
+\noindent {\bf Section 2.1, Problem 23b} We want to show 
+$ U \setminus (A \setminus B) = ( U \setminus A ) \cup B$
+
+\bigskip %some extra vertical space
+
+Here are some more math symbols that can be used in math mode
+
+\begin{enumerate}  %Start an enumerated list, with each entry specified by \item
+\item Intersection: $\cap$ or $\bigcap$
+\item Union: $\cup$ or $\bigcup$
+\item Setminus: $\setminus$
+\item Logical Negation: $\sim $
+\item Empty set: $\emptyset$
+\item x is an element of A:    $x \in A$
+\item p implies q: $p \implies q$
+\item Set builder notation: $(-\infty,2) = \{x : x \in \mathbb{R}  \text{ and } x < 2 \}$
+\end{enumerate} %End the enumerated list
+
+\vfill %Fills vertical space 
+
+\begin{center} (continued) \end{center}
+
+
+\newpage % This starts a new page. 
+
+For math mode, if you use two dollar signs, instead of one, at the beginning and the
+end of a math mode expression, the equation displays centered on a
+separate line.  LaTeX automatically includes extra spacing between
+lines to allow for ``taller expressions''.  Below is how you can
+typeset problem 26a in section 2.1. 
+$$ B \cup \left[ \bigcap_{j \in J}  a_j \right] = \bigcap_{j \in J} \left( B \cap A_j \right) $$
+Note the syntax in front of the brackets [ and ]. Using the ``slash left'' 
+or ``slash right'' in front of these brackets tells LaTeX that you want 
+it to automatically figure out the correct
+height of these based on whatever they are is enclosing.
+The same thing can be done for braces and parenthesis.
+
+\bigskip
+
+Below is how you make bold face and italics. Note that you need
+braces around the items whose font you want to change.
+
+\bigskip
+
+\noindent{\bf Most importantly,} if you want to know how to do {\it ``something''} in LaTeX, you can usually just search the web for: {\it ``LaTeX something''}
+
+
+%End the document with \end{document}
+\end{document}
+

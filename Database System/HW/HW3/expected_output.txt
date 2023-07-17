@@ -1,0 +1,241 @@
+ ?column? 
+----------
+ Query 1
+(1 row)
+
+        name         
+---------------------
+ Adele
+ Alessia Cara
+ Alicia Keys
+ Bazzi
+ Bobby Helms
+ Brenda Lee
+ Bruno Mars
+ Bryson Tiller
+ Charlie Puth
+ Childish Gambino
+ DaBaby
+ Demi Lovato
+ DNCE
+ Drake
+ Dua Lipa
+ Ed Sheeran
+ Ella Mai
+ Flo Rida
+ Foster The People
+ Halsey
+ Harry Styles
+ Hozier
+ Imagine Dragons
+ James Arthur
+ James Bay
+ James Blunt
+ Jason Mraz
+ Jonas Brothers
+ Juice WRLD
+ Justin Bieber
+ Justin Timberlake
+ Khalid
+ Lady Gaga
+ Lauv
+ Lewis Capaldi
+ Linkin Park
+ Lizzo
+ Lukas Graham
+ Maroon 5
+ Niall Horan
+ Nicki Minaj
+ One Direction
+ OneRepublic
+ Panic! At The Disco
+ Passenger
+ Portugal. The Man
+ Post Malone
+ Rihanna
+ Roddy Ricch
+ Sam Hunt
+ Sam Smith
+ Shawn Mendes
+ Snow Patrol
+ Taylor Swift
+ The Killers
+ The Weeknd
+ Trevor Daniel
+(57 rows)
+
+ ?column? 
+----------
+ Query 2
+(1 row)
+
+     name      |            name            |   max   
+---------------+----------------------------+---------
+ Nirvana       | Smells Like Teen Spirit    |  700797
+ Stevie Wonder | What Christmas Means To Me | 2672546
+(2 rows)
+
+ ?column? 
+----------
+ Query 3
+(1 row)
+
+ songid |        songname        |   artistname   
+--------+------------------------+----------------
+   2028 | Adore You              | Harry Styles
+   7677 | Blinding Lights        | The Weeknd
+  11123 | Circles                | Post Malone
+  15495 | Don't Start Now        | Dua Lipa
+  18337 | Falling                | Trevor Daniel
+  22074 | Good As Hell           | Lizzo
+  23947 | Heartless              | The Weeknd
+  25007 | Hold Me While You Wait | Lewis Capaldi
+  30048 | Intentions             | Justin Bieber
+  35814 | Lose You To Love Me    | Selena Gomez
+  38336 | Memories               | Maroon 5
+  43771 | Only Human             | Jonas Brothers
+  50608 | Say So                 | Doja Cat
+  53794 | Someone You Loved      | Lewis Capaldi
+  55691 | Sucker                 | Jonas Brothers
+  58411 | The Box                | Roddy Ricch
+  65248 | Watermelon Sugar       | Harry Styles
+  67794 | Woah                   | Lil Baby
+(18 rows)
+
+ ?column? 
+----------
+ Query 4
+(1 row)
+
+ songid |         songname         |   artistname    
+--------+--------------------------+-----------------
+   2299 | Ain't No Sunshine        | Bill Withers
+   8586 | Break Up Song            | Little Mix
+  14619 | Disturbia                | Rihanna
+  36616 | Lovely Day               | Bill Withers
+  56457 | Sweet Home Alabama       | Lynyrd Skynyrd
+  59021 | The Gambler              | Kenny Rogers
+  61383 | This Love                | Maroon 5
+  61563 | Thriller                 | Michael Jackson
+  62132 | Together                 | Sia
+  66070 | What Makes You Beautiful | One Direction
+  69757 | Zombie                   | The Cranberries
+(11 rows)
+
+ ?column? 
+----------
+ Query 5
+(1 row)
+
+ songid |               songname                |     artistname      
+--------+---------------------------------------+---------------------
+   3508 | All of Me                             | John Legend
+   7316 | Birthday                              | Anne-Marie
+   8966 | Bruises                               | Lewis Capaldi
+  69830 | bury a friend                         | Billie Eilish
+  69834 | cardigan                              | Taylor Swift
+  10974 | Christmas (Baby Please Come Home)     | Mariah Carey
+  11009 | Christmas Time                        | Bryan Adams
+  13075 | Daisy                                 | Ashnikko
+  69869 | everything i wanted                   | Billie Eilish
+  23069 | Hallucinate                           | Dua Lipa
+  24601 | Hey Ya!                               | Outkast
+  28890 | Ice Cream (with Selena Gomez)         | BLACKPINK
+  26881 | I Gotta Feeling                       | Black Eyed Peas
+  30048 | Intentions                            | Justin Bieber
+  27456 | I Saw Mommy Kissing Santa Claus       | The Jackson 5
+  32643 | Know Your Worth                       | Khalid
+  34444 | Levitating                            | Dua Lipa
+  36612 | Lovefool                              | twocolors
+  37688 | Maniac                                | Conan Gray
+  38341 | Memories (feat. Kid Cudi)             | David Guetta
+  38464 | Merry Xmas Everybody                  | Slade
+  39254 | Modern Loneliness                     | Lauv
+  42041 | No Shame                              | 5 Seconds of Summer
+  43123 | Old Me                                | 5 Seconds of Summer
+  44437 | Own It (feat. Ed Sheeran & Burna Boy) | Stormzy
+  45733 | Play Date                             | Melanie Martinez
+  46724 | Protect The Land                      | System Of A Down
+  47604 | Ransom                                | Lil Tecca
+  48467 | Ride It                               | Regard
+  50608 | Say So                                | Doja Cat
+  51094 | Selfish                               | Madison Beer
+  55065 | Step Into Christmas                   | Elton John
+  55609 | Stunnin' (feat. Harm Franklin)        | Curtis Waters
+  56143 | Supalonely                            | BENEE
+  62132 | Together                              | Sia
+  64754 | Wake Me Up                            | Avicii
+(36 rows)
+
+ ?column? 
+----------
+ Query 6
+(1 row)
+
+  id   |           name            | songsonbilboard | minbilboardrank 
+-------+---------------------------+-----------------+-----------------
+  1020 | Aretha Franklin           |               3 |               1
+  2204 | Bob Dylan                 |               0 |                
+  6183 | Fleetwood Mac             |               0 |                
+  9122 | Joni Mitchell             |               0 |                
+  9481 | Kanye West                |               2 |               1
+  9677 | Kendrick Lamar            |               2 |               4
+ 10327 | Lauryn Hill               |               0 |                
+ 11724 | Marvin Gaye               |               0 |                
+ 12102 | Michael Jackson           |               3 |               1
+ 13109 | Nirvana                   |               1 |               6
+ 14219 | Prince and the Revolution |               0 |                
+ 14255 | Public Enemy              |               0 |                
+ 14421 | Radiohead                 |               0 |                
+ 16549 | Stevie Wonder             |               0 |                
+ 17262 | The Beach Boys            |               0 |                
+ 17263 | The Beatles               |               0 |                
+ 17462 | The Clash                 |               0 |                
+ 18355 | The Rolling Stones        |               0 |                
+(18 rows)
+
+ ?column? 
+----------
+ Query 7
+(1 row)
+
+  id   |      name      
+-------+----------------
+  7395 | Harry Styles
+ 11195 | Lynyrd Skynyrd
+ 14835 | Rihanna
+ 18975 | Tom Petty
+(4 rows)
+
+ ?column? 
+----------
+ Query 8
+(1 row)
+
+         genre          
+------------------------
+ album rock
+ alternative metal
+ alternative rock
+ classic rock
+ conscious hip hop
+ edm
+ folk rock
+ hard rock
+ heartland rock
+ hip pop
+ mellow gold
+ north carolina hip hop
+ nu metal
+ permanent wave
+ pop dance
+ post-grunge
+ queens hip hop
+ rap metal
+ roots rock
+ singer-songwriter
+ soft rock
+ tropical house
+ west coast rap
+(23 rows)
+

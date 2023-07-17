@@ -1,0 +1,106 @@
+\documentclass{article}
+\title{CSCI 2200 HW1}
+\author{Xinshi,Wang}
+\usepackage[letterpaper,textwidth=5.5in,right=0.6in,textheight=9in,left=0.6in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{scrextend}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\begin{document}
+\noindent
+CSCI 2200 HW3\\
+Wang Xinshi\\
+
+%Q 13.10 starts from here
+\begin{addmargin}[2em]{2em}
+	\text{\bf Problem 13.10: }From 10 students, in how many ways can you choose a president and vice-president? What if two students are identical twins in every possible way? What if three students are identical triplets in every possible way?
+	\vspace{1.5em}
+	
+	We are counting sequence of length 2 without repetition for 10 object, so there are $\dfrac{10!}{(10-2)!} = 10 \times 9 = 90$ ways of choosing a president and vice-president. If two students are identical twins in every possible way, then the possibilities are $10 \times 9 - (9+8) = 73$. If there are three identical twins, then there are $10 \times 9 - (9+8+9) = 64 $ ways. 
+\end{addmargin}
+%Q 13.10 ends here 
+
+\clearpage
+
+%Q 13.51 starts from here
+\begin{addmargin}[2em]{2em}
+	\text{\bf Problem 11.13: } How many functions $f : \{1, . . . , 5\} \rightarrowtail \{1, . . . , 10\}$ are: (a) Strictly increasing? (b) Non-decreasing?
+	\vspace{1.5em}
+	
+	(a). If the function is strictly increasing, then we have $f(1)<f(2)...<f(n)$ and each value in the domain has to be mapped into a value in the range. Therefore we are taking 5 out of 10 values which gives us $\binom{10}{5} = 252$\\
+	\indent	(b). Likewise, for every $x$,  we have $f(1)\leq(2)...\leq f(n)$ and each value in the domain has to be mapped into a value in the range. Therefore the number of non-decreasing functions = $\binom{5+9}{9} = 2002$.\\
+\end{addmargin}
+
+%Q 11.13 ends here
+If random variable X has pgf $G(z) = \sum_{k=1}^{\infty} akz^k$ where a is either 0 or 1, find $p({X \leq 7})$.
+\clearpage
+
+%Q 11.71(a) starts from here
+\begin{addmargin}[2em]{2em}
+\text{\bf Problem 13.53(h): }The streets in a neighborhood form a rectangular grid. A child starts at home and walks to school which is 10 blocks east and 10 blocks north. How many shortest paths are there?
+\vspace{1.5em}
+
+Ultimately it takes $10$ steps north and $10$ steps east to get to school, so there are $20$ choices and we are choosing $10$ from the $20$ options. Therefore the number of possibilites is $$\binom{20}{10} = 184756$$
+\end{addmargin}
+%Q 11.71(a) ends here
+
+\clearpage
+%Q 12.31 starts from here
+Find the coefficients of $x^3$ and $x^{17}$ in: (a) $(1 + \sqrt{x} + x + x^2)^{10}$ (b) $(x^{1/2} + x^{3/2} + x^{7/2})^{10}$.
+\vspace{1.5em}
+
+The general formula is $$\sum_{k_1+k_2+...+k_m = n} \binom{n!}{k_1,k_2,...,k_m} \prod_{i=1}^{m}x_i^{k_i}$$\\\\
+(a). At $x^3$, there are 6 possibilities. (1).$k_1 = 7, k_2 = 2, k_3 =2 , k_4 = 0$ (2).$k_1 = 8, k_2 = 1, k_3 =0 , k_4 = 1$ (3).$k_1 = 7, k_2 = 0, k_3 =2 , k_4 = 1$ (4).$k_1 = 7, k_2 = 3, k_3 = 0 , k_4 = 0$ (5).$k_1 = 4, k_2 = 0, k_3 = 6 , k_4 = 0$ (6).$k_1 = 5, k_2 = 1, k_3 = 4 , k_4 = 0$. This gives us the coefficient of $x^3$ as $\dfrac{10!}{2!2!6!}+\dfrac{10!}{1!2!7!}+\dfrac{10!}{1!1!8!}+\dfrac{10!}{7!3!}+\dfrac{10!}{4!6!}+\dfrac{10!}{1!4!5!} = 3300$.\\\\
+\indent Likewise, there are 3 possibilities at $x^17$. (1).$k_1 = 1, k_2 = 1, k_3 = 0 , k_4 = 8$ (2).$k_1 = 0, k_2 = 0, k_3 = 2 , k_4 = 8$ (3).$k_1 = 0, k_2 = 3, k_3 = 0 , k_4 = 7$. This gives us the coefficient of $x^{17}$ as $\dfrac{10!}{2!8!}+\dfrac{10!}{1!8!1!}+\dfrac{10!}{7!3!} = 255$.\\\\
+\vspace{1.5em}
+
+
+\noindent (b). At $x^3$, we need to satisfy the following system of equations:
+$$\begin{cases}
+		k_1 + k_2 + k_3 &= 10\\
+		\dfrac{1}{2}k_1 + \dfrac{3}{2}k_2 + \dfrac{7}{2} k_3 &= 3\\
+\end{cases}$$
+\indent Which gives us the solution:
+$$\begin{cases}
+	k_2 = 16 - \dfrac{3k_1}{2}\\\\
+	k_3 = -6 + \dfrac{k_1}{2}\\
+\end{cases}$$
+\indent Since $k_3 \geq 0$, $k_1 \geq 12$, which is impossible. Therefore there does not exists a term $x^3$ in the expansion. Thus coefficient = 0.\\\\
+Likewist at $x^17$, we need to satisfy the following system of equations:
+$$\begin{cases}
+	k_1 + k_2 + k_3 &= 10\\
+	\dfrac{1}{2}k_1 + \dfrac{3}{2}k_2 + \dfrac{7}{2} k_3 &= 17\\
+\end{cases}$$
+\indent Which gives us the solution:
+$$\begin{cases}
+	k_2 = 9 - \dfrac{3k_1}{2}\\\\
+	k_3 = 1 + \dfrac{k_1}{2}\\
+\end{cases}$$
+\indent by substuting $k_1 = 0,2,4,6$ into $k_2 \text{ and } k_3$ gives us 4 possibilities 1).$k_1 = 0, k_2 = 9, k_3 = 1 $ (2).$k_1 = 2, k_2 = 2, k_3 = 6$ (3).$k_1 = 4, k_2 = 3, k_3 = 3$ (4).$k_1 = 6, k_2 = 0, k_3 = 4$. This gives us the coefficient of $x^{17}$ as $\dfrac{10!}{9!1!}+\dfrac{10!}{2!2!6!}+\dfrac{10!}{4!3!3!}+\dfrac{10!}{6!4!} = 5680$.
+%Q 12.31 ends here
+\clearpage
+
+%Q 14.26 starts from here
+\begin{addmargin}[2em]{2em}
+Problem 14.26. How many of the billion numbers $0, . . . , 999999999$ contain a $1$? Solve this problem in three ways:
+(a) Compute how many do not contain a 1 and subtract from \textcolor{red}{1 billion} ?\\
+
+Since it does not contain $1$, then every digit have $9$ options instead of $10$.The t otal number of possibilities that does not contain a one is $387420489$. Substracting from $10^9$ gives us $612579511$.\\\\
+(b) Compute how many contain 1 one, 2 ones, . . . , 9 ones and then \textcolor{red}{add them up} ?\\
+
+If we fix one 1 and let others vary, there are $\dfrac{9!}{1!8!} \times 9^8$ possibilities. It is the same for all the 1s. Therefore the total possibilities is $$\sum_{i=0}^{8}\binom{9!}{i!(9-i)!}9^i$$ which gives us the same value $612579511$(credit to Mathematica).\\
+(c) Let $A_i$ = $\{$numbers in which the $i^{th}$ digit is one$\}$. Compute $|A_1 \cup A_2 \cup A_3 ... \cup A_9|$.\\
+
+The general inclusion-exclusion principle is $$ \left|\bigcup _{i=1}^{n}A_{i}\right|=\sum _{k=1}^{n}(-1)^{k+1}\left(\sum _{1\leqslant i_{1}lt;\cdots lt;i_{k}\leqslant n}|A_{i_{1}}\cap \cdots \cap A_{i_{k}}|\right)$$\\
+
+The formula for $\left |A_1 \cap A_2 \cap A_3 \cap A_4 \cap A_5 \cap A_6 \cap A_7 \cap A_8 \cap A_9 \right|$ is therefore equal to sum of each digit is 1 minus to digits is 1 minus two digits are 1 plus 3 digits are 1 minus 4 digits are 1 plus 5 digits are 1 minus 6 digits are 1 plus 7 digits are 1 minus 8 digits are 1 plus 9 digits is 1. We can represent it as $$\sum_{i=1}^{9} (-1)^{i+1} 9^i \binom{9}{i}$$
+which is $134217729$.  
+\end{addmargin}
+%Q 12.74(k) ends here
+
+\end{document}

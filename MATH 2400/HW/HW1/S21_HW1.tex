@@ -1,0 +1,252 @@
+% def.tex
+
+% File containing LaTeX macros.
+% Has grown by accretion; can be better organized.
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{color}
+\usepackage{pdfsync}
+\pagestyle{plain}
+
+%\pagestyle{empty}
+
+\textheight 9 true in
+\textwidth 6.5 true in
+\hoffset -.75 true in
+\voffset -.75 true in
+ \mathsurround=2pt  \parskip=2pt
+\def\crv{\cr\noalign{\vskip7pt}} 
+
+\def\a{\alpha } \def\b{\beta } \def\d{\delta } \def\D{\Delta } \def\e{\epsilon }
+\def\g{\gamma } \def\G{\Gamma} \def\k{\kappa} \def\l{\lambda } \def\L{\Lambda }
+\def\th{\theta } \def\Th{\Theta} \def\r{\rho} \def\o{\omega} \def\O{\Omega}
+\def\ve{\varepsilon} 
+
+\def\sA{{\cal A}} \def\sB{{\cal B}} \def\sC{{\cal C}} \def\sE{{\cal E}} \def\sI{{\cal I}}
+\def\sR{{\cal R}} \def\sF{{\cal F}} \def\sG{{\cal G}} \def\sM{{\cal M}}
+\def\sT{{\cal T}} \def\sH{{\cal H}} \def\sD{{\cal D}} \def\sW{{\cal W}}
+\def\sL{{\cal L}} \def\sP{{\cal P}} \def\s{\sigma } \def\S{\Sigma}
+\def\sU{{\cal U}} \def\sY{{\cal Y}}
+
+\def\gm{\gamma -1}
+\def\summ{\sum_{j=1}^4}
+
+\def\bb{{\bm b}} \def\yb{{\bm y}}
+\def\ub{{\bm u}}  \def\xb{{\bm x}} \def\vb{{\bm v}} \def\wb{{\bm w}}
+\def\omegab{{\bm \omega}} \def\rb{{\bm r}} \def\ib{{\bm i}} \def\jb{{\bm j}}
+\def\lb{{\bm l}} \def\kb{{\bm k}} \def\Ab{{\bm A}} \def\fb{{\bm f}} \def\Ub{{\bm U}}
+\def\Fb{{\bm F}} \def\nb{{\bm n}} \def\Db{{\bm D}} \def\eb{{\bm e}}
+\def\gb{{\bm g}}  \def\hb{{\bm h}} \def\Yb{{\bm Y}} \def\Rb{{\bm R}} 
+
+\def\As1{{\bf {\cal A}}_1}\def\DO{{\cal D}_0} \def\UO{{\cal U}_0}
+\def\ie{{\it{i.e.}}}
+
+\def\ubbar{{\bf {\bar{u}}}} \def\sbar{{\bar{\sigma }}} \def\ubar{{\bar{u}}}  
+\def\abar{{\bar{a}}} \def\vbar{{\bar{v}}}  \def\rbar{{\bar{\rho}}}
+\def\pbar{{\bar{p}}} \def\ebar{{\bar{e}}} \def\Tbar{{\bar{T}}}
+\def\bbar{{\bar{\beta}}} \def\Mbar{{\bar{M}}}  \def \sMbar{{\bar{\cal M}}}
+\def\Ebar{{\bar{E}}} \def\sMbar{{\bar{\cal M}}}
+\def\sPbar{{\bar{\cal P}}} \def\xbar{{\bar{x}}}
+
+\newcommand{\pdv}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\dv}[2]{\frac{d#1}{d#2}}
+\newcommand{\ord}[2]{#1^{(#2)}}
+\newcommand{\vct}[1]{\vec{#1}}
+
+ \newcommand{\bc}{\begin{center}}
+ \newcommand{\ec}{\end{center}}
+ 
+ \newcommand{\bq}{\begin{equation}}
+ \newcommand{\eq}{\end{equation}}
+ 
+ \newcommand{\beqs}{\begin{eqnarray}}
+ \newcommand{\eeqs}{\end{eqnarray}}
+ 
+ \newcommand{\beqa}{\begin{eqnarray*}}
+ \newcommand{\eeqa}{\end{eqnarray*}}
+ 
+ \newcommand{\ol}{\overline}
+ \newcommand{\ul}{\underline}
+ 
+ \newcommand{\dint}{{\int \!\! \int \!\!}}
+ \newcommand{\tint}{{\int \!\! \int \!\! \int \!\!}}
+ 
+ \newcommand{\bfig}{\begin{figure}}
+ \newcommand{\efig}{\end{figure}}
+ 
+ \newcommand{\cen}{\centering}
+ \newcommand{\n}{\noindent}
+ 
+ \newcommand{\btab}{\begin{table}}
+ \newcommand{\etab}{\end{table}}
+ 
+ \newcommand{\btbl}{\begin{tabular}}
+ \newcommand{\etbl}{\end{tabular}}
+ 
+ \newcommand{\bdes}{\begin{description}}
+ \newcommand{\edes}{\end{description}}
+ 
+ \newcommand{\benum}{\begin{enumerate}}
+ \newcommand{\eenum}{\end{enumerate}}
+ 
+ \newcommand{\bite}{\begin{itemize}}
+ \newcommand{\eite}{\end{itemize}}
+ 
+ \newcommand{\cle}{\clearpage}
+ \newcommand{\npg}{\newpage}
+ 
+ \newcommand{\bss}{\begin{singlespace}}
+ \newcommand{\ess}{\end{singlespace}}
+ 
+ \newcommand{\bhalf}{\begin{onehalfspace}}
+ \newcommand{\ehalf}{\end{onehalfspace}}
+ 
+ \newcommand{\bds}{\begin{doublespace}}
+ \newcommand{\eds}{\end{doublespace}}
+ 
+ \newcommand{\eps}{\mbox{$\epsilon$}} 
+ \newcommand{\stilde}{\mbox{$\tilde s$}} 
+ \newcommand{\shat}{\mbox{$\hat s$}} 
+
+ \newcommand{\blue}{\color{blue}}
+ \newcommand{\red}{\color{red}}
+ \newcommand{\magenta}{\color{magenta}}
+ \newcommand{\green}{\color{green}}
+ \newcommand{\nc}{\normalcolor}
+
+
+
+\def\arg{{\rm{arg}}}
+\def\Arg{{\rm{Arg}}}
+\def\imath{i}
+\def\Log{{\rm{Log}}}
+\def\erfc{{\rm{erfc}}}
+\def\Oh{\mathcal{O}}
+\def\oh{\mathsf{o}}
+
+\def\Res{{\rm{Res}}}
+
+\def\fl{{\rm{fl}}}
+
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+%\numberwithin{equation}{section}
+\pagestyle{empty}
+\begin{document}
+
+\begin{center}
+\large{ MATH-2400 \hspace{.25in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.25in}SPRING 2021\\ Homework-1 (subjective) \\ Assigned Thursday January 28, 2021 \\ Due 12 Noon, Friday February 5, 2021}\end{center}
+\textcolor{blue}{Wang Xinshi 661975305}\\
+\bigskip
+\n\ul{NOTES}
+\benum
+\item 
+Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item 
+Legible, handwritten solutions will be acceptable, but the use of a typesetting system such as LaTeX is strongly recommended.  \blue{\bf Do not turn in your rough attempt at solving a problem; once you have worked out the solution, copy it neatly or typeset it before submission, after removing all false starts.}\nc
+\item 
+Please write your solutions clearly and coherently, with the work displayed in a sequential manner and sufficient explanation provided so that your strategy and approach are transparent to the reader. 
+\item 
+Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item 
+The assignment is to be submitted electronically to LMS  as a single pdf file.  Be sure that the pages are properly oriented and well lighted.  \blue{\bf Please do not e-mail your homework submission to the TAs or the instructors.}\nc
+\eenum
+
+\bigskip
+
+
+\bc {\bf Practice Problems from the textbook (not to be turned in)} \ec
+
+\n Exercises from Chapter 1, pages 4-6: 1(b,c,g), 2(g,i), 3(f), 5(d), 6.
+
+\n Exercises from Chapter 2, pages 12-14: 1(c,f,l,m), 2(d,f,h), 3(f,g,h), 4(c,d).
+
+
+\bc {\bf Subjective part: problems to be turned in} \ec
+
+\begin{enumerate}
+
+% Problem 1
+\item (20 points)  Solve the IVP
+\begin{equation*}
+y'=2y^2(1-t), \quad y(0)=1.
+\end{equation*}
+What is the $t$-interval in which the solution is valid?
+\nc
+\\
+
+\text{\bf Solution:}
+\begin{align*}
+	y' &= 2y^2(1-t)\\
+	\dfrac{1}{2y^2} dy &= (1-t) dt\\
+	\int \dfrac{1}{2y^2} dy &= \int (1-t) dt\\
+	-\dfrac{1}{2y} & = t - \dfrac{1}{2}t^2+C\\
+	2y &= - \dfrac{1}{t-\dfrac{1}{2}t^2}+C\\
+	y &= - \dfrac{1}{2t-t^2+C}\\
+\end{align*}
+
+Substitute the IC y(0) = 1 in gives us $\dfrac{1}{C} = 1$. Therefore $C = 1$. Thus $y =  \dfrac{1}{(t-1)^2}$. In order for the solution to be valid, the demoninator must not be 0. Thus $(t-1)^2 \neq 0$ and therefore the solution is valid in interval $(-\infty,1)\cup(1,\infty)$.
+
+\newpage
+% Problem 2
+\item (20 points) Consider the DE 
+\begin{equation*}
+2y' + y^3 \sin t = 0. 
+\end{equation*}
+\benum
+\item Find all solutions.
+\begin{align*}
+	2y'+y^3sint &= 0\\
+	2y' &= -y^3sint\\
+	-\dfrac{2y'}{y^3} &= sint\\
+	\int -\dfrac{2}{y^3}dy &= \int sint dt\\
+	\dfrac{1}{y^2} &= -cost+C\\
+	y^2 &= \dfrac{1}{C-cost}\\
+	y &= \dfrac{1}{\sqrt{C-cost}}
+\end{align*}
+\item Find in explicit form the solution for the initial condition $y(0) = 1/2.$
+\text{\bf Solution:} Substitute 0 in gives us $\dfrac{1}{\sqrt{C}} = \dfrac{1}{2}$. Thus $C = 4$ and $y = \dfrac{1}{\sqrt{4-cost}}$.
+\item Find in explicit form the solution for the initial condition $y(0) = -1/2.$
+\text{\bf Solution:} Substitute 0 in gives us $\dfrac{1}{\sqrt{C}} = -\dfrac{1}{2}$. There are no solution in real numbers.
+\eenum
+
+\newpage
+
+% Problem 3
+\item (20 points) Find, in implicit form, the solution of the IVP 
+\begin{equation*}
+\frac{dv}{du} + \frac{e^{u+v} + e^{-u+v}}{e^v+e^{-v}} = 0, \quad v(0) = 0.
+\end{equation*}
+\nc
+
+\text{\bf Solution:}\\
+\begin{align*}
+	\dfrac{dv}{du} &= -\dfrac{e^{u+v}+e^{-u+v}}{e^v+e^{-v}}\\
+	\dfrac{dv}{du} &= -\dfrac{e^v(e^{v}+e^{-u})}{e^v(1+e^{-2v})}\\
+	\dfrac{dv}{du} &= -\dfrac{e^{v}+e^{-u}}{1+e^{-2v}}\\
+	1+e^{-2v} dv &= 1+e^{-2v} du\\
+	\int 1+e^{-2v} dv &= \int 1+e^{-2v} du\\
+	v - \dfrac{1}{2}e^{-2v} &= -e^{u}-e^{-u}+C 
+\end{align*}
+\end{enumerate}
+
+
+
+
+
+\end{document}

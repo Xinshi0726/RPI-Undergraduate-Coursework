@@ -1,0 +1,229 @@
+\documentclass{article}
+\title{CSCI 2200 HW1}
+\author{Xinshi,Wang}
+\usepackage[letterpaper,textwidth=5.5in,right=0.6in,textheight=9in,left=0.6in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{scrextend}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{setspace}
+\begin{document}
+\noindent
+CSCI 2200 HW3\\
+Wang Xinshi\\
+
+%Q 4.27(c)(d) starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 4.27(c) \quad $\forall n:(P(n) \implies Q(n)$
+	
+	\textcolor{blue}{
+		Prove: You can prove it use direct proof. Show that Q(n) cannot be false when P(n) is true.}
+	
+	\textcolor{blue}{
+		Disprove: You can disprove it by showing that Q(n) is false when P(n) is true. 
+		}
+	
+	\noindent Problem 4.27(d) \quad $\forall x:((\forall n:(P(n))) \implies Q(x))$
+	
+	\textcolor{blue}{
+		Prove:Firstly prove $P(n)$ is correct because for all $n$, $P(n)$ must be true. Since the first part of the if then statement is correct, $Q(x)$ must also be true}
+	
+	\textcolor{blue}{
+		Disprove: Show either $P(n)$ is false, or $Q(n)$ is false.
+	}
+
+\end{addmargin}
+%Q 4.27(c)(d) ends here 
+
+\clearpage
+
+%Q 5.12(h) starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 5.12(h) For $n \geq -1$, prove by induction:
+	\begin{center}
+		$10^0 + 10^1 + 10^2 + ... +10^n < 10^{n+1}$
+	\end{center}
+	
+	\textcolor{blue}{
+		Base Case: n = 1
+		\begin{addmargin}[2.3cm]{0em}
+				$10^0 + 10^1 = 11$\\
+			    $10^2 = 100$\\
+			    $\because 11 \le 100$\\
+			    $\therefore \text{the base case holds.}$	
+		\end{addmargin}}
+	
+	\textcolor{blue}{
+		Inductive step:
+		\begin{addmargin}[3cm]{0em}
+			Assume: $10^0+10^1+...+10^n \le 10^{n+1}$ holds\\
+			Prove: $10^0 + 10^1 +....+ 10^{n+1} \le 10^{n+2}$
+		\end{addmargin}}
+	
+	\textcolor{blue}{
+		\begin{addmargin}[3.5cm]{0em}
+			$10^0 + 10^1 +... +10^n+1 \le 10^{n+1} + 10^{n+1}$\\
+			$10^0 + 10^1 +... +10^n+1 \le 2 \cdot 10^{n+1}$\\
+			$10^{n+2} = 10^{n+1} \cdot 10 = 10 \cdot 10^{10^n+1}$\\
+			$10^{n+2} = 10 ^{n+1} \cdot 10 = 10 \cdot 10^{n+1}$\\
+			$\because 10 \cdot 10^{n+1} \ge 2 \cdot 10^{n+1}$
+			$\therefore 10^0 + 10^1 +... +10^n+1 \le 10 \cdot 10^{n+1}\\ \le 10^{n+2}$\\
+			$\therefore 10^0 + 10^1 +... +10^n+1 \le 10^{n+2}$\\
+		\end{addmargin}
+		\begin{flushright}
+			$\square$
+		\end{flushright}
+	}
+Problem 5.12(J) is on the next page
+\end{addmargin}
+
+%Q 5.12(h) ends here
+
+\clearpage
+
+%Q 5.12(J) starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 5.12(j) For $n \geq -1$, prove by induction:
+	\begin{center}
+		$(1+x)^n \geq 1+nx$ when $x \geq -1$
+	\end{center} 
+	
+	\textcolor{blue}{
+	Base Case: n = 1
+	\begin{addmargin}[2.3cm]{0em}
+		1+x = 1+x
+		$\therefore \text{the base case holds.}$	
+\end{addmargin}}
+
+	\textcolor{blue}{
+		Inductive step:
+		\begin{addmargin}[2.35cm]{0em}
+			Assume: $(1+x)^n \geq 1+nx$ holds\\
+			Prove: $(1+x)^{n+1} \geq 1+(n+1)x$
+	\end{addmargin}}
+	
+	\textcolor{blue}{
+		\begin{addmargin}[3.5cm]{0em}
+			$(1+x)^{n} \cdot (1+x) \geq (1+nx) \cdot (1+x)$\\
+			$(1+x)^{n+1} \geq (1+x+nx+nx^2)$\\
+			$\because (1+x+nx+nx^2) - (1+nx+x) = nx^2$ and $nx^2$ because $x^2 \geq 0$ and $n \geq 1$\\
+			$\therefore 1+x+nx+nx^2 \geq (1+nx+x)$\\
+			$\therefore (1+n)^{n+1} \geq 1+nx+x$
+		\end{addmargin}
+		\begin{flushright}
+			$\square$
+		\end{flushright}
+	}
+\end{addmargin}
+%Q 5.12(J) ends here
+
+\clearpage
+%Q 5.26(f) starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 5.26(f). Find a formula for the quantity of interest:
+	\begin{center}
+		$$S(n) = \sum_{i=1}^{n} \dfrac{n}{(n+1)!}$$
+	\end{center}
+	\textcolor{blue}{
+		\begin{addmargin}[2em]{2em}
+			\begin{spacing}{2.2}
+				$S(1) = \dfrac{1}{2!} = \dfrac{1}{2}$\\
+				$S(2) = \dfrac{1}{2!}+\dfrac{2}{3!} = \dfrac{1}{2} + \dfrac{2}{6} = \dfrac{5}{6}$\\
+				$S(3) = \dfrac{1}{2!} + \dfrac{2}{3!} + \dfrac{3}{4!} = \dfrac{5}{6} + \dfrac{3}{24} = \dfrac{20}{24} + \dfrac{3}{24} = \dfrac{23}{24}$
+			\end{spacing}
+		\noindent The Assumption here is $$\sum_{i=1}^{n} \dfrac{n}{(n+1)!} = \dfrac{(n+1)!-1}{(n+1)!}$$ \\
+		Base case: $$S(1) = \dfrac{(1+1)!-1}{(1+1)!} = \dfrac{1}{2}$$
+		\begin{center}
+			We have verified the base case is valid
+		\end{center}
+		Assume: $$\sum_{i=1}^{n} \dfrac{n}{(n+1)!} = \dfrac{(n+1)!-1}{(n+1)!}$$
+		Prove: $$\sum_{i=1}^{N+1} \dfrac{n+1}{(n+2)!} = \dfrac{(n+2)!-1}{(n+2)!}$$
+		$$\dfrac{1}{2!}+\dfrac{2}{3!}+\dfrac{3}{4!}+...+\dfrac{n+1}{(n+2)!} = \dfrac{(n+1)!-1}{(n+1)!}+\dfrac{n+1}{(n+2)!}$$ 
+		$$\dfrac{1}{2!}+\dfrac{2}{3!}+\dfrac{3}{4!}+...+\dfrac{n+1}{(n+2)!} = \dfrac{((n+1)!-1) \cdot (n+2)}{(n+2)!}+\dfrac{n+1}{(n+2)!}$$ 
+		$$\dfrac{1}{2!}+\dfrac{2}{3!}+\dfrac{3}{4!}+...+\dfrac{n+1}{(n+2)!} = \dfrac{((n+2)!-(n+2))+(n+1)}{(n+2)!}$$ 
+		$$\dfrac{1}{2!}+\dfrac{2}{3!}+\dfrac{3}{4!}+...+\dfrac{n+1}{(n+2)!} = \dfrac{((n+2)!-1}{(n+2)!}$$ 
+		$$\therefore \sum_{i=1}^{N+1} \dfrac{n+1}{(n+2)!} = \dfrac{(n+2)!-1}{(n+2)!}$$
+		\begin{flushright}
+			$\square$
+		\end{flushright}
+		\end{addmargin}	}
+\end{addmargin}
+%Q 5.26(f) ends here
+
+\clearpage
+
+%Q 5.71 starts from here
+\begin{addmargin}[2em]{2em}
+Problem 5.71.  Distinct numbers $X_1,...,X_n$ must be placed in n boxes separated by $<$ and $>$ signs so that all inequalities are obeyed between consecutive numbers. For example, $5,7,3,8$ can be placed in $\square$ $<$ $\square$ $>$ $\square$ $<$ $\square$ as follows, $5 < 8 > 3 < 7$ . Prove this can always be done no matter what the numbers and inequalities are.
+
+	\textcolor{blue}{
+	\begin{addmargin}[2em]{1em}
+		$P(n):$ $n$ distinct numbers can be placed in boxes separeted by $n-1$ inequality signs for all $n \in \mathbb{N}.$\\\\
+		Base case: $P(1):$ $1$ distinct number can be placed in boxes separeted by $0$ inequality sign.\\
+		\begin{addmargin}[1.7cm]{0cm}
+			Let us pick an arbitray number $X$. We can prove that X can be placed on its own with 1 box and no inequality signs.
+			$$X$$
+			Therefore we have verified the base case.\\
+		\end{addmargin}
+		Inductive step: 
+		\begin{addmargin}[2.35cm]{0cm}
+			Assume: $P(n)$ holds\\
+			Prove: $P(n+1):$ $n+1$ distinct numbers can be placed in boxes separeted by $n$ inequality signs for all $n+1 \in \mathbb{N}.$\\
+			\begin{addmargin}[0cm]{0cm}
+				The inequality connecting $Box_{n-1}$ and $box_{n}$ can either be $>$ or $<$. Consider two exhuastive cases.
+				\begin{addmargin}[1.5cm]{0cm}
+					Case 1: The inequality sign is $<$. Find the largest number $X_{max}$ in $X_1,X_2,...X_n$. Then, the other $n$ numbers can be placed in the first n boxes(assumption in inductive steps). Since $X_{max}$ is larger than any number in $X_1,X_2,...X_n$, we can always place it in the last box since the last inequality sign is $<$.\\\\
+					Case 2: The inequality sign is $>$. Find the largest number $X_{min}$ in $X_1,X_2,...X_n$. Then, the other $n$ numbers can be placed in the first n boxes(assumption in inductive steps). Since $X_{min}$ is smaller than any number in $X_1,X_2,...X_n$, we can always place it in the last box since the last inequality sign is $>$.\\
+				\end{addmargin}
+				Hence, we have shown that p(n+1) is true when p(n) is true.
+			\end{addmargin}
+		\end{addmargin}
+		\begin{flushright}
+			$\square$
+		\end{flushright}
+	\end{addmargin}
+}
+\end{addmargin}
+%Q 5.71 ends here
+
+\clearpage
+
+\begin{addmargin}[2em]{2em}
+Problem 6.6. Let $H_n = 1/1 + 1/2 +···+ 1/n$, the nth Harmonic number, and $S_n = H_1/1 + H_2/2 +···+ H_n/n$. (a) Prove $S_n \leq H_n^2/2 + 1$ by induction. What goes wrong? (b) Prove the stronger claim $S_n \leq H_n^2/2 + (1/12 + 1/22 +···+ 1/n^2)/2$. Why is this stronger? 
+	\textcolor{blue}{
+		\begin{addmargin}[2em]{1em}
+			(a). Base case: $n= 1$, $H_1 = 1$ , $S_1 = H_1/1 =1$, $\therefore S_1 \leq H_n^2/2+1$\\
+			Inductive Step:
+			\begin{addmargin}[2.35cm]{0cm}
+				Assume: $S_n \leq H_n^2/2 + 1$\\
+				Prove: $S_{n+1} \leq H_{n+1}^2/2 + 1$
+				$$H_{n+1}^2=\dfrac{H_{n}^2}{2}+\dfrac{H_n}{n+1}+\dfrac{1/2}{(n+1)^2}$$
+				$$S_{n+1} \leq \dfrac{H_n^1}{2}+1+\dfrac{H_{n+1}}{n+1}$$
+				$$S_{n+1} \leq \dfrac{H_n^1}{2}+1+\dfrac{H_{n}+\dfrac{1}{n+1}}{n+1}+1$$
+				$$S_{n+1} \leq \dfrac{H_n^1}{2}+1+\dfrac{H_{n}+\dfrac{1}{n+1}}{n+1}+1$$
+				$$S_{n+1} \leq \dfrac{H_n^2}{2}+1+\dfrac{H_{n}}{n+1}+\dfrac{1}{(n+1)^2}+1$$
+				$$\because \dfrac{H_n^2}{2}+1+\dfrac{H_{n}}{n+1}+\dfrac{1}{(n+1)^2} \geq  \dfrac{H_{n}^2}{2}+\dfrac{H_n}{n+1}+\dfrac{1/2}{(n+1)^2}$$
+				$$\therefore S_{n+1} \nleq H_{n+1}^2/2 + 1$$
+			\end{addmargin}
+		\begin{spacing}{2.2}
+				(b). Base case: $n= 1$, $H_1 = 1$ , $S_1 = H_1/1 =1$, $\therefore S_1 \leq H_n^2/2+\dfrac{\dfrac{1}{1^2}}{2}$\\
+				Inductive Step:
+				\begin{addmargin}[2cm]{0cm}
+					Assume: $S_n \leq \dfrac{H_n^2}{2}+\dfrac{(\dfrac{1}{1^2}+\dfrac{1}{2^2}+...+\dfrac{1}{n^2})}{2}$\\
+					Prove: $S_{n+1} \leq \dfrac{H_{n+1}^2}{2}+\dfrac{(\dfrac{1}{1^2}+\dfrac{1}{2^2}+...+\dfrac{1}{(n+1)^2})}{2}$
+					$$S_{n+1} \leq \dfrac{H_n^2}{2}+\dfrac{(\dfrac{1}{1^2}+\dfrac{1}{2^2}+...+\dfrac{1}{n^2})}{2}+\dfrac{H_{n+1}}{n+1}$$
+					$$S_{n+1} \leq \dfrac{H_n^2}{2}+\dfrac{(\dfrac{1}{1^2}+\dfrac{1}{2^2}+...+\dfrac{1}{n^2})}{2}+\dfrac{H_{n}+\dfrac{1}{n+1}}{n+1}$$
+					$$S_{n+1} \leq \dfrac{H_n^2}{2}+\dfrac{(\dfrac{1}{1^2}+\dfrac{1}{2^2}+...+\dfrac{1}{n^2})}{2}+\dfrac{H_{n}}{n+1}+\dfrac{1}{(n+1)^2}$$
+					$$S_{n+1} \leq \dfrac{H_n^2}{2}+\dfrac{(\dfrac{1}{1^2}+\dfrac{1}{2^2}+...+\dfrac{1}{n^2})}{2}+\dfrac{H_{n}}{n+1}+\dfrac{1/2}{(n+1)^2}++\dfrac{1/2}{(n+1)^2}$$
+					$$S_{n+1} \leq \dfrac{H_{n+1}^2}{2}+\dfrac{(\dfrac{1}{1^2}+\dfrac{1}{2^2}+...+\dfrac{1}{(n+1)^2})}{2}$$\\
+					It is stronger because it is more precise. It replace a sequence of number greater than one.
+						\begin{flushright}
+						$\square$
+					\end{flushright}
+				\end{addmargin}
+		\end{spacing}
+		\end{addmargin}
+	}
+\end{addmargin}
+\end{document}

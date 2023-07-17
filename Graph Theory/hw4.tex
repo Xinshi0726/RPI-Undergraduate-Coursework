@@ -1,0 +1,133 @@
+
+\documentclass[12pt]{article}
+\usepackage[letterpaper,textwidth=5.5in,right=0.6in,textheight=9in,left=0.6in,top=0.7in,bottom=0.7in]{geometry}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+	\noindent Xinshi Wang\\
+	661975305\\
+	hw04\\
+	
+	\noindent 1.\\
+	\textbf{Proof:}
+	
+	$G$ is bipartite $\implies$ every block of $G$ is bipartite.
+	
+	This direction is trivial. Since every block of $G$ is maximal biconnected subgraphs of G, we know every block is bipartite since it is a subgraph of $G$ and it will not contain an odd cycle.\\
+	
+	Every block of $G$ is bipartite $\implies$ $G$ is bipartite.
+	
+	We prove this statment by proving its contrapositive; $G$ is not bipartite $\implies$ there exists a block of $G$ that is not bipartite.
+	
+	If G is not bipartite, then $G$ contains an odd cycle. Since the odd cycle it self has no cut vertices, it will appear in a block of G by definition of maximal biconnected subgraph. Thus there exists a block that contains odd cycle, which means there exists a block that is not bipartite. 
+	
+	\hfill $\blacksquare$ 
+	 
+	\noindent 2.\\
+	\textbf{Proof:}
+	k
+	We first prove if for graph $G$, $\forall v\in V(G) : d(v)$ is even then every maximal biconnected component $B_i \in G$, $\forall u\in V(B_i) : d(u)$ is even.
+	
+	Assume there exists a graph $G$ such that $\forall v\in V(G) : d(v)$ is even and $\exists u\in V(B_i) : d(u)$ is odd. By definition, we know there exists at most one common vertex u between $B_i$ and $B_j$ where $i \neq j$. Since $B_i$ and $B_j$ are subgraphs of $G$, all vertices except for u have even degrees. Consider $u \in V(B_i)$ has an odd degree and all other vertices in $V(B_i)$have even degrees, the sum of degrees is odd. By the handshake theorem, this is impossible. Thus we have derived a contradiction. Therefore $\nexists u\in V(B_i) : d(u)$ is odd, which means $\forall u\in V(B_i) : d(u)$ is even.
+	
+	We next prove if for every maximal biconnected component $B_i \in G$, $\forall u\in V(B_i) : d(u)$ is even, then for graph $G$, $\forall v\in V(G) : d(v)$ is even.
+	
+	We prove this using induction. Let P(n) denote the statement if for every maximal biconnected component $B_i$, $\forall u\in V(B_i) : d(u)$ is even, then for graph $G$ composed of n biconnected component, $\forall v\in V(G) : d(v)$ is even. 
+	
+	Base case: P(1). The biconnected component is the graph $G$. Thus $\forall u\in V(B_i) : d(u)$ is even $\implies$ $\forall v\in V(G) : d(v)$ is even.
+	
+	Inductive step: Assume $P(n)$ is true, prove $p(n+1)$ is true.
+	
+	By adding one biconnected component $B_j$ to $G$ will result a new graph $G'$. 
+	Let us consider one common vertex $u \in V(B_i) \cup V(B_j)$. Since the case $u \in V(B_i)$ has an even degree by the inductive hypothesis and the case $u \in V(B_j)$ also have an even degree since we are adding a biconnected component $B_j$ such that  $\forall u\in V(B_j) : d(u)$ is even. Thus $u \in V(B_i) \cup V(B_j)$ have an even degree. This holds for all verices that is also in other blocks in $B_j$. Thus vertices that are only in $V(B_j)$ have even degrees and $vertices$ that are also in other blocks have even degrees. Thus $\forall v\in V(G) : d(v)$ is even.
+	
+	\hfill $\blacksquare$ 
+	\newpage
+	
+	\noindent 3.\\
+	Claim: $1 \leq \kappa(G) \leq 1 \implies \kappa(G) = 1$, $1 \leq \kappa'(G) \leq 2$.\\
+	\textbf{Proof:}
+	
+	Since there is a non-empty set of articulation vertices, we can remove one vertex to disconnect graph $G$. Thus $\kappa(G) = 1$.
+	
+	For $\kappa'(G)$, consider 3 exhaustive cases for an articulation vertex $u$. Since the min degree is 3 and the max degree is 5, u can have degree 3, 4, or 5.
+	
+	(1). u have degree 3 and $u \in V(B_i)$ and $V(B_j)$.
+	
+	There are two exhaustive cases: (1). $d(u) = 1$ when $u \in V(B_i)$ and $d(u) = 2$ when $u \in V(B_j)$. (2). $d(u) = 2$ when $u \in V(B_i)$ and $d(u) = 1$ when $u \in V(B_j)$. Then $\kappa_1(G) \leq \max (\min d(u) \text{ in these 2 cases}) = 2$ since cutting all the edges of u in one block will disconnect this block with another block. Taking the maximum of all the possibilities gives us the upperbound for $\kappa_1(G)$.
+	
+	(2). have degree 4 and $u \in V(B_i)$ and $V(B_j)$.
+	
+	There are three exhaustive cases: (1). $d(u) = 1$ when $u \in V(B_i)$ and $d(u) = 3$ when $u \in V(B_j)$. (2). $d(u) = 2$ when $u \in V(B_i)$ and $d(u) = 2$ when $u \in V(B_j)$. (3). $(u) = 3$ when $u \in V(B_i)$ and $d(u) = 1$ when $u \in V(B_j)$. Then $\kappa_2(G) \leq \max (\min d(u) \text{ in these 3 cases}) = 2$ since cutting all the edges of u in one block will disconnect this block with another block. Taking the maximum of all the possibilities gives us the upperbound for $k_2(G)$.
+	
+	(3). u have degree 5 and $u \in V(B_i)$ and $V(B_j)$.
+	
+	There are four exhaustive cases: (1). $d(u) = 1$ when $u \in V(B_i)$ and $d(u) = 4$ when $u \in V(B_j)$. (2). $d(u) = 2$ when $u \in V(B_i)$ and $d(u) = 3$ when $u \in V(B_j)$. (3). $(u) = 3$ when $u \in V(B_i)$ and $d(u) = 2$ when $u \in V(B_j)$. (4). $(u) = 4$ when $u \in V(B_i)$ and $d(u) = 1$ when $u \in V(B_j)$ Then $\kappa_3(G) \leq \max (\min d(u) \text{ in these 4 cases}) = 2$ since cutting all the edges of u in one block will disconnect this block with another block. Taking the maximum of all the possibilities gives us the upperbound for $\kappa_3(G)$
+	
+	Therefore the upperbound for $\kappa'(G)$ is 2. For the lowerbound, there exists cases as we dicussed above that could disconnect two blocks by moving one edge. Thus $\kappa'(G) \geq 1$. Therefore $1 \leq \kappa'(G) \leq 2$.
+	
+	
+	\hfill $\blacksquare$ 
+	
+	\noindent 4.\\
+	\textbf{Proof:}
+	
+	First we replace each $e = (u,v) \in E(G)$ with directed edges $f = (u \rightarrow v)$ and $h = (v \rightarrow u)$ and consider a network flow from $x$ to $y$. Let $x$ denote the source vertex and $y$ denote the sink vertex. Let us assign weight of 1 to each edge on $G$.
+	
+	Let $F$ denote the maximal flow on G. Since the capacity of each edge on G is 1, units of flow correspond to pairwise edge-disjoint x,y path in G. Then a flow of value k correspnds to a set of k iedps.
+	
+	Let the source and sink partions be $S$ and $T$. Deleteing them will make it impossible to reach from x to y. The size of the set = cap(S,T)
+	
+	By the Max flow Min cut Theorem we have
+	
+	$$\lambda'(x,y) \geq max val(f) = min cap(S,T) \geq k'(x,y)$$
+	
+	Since $k'(x,y) \geq \lambda' (x,y)$ always hold, then equality must hold.
+	
+	\newpage
+	
+	\noindent 5.\\
+	\textbf{Proof:}
+	
+	In order to derive $K\ddot{o}nig-Egerv\acute{a}ry's$ theorem from Menger's theorem, let us consider the bipartite graph $G$ consisted of $X$ and $Y$. Let us add vertex $x$ to $Y$ and add vertex $y$ to $X$. Then connect edges in X to $x$ and edges in $Y$ to $y$. In order to prove $K\ddot{o}nig-Egerv\acute{a}ry's$ theorem, we need to show $\alpha'(G)$ (the size of maximum match) corresponds to $\lambda (x,y)$, and $\beta(G)$ (the size of the smallest vertex cover) corresponds to $ \kappa (x,y)$.
+	
+	Let us first consider $\alpha'(G)$ and $\lambda (x,y)$. If we remove the endpoints of all the x,y internally disjoint paths, we obtain a set of edges that share no common endpoints (by the definition of internally disjoint paths). The set of edges that share no common endpoints is a matching of graph $G$. Since the size of a maximum matching is greater than or equal to any other matching in $G$, we have $\alpha'(G) \geq \lambda(x,y)$.
+	
+	Next let us consider $\beta(G)$ and $\kappa(x,y)$. In order to break all x-y internally disjoint paths, an x-y separator needs to contain at least an end-point of an edge. Thus the size of an x-y separator is at least the size of an vertex cover of G. Then we have $\kappa(x,y) \geq \beta(G)$. 
+	
+	Therefore we have the following inequality with Menger's theorem:
+	$$\alpha'(G) \geq \lambda(x,y) = \kappa(x,y) \geq \beta(G)$$
+	
+	Since edges in the Maximum cover are disjoint, no two edges share an endpoint. Thus each vertex v covers at most one edge. Thus $\alpha'(G) \leq \beta (G)$. Since we have derive $\alpha'(G) \geq \beta (G)$ above, we have shown $\alpha'(G) = \beta (G)$
+	\hfill $\blacksquare$ \\
+
+	\noindent 6.\\
+	A giant component emerges when $np \rightarrow c > 1$. Then we have $p > \dfrac{1}{n} > \dfrac{1}{1000} = \dfrac{1}{999}$.
+	
+	\noindent 7.\\
+	A giant component emerges when $np \rightarrow c > 1$. Then we have $10^{-3} > \dfrac{1}{n} \implies n > \dfrac{1}{10^{-3}} = 1001$. Thus we need to have at least 1001 vertices.
+	
+	\noindent 8.\\
+	We have the following formula for $\beta$:
+	$$C_v(\beta) \approx C_v(0) \times (1-\beta)^3$$
+	Since $C_v(0) \approx \dfrac{3}{4}$, we have $\dfrac{1}{3} = \dfrac{3}{4} \times (1- \beta)^3$. Thus we have $\beta \approx 0.237$.
+	
+	Then we have $|V| = 2000000000$ and $|E| = 500000000000$. Thus we have the sum of degree $= 250000000000$. Then we have the average degree for each node $k = 125$, and $N = |V| =2000000000$ by definition. 
+	\noindent 9.
+	
+	First we compute the proportion of infected population at time infinity with assumption $s_0 = 1$:\\
+	$$s(\infty) - s(0) = \dfrac{log(s(\infty))}{R_0},s(0) = 1, R_0 = 2.5$$
+	$$s(\infty) = \dfrac{log(s(\infty))}{2.5}+1$$
+	
+	We have $s(\infty) \approx 0.10735$. Thus we have $r(\infty) \approx 0.893$. Thus there will be $893$ people be infected.\\
+	
+	\noindent 10.
+	
+	If there are only $1$ person died and the death rate is $1\%$, we have in total $100$ people being infected. Thus we have $r(\infty) = \dfrac{100}{1000} = 0.1$. Thus $s(\infty) = 0.9$. Then we have 
+	$$R_0 = \dfrac{log(\dfrac{s(\infty)}{s(0)})}{s(\infty)-s(0)}$$
+	
+	Thus $R_0 \approx 1.0536$.
+	
+\end{document} 

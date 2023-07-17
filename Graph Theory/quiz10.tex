@@ -1,0 +1,36 @@
+
+\documentclass[12pt]{article}
+\usepackage[letterpaper,textwidth=5.5in,right=0.6in,textheight=9in,left=0.6in,top=0.7in,bottom=0.7in]{geometry}
+
+\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\begin{document}
+	Xinshi Wang, 661975305
+	
+	1. We Prove this using contradiction. Assume $\forall e \in C, \forall C \subseteq G : \nexists K_3, e \in K_3$. In other words, for $\forall e \in C, \forall C \subseteq G$, $e \in C_n$, where $n \geq 4$ (note here $C_3$ and $K_3$ are equivalent). Thus every edge must be in a cycle that has more than or equal to 4 vertices, and there's no edge within the $C_n$ otherwis there will exist a smaller cycle and some edge $e$ in the graph $G$ will belong to that cycle. Thus we have a cycle of at least $4$ vertices that has no chord, which leads to a contradictionn with $G$ is a chordal graph. Thus every edge in every cycle of $G$ is part of a triangle $K_3$.\\
+	
+	2.
+	
+	 We prove this using induction on the number of edges $e$.
+	
+	Base Case: $e$ = 0. Since $G$ is connected, we have $1-0+1 = 2$. Thus the base case holds.
+	
+	Inductive step: Suppose the formula holds for gaphs of less than e-1 edges. Let G be a graph with e edges, show the euler's formula holds for graph G.
+	
+	Case 1: G does not contain a cycle. 
+	
+	Then G is a tree. It has 1 region since it is connected. It has $v-1$ edges. Thus $v-(v-1)+1 = 2$.
+	
+	Case 2: G contains at least 1 cycle.
+	
+	We assume the cycle is $C$. If we remove an edge $e$ from $C$, we get a path $P$ and new graph $G'$. $G'$ has one less region than $G$ by definition and thus we have $r' = r-1$.  with the same number of vertices $v' = v$ and one less edge than G, which means $e' = e-1$.
+	
+	Thus the I.H. holds since $v-(e-1)+(r-1) = 2$ $\implies$ $v-e+r = 2$ holds.
+
+	Thus we have proved the euler's formula 
+\end{document}

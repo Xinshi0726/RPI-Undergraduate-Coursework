@@ -1,0 +1,263 @@
+\documentclass{article}
+\title{CSCI 2200 HW1}
+\author{Xinshi,Wang}
+\usepackage[letterpaper,textwidth=5.5in,right=0.6in,textheight=9in,left=0.6in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{scrextend}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{setspace}
+\begin{document}
+\noindent
+CSCI 2200 HW4\\
+Wang Xinshi\\
+
+%Q 7.45 starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 7.45: Give recursive definitions for the set S in each of the following cases.\\
+	(a) $S = \{0, 3, 6, 9, 12, . . .\}$, the multiples of 3.\\
+	(b) $S = \{1, 2, 3, 4, 6, 7, 8, 9, 11, . . .\}$, the numbers which are not multiples of 5.\\
+	(c) $S$ = $\{$all strings with the same number of 0’s as 1’s$\}$ (e.g. $0011,0101,100101$).\\
+	(d) The set of odd multiples of $3$.\\
+	(e) The set of binary strings with an even number of $0$’s.\\
+	(f) The set of binary strings of even length.\\
+	
+	%(a) starts from here
+	\noindent
+	\textcolor{blue}{
+	(a).$S = \{\text{The multiples of 3}\}$
+	}	
+	
+	\textcolor{blue}{
+		$\textcircled{1}. 0 \in S$ 
+	}
+
+	\textcolor{blue}{
+		$\textcircled{2}. x \in S \implies x+3 \in S$ 
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{3}.$ Nothing else is in $S$.\\
+	}
+	%(a) ends here
+	
+	%(b) starts from here
+	\noindent
+	\textcolor{blue}{
+	(b).$S = \{\text{The numbers which are not multiples of 5}\}$
+	}
+
+	\textcolor{blue}{
+	$\textcircled{1}. 1 \in S$
+	}
+	
+	\textcolor{blue}{
+	$\textcircled{2}. x \in S \implies 2x,3x,4x  \in S$
+	}
+
+	\textcolor{blue}{
+	$\textcircled{4}.$ Nothing else is in $S$.\\
+	}
+	%(b) ends here 
+	
+	%(c) starts from here
+	\noindent
+	\textcolor{blue}{
+		(c).$S = \{\text{All strings with the same number of 0's as 1's}\}$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{1}. \epsilon \in S$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{2}. x \in S \implies 01x \in S$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{3}. x \in S \implies x01 \in S$
+	}
+
+	\textcolor{blue}{
+		$\textcircled{4}. x \in S \implies 10x \in S$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{5}. x \in S \implies x10 \in S$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{6}. x \in S \implies 0x1 \in S$
+	}
+
+	\textcolor{blue}{
+		$\textcircled{7}. x \in S \implies 1x0 \in S$
+	}
+
+	\textcolor{blue}{
+		$\textcircled{8}.$ Nothing else is in $S$.\\
+	}
+	%(c) ends here 
+	
+	%(d) starts from here
+	\noindent
+	\textcolor{blue}{
+		(d).$S = \{\text{The set of odd multiples of 3}\}$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{1}. 3 \in S$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{2}. x \in S \implies (2k+1)x  \in S$, where $k \in \mathbb{N}$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{3}.$ Nothing else is in $S$.\\
+	}
+	%(d) ends here 
+	
+	%(e) starts from here
+	\noindent
+	\textcolor{blue}{
+		(e).$S = \{\text{All strings with an even number of 0's}\}$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{1}. \epsilon,1 \in S$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{2}. x \in S \implies 0x0 \in S$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{2}. x,y \in S \implies xy \in S$
+	}
+
+	\textcolor{blue}{
+		$\textcircled{8}.$ Nothing else is in $S$.\\
+	}
+	%(e) ends here 
+	
+	%(f) starts from here
+	\noindent
+	\textcolor{blue}{
+		(f).$S = \{\text{The set of strings with even length}\}$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{1}. \epsilon \in S$
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{2}. x \in S \implies x00 \in S$.
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{2}. x \in S \implies x01 \in S$.
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{2}. x \in S \implies x10 \in S$.
+	}
+	
+	\textcolor{blue}{
+		$\textcircled{2}. x \in S \implies x11 \in S$.
+	}
+
+	\textcolor{blue}{
+		$\textcircled{3}.$ Nothing else is in $S$.\\
+	}
+	%(f) ends here
+\end{addmargin}
+%Q 7.45 ends here 
+
+\newpage
+
+%Q 7.60 starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 8.19(c). prove that every RFBT has an odd number of vertices.
+	
+	\noindent
+	\textcolor{blue}{
+	$\textcircled{1}. \epsilon \in RFBT$\\
+	$\textcircled{2}. T_1,T_2 \in RFBT \implies T_1, T2$ form a new RFBT.\\
+	}
+	
+	\noindent
+	\textcolor{blue}{
+		Base Case: $\epsilon + F = 3 $ vertcies, which is odd.\\
+		Inductive step: The property preserves in the child.\\
+		(a). $T_1 = \epsilon, T_2 = \epsilon$.\\
+		\quad $n = 0$.\\
+		The property preserves.\\\\
+		(b) $T_1 = \epsilon, T_2 = F$\\
+			$n = 2 \times 1 +1 = 3$\\
+			The property preserves. \\\\
+		(b) $T_1 = F, T_2 = \epsilon$\\
+		$n = 2 \times 1 +1 = 3$\\
+		The property preserves. \\\\
+		(b) $T_1 = F, T_2 = F$\\
+		$n = 2 \times 2 +1 = 5$\\
+		The property preserves. 
+	}
+\end{addmargin}
+
+%Q 7.60 ends here
+
+\clearpage
+
+%Q 9.3(h) starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 9.3(h)
+	\begin{center}
+		$\sum_{i=0}^{n} \sum_{j=i}^{n}(i+j)$
+	\end{center} 
+	\noindent
+	\textcolor{blue}{
+	$\sum_{i=0}^{n} \sum_{j=i}^{n}(i+j)$\\
+	$=\sum_{i=0}^{n} (\sum_{j=i}^{n} i + \sum_{j=i}^{n} j)$\\
+	$=\sum_{i=0}^{n}(n-i+1)i+(\sum_{j=1}^{n}j - \sum_{j=1}^{i}j)$\\
+	$=\sum_{i=0}^{n}(ni-i^2+i)+(\dfrac{1}{2}n(n+1))-\dfrac{1}{2}i(i+1)$\\
+	$=\sum_{i=0}^{n}(ni-i^2+i)+\sum_{i=0}^{n}(\dfrac{1}{2}n(n+1))-\sum_{i=0}^{n}\dfrac{1}{2}i(i+1)$\\
+	$=\sum_{i=0}^{n}(ni-i^2+i)+(n+1)(\dfrac{1}{2}n(n+1))-\dfrac{1}{2}((n+1)(\dfrac{1}{2}n+\dfrac{1}{6}n(n+1)(2n+1)))$\\
+	$=n\sum_{i=0}^{n}i-\sum_{i=0}^{n}i^2+\sum_{i=0}^{n}i+(n+1)(\dfrac{1}{2}n(n+1))--\dfrac{1}{2}((n+1)(\dfrac{1}{2}n+\dfrac{1}{6}n(n+1)(2n+1))$\\
+	$=\dfrac{1}{2}n(n+1)(n+2)$\\
+	}
+	
+	\noindent9.3(l)
+	\begin{center}
+		$\sum_{i=1}^{n} \sum_{j=1}^{n}\ln{(ij)}$
+	\end{center} 
+	\noindent
+	\textcolor{blue}{
+		$\sum_{i=1}^{n} \sum_{j=1}^{n}\ln{(ij)}$\\
+		$=\sum_{i=1}^{n} (\sum_{j=1}^{n}\ln{(i)}+\sum_{j=1}^{n}ln(j))$\\
+		$=\sum_{i=1}^{n} (n \ln(i) + \ln(j)!)$\\
+		$=n\ln(i)!+n\ln(j)!$\\
+		$=n(\ln(i)!+\ln(j)!)$
+	}
+\end{addmargin}
+%Q 9.3 ends here
+
+\newpage
+%Q 10.9 starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 10.9: How many zeros are at the end of $1000!$ ?\\
+	\textcolor{blue}{
+	\indent This is equivalent to finding n such that $10^n|1000!$. Numbers in the end only depends on 5 since it is the greatest in the prime pair for 10. Therefore the numbers in the end are given by $\left \lfloor\dfrac{1000!}{5^1}\right \rfloor+\left \lfloor\dfrac{1000!}{5^2}\right \rfloor+\left \lfloor\dfrac{1000!}{5^3}\right \rfloor+\left \lfloor\dfrac{1000!}{5^4}\right \rfloor+...= 200+48 +1 +0+...=249$. Therefore there are $249$ zeros in the end of $1000!$}
+\end{addmargin}
+%Q 10.9 ends here
+
+\newpage
+%Q 10.41 starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 10.41(b)(iii). what is the last digit of $2^{70} + 3^{70}$\\
+	\indent
+	\textcolor{blue}{$2^{70}$ can be re-written as $(2^2)^{35}$. Therefore the last digit of $2^{70}$ is 4. Likewise, $3^{70}$ can be re-written as $(3^2)^{35}$. Therefore the last digit of $3^{70}$ is 9. Summing them up gives us $13$. Therefore the last digit is $3$.}
+\end{addmargin}
+%Q 10.41(iii)(d) ends here
+\end{document}

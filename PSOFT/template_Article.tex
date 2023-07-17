@@ -1,0 +1,151 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper,textwidth=5.5in,right=0.6in,textheight=9in,left=0.6in,top=0.7in,bottom=0.7in]{geometry}
+
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+	\noindent Xinshi Wang\\
+	661975305\\
+	HW01\\
+	
+	\noindent Problem 1
+	
+	1. $\{ x$ is even $\land$ $y = x +1$ $\}$\\
+		
+	2. $\{ 1 \leq x \leq 3 \}$\\
+	
+	3. $\{ x > 0 \land y > 0 \}$\\
+	
+	4. $\{x$ is divisible by $50\}$\\
+	
+	5. None\\
+	
+	6. $abs(result*result-x)\leq 0.000001$\\
+	
+	\noindent Problem 2
+	
+	1. Valid; \\
+	
+	2. Valid;\\
+	
+	3. Invalid; we know from code that $i = i+1$ and $j = j-1$. Adding those up gives us $i+j = i+j$. From the precondition we know $i+j \neq 0$. Thus to make it correct, the post condition should also be $i+j \neq 0$.\\
+	
+	4. Invalid; the else case is $x \leq y$ instead of $x < y$. Thus, the postcondition should be $\{(m=x \land x>y) \lor (m = y \land x \leq y ) \} $\\
+	
+	\noindent Problem 3
+	
+	1. {A} code {E}: possibly invalid. There's no correlation between A and E.\\
+	
+	2. {C} code {D}: possibly invalid. C is a weaker precondition compared to F. We want a stronger one.\\
+	
+	\noindent Problem 4\\
+	1. $\{ x>0\}$\\
+	\hspace*{1cm} x=10;$\\
+	\hspace*{1cm}\hspace*{1cm} \{x=10\}$\\
+	\hspace*{1cm} y=20-x;$\\
+	\hspace*{1cm}\hspace*{1cm} \{x = 10 \land y = 20-x\} \implies \{y=10 \land x = 10\};$\\
+	\hspace*{1cm} z=y+4;$\\
+	\hspace*{1cm}\hspace*{1cm} \{z=y+4 \land y = 10\} \implies \{y = 10 \land x = 10 \land z = 14\};$\\
+	\hspace*{1cm} y=0;$\\
+	\hspace*{1cm}\hspace*{1cm} \{y = 0\} \implies \{y=0 \land x = 10 \land z = 14\};$\\
+	
+	\newpage 
+	
+	\noindent 2. $\{ |x|>11\}$\\
+	\hspace*{1cm} x=-x;$\\
+	\hspace*{1cm}\hspace*{1cm} \{|x|>11 \land x = -x\} \implies \{x>11\vee x<-11\}$\\
+	\hspace*{1cm} x=x*x;$\\
+	\hspace*{1cm}\hspace*{1cm} \{x = x*x \land x>11\vee x<-11\} \implies \{x>121\};$\\
+	\hspace*{1cm} x=x+1;$ \\\
+	\hspace*{1cm}\hspace*{1cm} \{x = x+1 \land x >121\} \implies \{x>122\};$\\
+	
+	\noindent 3. $\{ |x|<5\}$\\
+	\hspace*{1cm} if $(x>0)$ $\{$\\
+	\hspace*{1cm}\hspace*{1cm} $\{|x|<5 \land x>0\} \implies \{0<x<5\}$\\
+	\hspace*{3.5cm} $y=x+2$;$\\
+	\hspace*{1cm}\hspace*{1cm} \{0<x<5 \land y = x+2\} \implies \{2<y<7\}$\\
+	\hspace*{1cm} \} else $\{$\\
+	\hspace*{1cm}\hspace*{1cm} $\{|x|<5 \land x \leq 0\} \implies \{-5< x \le 0\}$\\
+	\hspace*{2.5cm}\hspace*{1cm} y=x-1;$\\
+	\hspace*{1cm}\hspace*{1cm} \{2<y<7 \land y=x-1\} \implies \{-6<y\le-1\}$\\
+	\hspace*{1cm} \}$\\
+	\hspace*{1cm}\hspace*{1cm} \{(-6<y\le-1 \land -5 <x\leq 0) \lor (2<y<7 \land 0<x<5)\}$\\
+	
+	\newpage
+	\noindent Problem 5\\
+	
+	1. $\{wp(x=-5,y>-2x) \implies (y>10) \}$\\
+	\hspace*{2.5cm} $x=-5;$\\
+	\hspace*{2.5cm}\qquad $\{wp(z=2*x+y,z>0) \implies (2x+y>0) = (y>-2x)\}$\\
+	\hspace*{2.5cm} $z=2*x+y;$\\
+	\hspace*{2.5cm}\qquad $\{z>0\};$\\
+
+	2. $\{wp(code,x>0 \lor x \leq 0) = \{x>1 \lor x<-3\}\}$\\
+	\hspace*{2.5cm} if $(x>0)\{$\\
+	\hspace*{2.5cm}\qquad $\{wp(x=x+6,x>7)=(x+6>7)=(x>1)\}$\\
+	\hspace*{2.5cm}\quad $x=x+6;$\\
+	\hspace*{2.5cm} $\}$ else $\{$\\
+	\hspace*{2.5cm}\qquad $\{wp(x=4-x,x>7) = (4-x>7) = (x<-3)\}$\\
+	\hspace*{2.5cm}\quad $x=4-x;$\\
+	\hspace*{2.5cm} $\}$\\
+	\hspace*{2.5cm}\qquad $\{x>7\}$\\
+	
+	3. $\{wp(\text{if else statements and codes},x>0)=(x>3) \lor (x \ge -4 )\}$\\
+	\hspace*{2.5cm} if $(x>4)\{$\\
+	\hspace*{2.5cm}\qquad $\{wp(x=x-3,x>0)=(x-3>0)=(x>3)\}$\\
+	\hspace*{2.5cm}\quad $x=x-3;$\\
+	\hspace*{2.5cm}\quad $\}$ else $\{$\\
+	\hspace*{2.5cm}\qquad\qquad $\{wp((x<-4) \text{ do } x=x+3 \land (x \geq -4) \text{ do } (x = x+1),x>0)=(x<-4\land x>-3)\lor (x\ge -4 \land x>-1)=(x\ge-4)\}$\\
+	\hspace*{3.5cm}\qquad if $(x<-4)\{$\\
+	\hspace*{3.5cm}\qquad\qquad $\{wp(x=x+3,x>0)=(x>-3)\}$\\
+	\hspace*{3.5cm}\qquad\quad $x=x+3$\\
+	\hspace*{3.5cm}\qquad\}else $\{$\\
+	\hspace*{3.5cm}\qquad\qquad $\{wp(x=x+1,x \geq -4)=(x+1>0)=(x>-1)\}$\\
+	\hspace*{3.5cm}\qquad\quad $x=x+1$\\
+	\hspace*{2.5cm}\qquad$\}$\\
+	$\}$\\
+	\hspace*{2.5cm}\qquad$\{x>0\}$\\
+	
+	4. $\{wp(x=y+2,x>2y-1)=(y+2>2y-1)=(y<3) \}$\\
+	\hspace*{2.5cm}$ x=y+2;$\\
+	\hspace*{2.5cm}\qquad $\{wp(z=x+1,z>2y)=(x+1>2y)=(x>2y-1)\}$\\
+	\hspace*{2.5cm}$ z=x+1;$\\
+	\hspace*{2.5cm}\qquad $\{z>2y\};$\\
+	
+	\newpage
+	
+	5. $\{wp(x \ge 0 \text{ do } z=x \lor x <0 \text{ do } z = x+1 ,z\neq0)=(x\ge0 \land x\neq0)\lor(x<0 \land x\neq-1)= -1 <x < 0\}$\\
+	\hspace*{2.5cm} if $(x\ge0)$\\
+	\hspace*{2.5cm}\qquad $\{wp(z=x,z\neq0)=(x\neq0)\}$\\
+	\hspace*{2.5cm}\quad z=x;$\\
+	\hspace*{2.5cm}$ else\\
+	\hspace*{2.5cm}\qquad $\{wp(z=x+1,z\neq0)=(x+1\neq0)=(x\neq-1)\}$\\
+	\hspace*{2.5cm}\quad z=x+1;$\\
+	\hspace*{2.5cm} \{z\neq0\}$\\
+	
+	\noindent Problem 6\\
+	1.\hspace*{2.5cm}$\{x_{pre}<y_{pre}\}$\\
+	\hspace*{2.7cm} $\{wp(w=y, w=y_{pre}=x_{post}\land y_{post}=x_{pre}) = { w=y_{pre}=x_{post} = y_{post} = x_{pre}}\}$\\
+	\hspace*{1cm}\quad $w=y;$\\
+	\hspace*{2.5cm}\quad$\{wp(z=x+y-w, w=y_{pre}=x_{post}\land y_{post}=x_{pre})=(z = w-w+y_{post})= (z = x_{pre})\}$\\
+	\hspace*{1cm}\quad $z=x+y-w;$\\
+	\hspace*{2.5cm}\quad$\{wp(x=w,x_{post}=y_{pre}\land y_{post}=x_{pre})=(w=y_{pre}=x_{post})\land y_{post}=x_{pre}\}$\\
+	$\hspace*{1cm}\quad x=w;$\\
+	\hspace*{2.5cm}\quad$\{x_{post}=y_{pre}\land y_{post}=x_{pre}\}$
+	
+	InSufficient, we need to make sure $x_{pre} = y_{pre}$. The given condition is weaker than $x_{pre} = y_{pre}$.\\
+	
+	2$\hspace*{1.65cm}\quad\{(x=y)\vee(x\neq y\wedge y>0)\}$\\
+	\hspace*{2.5cm}\quad$\{wp((x_1==y) \text{ do }x_2=0 \lor (x_1 != y) \text{ do }x_2=x_1*y,x_2\le y)=(x_1=y\land y \ge 0)\lor(x_1\neq y\land x_1 \le 1)\}$\\
+	\hspace*{1cm}\quad if $(x==y);$\\
+	\hspace*{2.5cm}\quad$\{wp(x_2=0,x_2\le y)=(y \ge 0)\}$\\
+	\hspace*{2.5cm} $x=0;$\\
+	\hspace*{1cm}\quad else\\
+	\hspace*{2.5cm}\quad$\{wp(x_2=x_1*y,x_2\le y)=(x_1*y\le y)=(x_1\le 1)\}$\\
+	\hspace*{2.5cm} $x=x*y;$\\
+	\hspace*{2.5cm}\quad$\{x\le y\}$
+	
+	Insufficient. The given condition is weaker. We also need to make sure $\{x \leq 1\}$ and $y \geq 0$.
+	\bigskip
+	
+\end{document}

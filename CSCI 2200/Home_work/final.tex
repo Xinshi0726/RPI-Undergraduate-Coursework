@@ -1,0 +1,133 @@
+\documentclass{article}
+\title{CSCI 2200 HW1}
+\author{Xinshi,Wang}
+\usepackage[letterpaper,textwidth=5.5in,right=0.6in,textheight=9in,left=0.6in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{scrextend}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{setspace}
+\begin{document}
+	\noindent
+	FOCS Final \\
+	Wang Xinshi\\
+	
+	\noindent (1). B\\
+	There exists a constant $c \in \mathbb{N}$ such that $1+\dfrac{1}{\sqrt 2}+...+\dfrac{1}{\sqrt{n}}>c\sqrt{n}$. Thus the c is in the outer parenthese with an there exists statement.\\\\
+	(2). E\\
+	The previous sum is equal to infinity. Thus there does not exist such C.\\\\
+	(3). B\\
+	$T_1 = 2$, $T_2=2+4=6$, $T_3=6+6=12$, $T_4=12+8=20$, $T_5=20+10=30$. We can derive a formula for $T_n$. $T_n = (n+1)n$. Thus $T_100 = 100 \times 101 = 10100$.\\\\
+	(4). D\\
+	$T_1 = 1$, $T_2 = 2 \times 1 = 2$, $T_3 = 3 \times 2 = 6$, $T_4 = 4 \times 6 = 24$, $T_5 = 5 \times 24 = 120$. The formula for $T_n$ is $n!$. As we can see this grows way faster than any other polynomials in the four options, and the limit of $n!$ dividing any of them as $n$ approaches inifinity is infinity. Thus $n! \in \omega(2^n)$\\\\
+	(5). D\\ 
+	We are dividing the candies between 11 kids. We do it in mod 11 world. In mod 11 world, $2^5 \equiv -1 $ since $2^5 = 32$ and $32+1$ is divisible by 11. We can then form $2^{2016}$ as $2 \times (2^{5})^{403} \equiv -2$. Then the remainder is 9. \\\\
+	(6). E\\
+	This is the famous harmonic seris. We all know it diverges.\\\\
+	(7). C\\
+	Since it does not contain digit 2, there are 8 choices for the hundredth, 9 choices for the tenth, and 9 choices for the 9. Thus the number of ways is $8 \times 9 \times 9 = 648$.\\\\
+	(8). E\\
+	This is the harmonic minus $\dfrac{1}{2}$, so it still diverges.\\\\
+	(9). C\\
+	Obviously, this equals to $3 \times 3 \times 3 \times ... \times 3 = 3^7$.\\\\
+	(10). C\\
+	We can have the first color with 3 shirts. Then we have $\binom{7}{3} + \binom{4}{2} + \binom{2}{2} = 210$. Or we can have the second color with 3 shirts, and the other with 2 shirts. Then we have $\binom{7}{2} + \binom{5}{3} + \binom{2}{2} = 210$. Or we can have the third color with 3 shirts. Which gives us $\binom{7}{2} + \binom{5}{2} + \binom{3}{3} = 210$. Adding them up gives us 630.
+	\\\\
+	(11). E\\
+	Consider a graph with 2 nodes and 1 edge. Thus the degree of each node is 1, and A is false since it is connected. For B sum of degrees $= 5$, which is odd. Thus it is impossible. For C, the counter example is given in A. For D, a counter example is given in A.\\\\
+	(12). B\\
+	There are 36 possibilities of rolling a pair of dice The outcomes where you roll exactly a $5$ are $\{(5,1),(5,1)...(5,6)\}\setminus\{5,5\} \cup \{(1,5),(2,5)...(6,5)\}\setminus\{5,5\}$. Thus the probability of choosing one of them in the set above is $\dfrac{10}{36}$.\\\\
+	(13). E\\
+	$P(\text{exactly one 5|Sum is even}) = \dfrac{P(\text{exactly one 5 $\cap$ Sum is even})}{P(\text{Sum is even})}$. The probability space for even sums are $(1,1),(1,3),(1,5)$,\\$(2,2),(2,4),(2,6),(3,1),(3,3),(3,5),(4,2),(4,4),(4,6),(5,1),(5,3),(5,5),(6,2),(6,4),(6,6)$. We can see there are 4 tuples with exactly one 5. Thus $P(\text{exactly one 5|Sum is even})=\dfrac{4}{18} = \dfrac{2}{9}$.\\\\
+	(14). D\\
+	The probability of getting a boy changes as the number of boys gets smaller. Therefore this is not a binary random variable.\\\\
+	(15). C\\
+	Expected value equals probability times the number of friendships. In the tree structure, the number of edges equals the number of vertices -1. Thus the expected number of matches = $(20-1) \times 0.5 = 9.5$.\\\\
+	(16). C\\
+	We use the law of total expectation as what we did on quiz2(I think so). $E[X] = E[X|B]P(B)+E[X|G]P(G) = \left(1+\dfrac{1}{1-\dfrac{2}{3}}\right) \times \dfrac{1}{2} + 1 \times \dfrac{1}{2} = 2.5$\\\\
+	(17). B\\
+	Basically the same thing as 16\\
+	$E[X] = E[X|B]P(B)+E[X|G]P(G) = \left(1+\dfrac{1}{1-\dfrac{2}{3}}\right) \times \dfrac{1}{2} + \left(1+\dfrac{1}{1-\dfrac{2}{3}}\right) \times \dfrac{1}{2} = 4$\\\\
+	(18). C\\
+	You can represent a DFA with a list, where each element in the list shows the connectivity of each node. For example, $q_0|q_0,q_1,q_2,q_3$ represents how $q_0$ is connected with other nodes. We have the same thing for $q_1,q_2,$ and $q_3$. Since at each position, you either connect to the node, or you don't. Thus there are 2 choices at each position. Thus for $q_0$ there are $2^4$ ways. For all four of them we have $(2^4)^4$ ways. Which gives us around 1 million(use $2^10 \times 2^6$). \\\\
+	(19). E\\
+	We could only generate 1 digit, 3 digits, 5 digitis, 7 digits and so on.... in this problem. Thus none of them match the right digits\\\\
+	(20). B\\
+	$\mathcal{L}_A$ is harder than $\mathcal{L}_B$. Thus $\mathcal{L}_A$ is undecidable since $\mathcal{L}_B$ is undecidable. Thus $\mathcal{L}_A$ is infinity by definition. 
+	\newpage
+	\noindent (2). 
+	Prove there is a constant $c>0$ for which, no matter which $n \in \mathbb{N}$ you pick, $1+\dfrac{1}{\sqrt{2}} + \dfrac{1}{\sqrt{3}}+...+\dfrac{1}{\sqrt{n}}>c\sqrt{n}$.
+	
+	Tinkering: This problem is pretty hard when you try to prove it using induction. I tried to use $c = \dfrac{1}{\sqrt{n}}$ and $c = \dfrac{1}{\sqrt{n+1}}$. But they did not work. Then I switched gear and used contradiction, and it turns out to be much more easier. 
+
+
+	\text{\bf \textcolor{red}{Prove:}}We can prove by contradiction.
+	
+	Assume there does not exist a constant $c>0$ for which, no matter which $n \in \mathbb{N}$ you pick, $1+\dfrac{1}{\sqrt{2}} + \dfrac{1}{\sqrt{3}}+...+\dfrac{1}{\sqrt{n}}>c\sqrt{n}$. Or equivalently, for all $c>0$, no matter which $n \in \mathbb{N}$ you pick, $1+\dfrac{1}{\sqrt{2}} + \dfrac{1}{\sqrt{3}}+...+\dfrac{1}{\sqrt{n}} \leq c\sqrt{n}$.
+	
+	Let c = $\dfrac{1}{2\sqrt{n}}$. Thus we have $1+\dfrac{1}{\sqrt{2}}+\dfrac{1}{\sqrt{3}}+...+\dfrac{1}{\sqrt{n}} \leq c\sqrt{n} = \dfrac{1}{2}$. Since for all $i \in \mathbb{N}$, $\dfrac{1}{\sqrt{i}}>0$. Thus $1+...+\dfrac{1}{\sqrt{n}} > 1 \nleq \dfrac{1}{2}, \forall n \in  \mathbb{N}$. Thus there is somthing fishy and we can derive a contradiction. Therefore there must exist a constant $c>0$ for which, no matter which $n \in \mathbb{N}$ you pick, $1+\dfrac{1}{\sqrt{2}} + \dfrac{1}{\sqrt{3}}+...+\dfrac{1}{\sqrt{n}}>c\sqrt{n}$.\\ 
+	
+	\newpage
+	
+	\noindent (3).
+	Prove 5 consecutive numbers are divisible by 5!.\\
+	Tinkering: I tried to make n the median number, and thus we can represent the 5 numbers as $n-1,n-2,n,n+1,n+2$, and tried to multiply them out and do the algebra. I turns out it is not possible. The other way is to note the link between the 5 numbers and factorial. It is possible to represent the product as $\dfrac{n!}{(n-5)}$. In this case 5 is the largest number among the 5, and things become easier.\\
+	
+	\text{\bf \textcolor{red}{Prove:}} In order to show the product of 5 consecutive numbers is divisible by $5!$, we denote the product as S and try to prove $\dfrac{S}{5!} \in \mathbb{N}$. 
+	
+	We know $S = \dfrac{n!}{(n-5)}$, so we can instead show $\dfrac{n!}{(n-5)} \times \dfrac{1}{5!} \in \mathbb{N}$. This is the same as showing $\binom{n}{5} \in \mathbb{N}$.
+	
+	We prove the statement above using induction.
+	
+	Base Case: We note here $n \in \mathbb{N} \setminus \{1,2,3,4\}$. Thus we pick $n=5$. $\binom{5}{5} = 1 \in \mathbb{N}$. Thus base case holds. 
+	
+	Inductive steps: Assume $\binom{n}{5} \in \mathbb{N}$, then we prove $\binom{n+1}{5} \in \mathbb{N}$.
+	
+	From Pascal's triangle, we know $\binom{n}{5} = \binom{n-1}{5}+\binom{n-1}{4}$ and $\binom{n+1}{5} = \binom{n}{5} + \binom{n}{4}$. Thus we have 
+	\begin{align*}
+		\binom{n+1}{5} &= \binom{n}{5} + \binom{n}{4}\\
+					   &= c \in \mathbb{N} + \binom{n}{4}\\
+					   &= c \in \mathbb{N} + \dfrac{n!}{(n-4)!4!}\\
+					   &= c \in \mathbb{N} + \dfrac{n!}{(n-5)!5!} \times 5(n-5)\\
+					   &= c \in \mathbb{N} + \binom{n}{5} \in \mathbb{N} \times d \in \mathbb{N}\\
+					   &= C \in \mathbb{N}\\.
+	\end{align*}
+	Therefore we can conclude that $\binom{n}{5}$ is an integer, which means $\dfrac{n!}{(n-5)}$ is divisible by $5!$. In other words, 5 consecutive numbers are divisible by $5!$.
+	\newpage
+	
+	\noindent (4). Expected waiting time for starburst\\
+	Assume there are three colors, A, B, C in the probability space. Therefore there are in total 6 combinations. $AA,BB,CC,AB,$\\$AC,BC$. There are only 6 combinations here because the order does not matter.\\\\
+	Here we use the law of total expectation. The law of total expectation tells us\\ $E[X] = E[X|\text{1color}]P(\text{1color})+E[X|\text{2colors}]P(\text{2colors})$
+	We can subdivide those two cases, and we have
+	\begin{align*}
+		E[X] &= E[X|AA]P(AA)+E[X|BB]P(BB)+E[X|CC]P(CC)\\
+		 &+E[X|AB]P(AB)+E[X|AC]P(AC)+E[X|BC]P(BC)
+	\end{align*}
+
+	For the case AA,BB, and CC. Once we have one color, then we need to find 2 colors. You can directly get one color if you find a combination of two colors. Or you can find one color first, and then find the other color. Thus the probability of success = $\dfrac{1}{6}+(\dfrac{3}{6} \times \dfrac{3}{6}) = \dfrac{15}{36}$. The expected value for $E[X|AA]$ is therefore $1 + \dfrac{36}{15} = 3.4$ with $P(AA) = \dfrac{1}{6}$. It is the same for three of them. Thus the sum of three terms gives us 1.7.\\
+	
+	For the case  AC,AB,BC. We only need one color. Thus the probability of success is $\dfrac{3}{6}$. Thus the expected value is $\dfrac{1}{6} \times(1+2)$ for three of them. Thus the total expectation value is 1.5\\
+	
+	Adding those two up, we know the expected value is $3.2$ .
+	\newpage
+	
+	\noindent (5). Find a DFA for $\mathcal{L} = \{0^{\cdot n^2}\}$ or prove such thing does not exist.\\
+	Tinkering: We prove this with a contradiction, as we did in class!
+	
+	DFA solves a problem with finite states. We assume here the DFA solves the problem with an arbitrary finite K states. The states are $q_0,q_1,...,q_{k-1}$. By the archemedian property, we know we can pick a number $n$ such that $n^2>k$. Let us consider the DFA processing a string of $n^2$ zeros. By the pigenhole theorem, we know two of the states visited must be the same. In this case, let us denote $state(0^i)$ and $state(0^j)$ with $q$., where $i<j$.
+	
+	Now consider the input $a = 0^{i^2}$. Let us denote two traces. (i). $q|0^{\cdot i} \triangleright 0^{i^2-i}$ and (ii). $q|0^{\cdot j} \triangleright 0^{i^2-i}$. We know they end up with the same state since $state(0^i)$ = $state(0^j)$ = $q$.
+	However, they should not since $i^2 - i +j \neq i^2$ because $i \neq j$. Thus we found a contradiction and this DFA does not exist.
+	\newpage
+	\noindent (6). Give a high level pesudo-code description for the turing machine.\\
+	Tinkering: Turing machine is a finite state machine with an infinitely long tape. Therefore we can start from the right side of the tape and move it to the left side of the reversal string in the blank space. Since it has an infinitely long tape, it could be implemented.\\
+	Step 1: Check input format: It should only contain 0, 1, *, or blank.\\
+	Step 2: Return to *.\\
+	Step 3: Move right until you hit blank. Mark the Blank Y.\\
+	Step 4: Move left until you hit a unmarked bit. If you hit *, go to step 7. Else Remember the bit(implement it using two distince states that separete 0 and 1 in TM) and mark it with X. \\
+	Step 5: Go right and until you hit blank.\\
+	Step 6: Write the bit remembered in step 4 on the blank space. Move left until you hit Y. Then Go to step 4 and repeat.\\
+	Step 7: mark the * bit to blank space, move right and change all the bits that are mark X to blank space. Stop until you hit Y.\\
+	Step 8: change Y into *, and halt.\\
+\end{document} 

@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsmath,amssymb}
+\usepackage{mathrsfs,hyperref}
+\pagestyle{empty}
+
+\begin{document}
+\noindent{\bf Homework 3}
+
+There are two homework problems. Additionally, the second page includes instructions for your first Problem Presentation which is also due at the same time as Homework 3.  The expectation is that students
+will submit very high quality proofs. The problem solution must be written
+in LaTeX. Follow the instructions on LMS for how to submit the problem.
+
+\bigskip
+\bigskip
+\begin{enumerate}
+
+\item Suppose $f: S \rightarrow S$ for some non-empty set $S$. Prove that if $f \circ f$ is injective, then $f$ is injective. \\
+\vspace{.15in}
+
+% Insert solution here
+\noindent {\bf Proof.} In order to prove if $f \circ f$ is injective then $f$ is injective we can prove its contrapositive statement which is  if $f \circ f$ is not injective then $f$ is not injective.\\
+
+Suppose $x_1,x_2 \in S$, let $f(x_1) = f(x_2)$. Since f is not injective, $x_1 \neq x_2$. Since $f(x_1) \in S$ so $f(f(x_1))$ is defined and we can write $f(f(x_1)) = f \circ f (x_1)$. Likewise $f(x_2) \in S$ so $f(f(x_2)) = f \circ f (x_2)$. Since $f(x_1) = f(x_2)$, we know $f(f(x_1)) = f(f (x_2))$ which means $f \circ f (x_1) = f \circ f (x_2)$. Since $x_1 \neq x_2$, $f \circ f$ is not injective.\\
+
+Since we have proved the contrapositive statement, we have proved if $f \circ f$ is injective then $f$ is injective since it is logically equivalent to its contrapositive statement.\\
+
+\item For all the parts below, suppose that $f:A \rightarrow B$ and let $D$ be a subset of $B$.
+\begin{enumerate}
+\item Prove or give a counterexample: $f\left[f^{-1} (D) \right] \subseteq D.$
+\vspace{.15in}
+
+\noindent {\bf Proof.} Assume $f[f^{-1}(D)]$ is non-empty, else the result follows. Let $y \in f[f^{-1}(D)]$, then there exists a point $x \in f^{-1}(D)$ such that $f(x) = y$. Since $x \in f^{-1}(D)$, we know $f(x) \in D$. Therefore $y \in D$. Hence $f[f^{-1}(D)] \subseteq D$.\\
+
+\item Prove or give a counterexample: $D \subseteq f\left[f^{-1} (D) \right].$
+\vspace{.15in}
+
+\noindent {\bf Proof.} Let $f:\mathbb{R} \rightarrow \mathbb{R}$ and $f(x) = \sqrt{25-x}$. Let $D$ be $[-1,2]$, then we have $f^{-1}(D) = f^{-1}([-1,2]) = [21,25]$. Therefore $f[f^{-1}(D)] = f([21,25]) = [0,2]$. Hence we have found a case that $D \nsubseteq f[f^{-1}(D)]$.\\
+\item State which of the following gives  the ``weakest'' condition on $f$ to make a
+true statement.
+\begin{itemize}
+\item Without any further conditions, it is true that  $f\left[f^{-1} (D) \right] = D$.
+\item If $f$ is injective then $f\left[f^{-1} (D) \right] = D$.
+\item If $f$ is surjective then $f\left[f^{-1} (D) \right] = D$.
+\item If $f$ is bijective then $f\left[f^{-1} (D) \right] = D$.
+\end{itemize}
+Prove the statement that gives the weakest conditions on $f$. {\it Note that the proof of your chosen statement can refer back to any {\bf proof} you provide in parts (a) and (b) but a counterexample is not a proof.}
+\vspace{.15in}
+
+The statement if $f$ is surjective then $f\left[f^{-1} (D) \right] = D$ is correct. \\\\
+
+\noindent {\bf Proof.} In order to prove $f\left[f^{-1} (D) \right] = D$, we need to show $f\left[f^{-1} (D) \right] \subseteq D$ and $D \subseteq f\left[f^{-1} (D) \right]$\\
+
+From part(a) of the question, we know  $f\left[f^{-1} (D) \right] \subseteq D$.\\
+
+Assume $D$ is non-empty, else the result follows. Let $y \in D$. Since $D \subset B$, $y \in B$. Since $f$ is surjective and $y \in B$, there exists a point $x \in A$ such that $f(x) = y$. Because $y \in D$ and $y = f(x)$, $f(x) \in D$. By definition of the pre-image, $x \in f^{-1}(D)$ because $x \in A$ and $f(x) \in D$. Therefore $f(x) \in f[f^{-1}(D)]$. Since $f(x) = y$, $y \in  f[f^{-1}(D)]$. Therefore we have proved $f\left[f^{-1} (D) \right] \subseteq D$.\\
+
+Therefore we have proved $f\left[f^{-1} (D) \right] \subseteq D$ and $D \subseteq f\left[f^{-1} (D) \right]$, which means  $f\left[f^{-1} (D) \right] = D$.
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
+

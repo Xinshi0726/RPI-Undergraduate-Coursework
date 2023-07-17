@@ -1,0 +1,5 @@
+# ninja log v5
+41	73	1680706606080082849	hw3-main.c	70ee407f7e565d9a
+0	40	1680706606047307379	CMakeFiles/hw3-main.c.dir/hw3.c.o	33f41c1e34cd21e5
+0	16	1680638617566532641	CMakeFiles/hw3-main.c.dir/test.c.o	d6f57ef16580dd06
+1	34	1680638849889165895	CMakeFiles/hw3-main.c.dir/hw3-main.c.o	33f75076b82e073b

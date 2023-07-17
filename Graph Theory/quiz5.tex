@@ -1,0 +1,42 @@
+
+\documentclass[12pt]{article}
+\usepackage[letterpaper,textwidth=5.5in,right=0.6in,textheight=9in,left=0.6in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\begin{document}
+	\noindent Xinshi Wang\\
+	661975305\\
+	quiz05\\
+	
+	\noindent 1.\\
+	a. Max = Min = 1\\
+	
+	 Suppose there are 2 vertices in the beginning. To make those vertices weakly connected we need at least 1 edge. Let us call the vertex with $deg^+(v) = 1$ by $v_0$ and the other vertex $v_1$. Let us add a new vertex $v_2$. To make $v_2$ weakly connected and $deg^+(v_1) = 1$, we need to add a new edge from $v_1$ otherwise since we need to make the $v_0$, $v_1$, and $v_2$ weakly connected and $deg^+(v_1) = 1$. Repeat this process until we have $n$ vertices. The last vertex has $deg^+(v) = 0$. Then we need to create an edge with $v_{n-1}$ with $v_i \in  \{v_0,...,v_{n-2}\}$. Therefore there must exists a cycle between $v_{n-1}$ and $v_i$. Thus the Mimimum number of cycles $= 1$. Since every vertex v has $deg^+(v) = 1$, we cannot create any more edges. Thus Maximum number of cycles $= 1$.\\
+	 
+	\noindent b. Max = $\floor{n/2}$
+	
+		Since $deg^+(v) = 1, \forall v \in V(G)$. we could only form a an edge from $v_i$ to $v_j$. The maximum number of cycles is attained when $v_j$ also form an edge with $v_i$ since this loop contains the least edges when the number of edges is fixed. Thus there are in total $n/2$ in the case when n is even. When $n$ is odd, no more cycles are formed since it $d^-(v) = 0$. Thus Max = $\floor{n/2}$.\\
+		
+		
+	\noindent c. Max = n
+	
+		Since $deg^+(v) = 1, \forall v \in V(G)$. we could only form a an edge from $v_i$ to $v_j$. The maximum number of cycles is attained when $v_i$ also form an edge with itself since this loop contains the least edges. Thus there are in total $n$ vertices and thus $n$ edges. Thus Max = n.
+	
+	\noindent 2.\\
+	
+	\noindent a.
+	
+	k = 1, S = $\{e\}$ 
+	
+	k'=2, F = $\{ea,eh\}$\\
+	
+	\noindent b.
+	
+	k = 2, S = $\{d,i\}$
+	
+	k' = 3, F = $\{db,di,il\}$ 
+	
+\end{document}

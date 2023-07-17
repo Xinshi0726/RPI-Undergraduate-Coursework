@@ -1,0 +1,6 @@
+PID 3014462: Solving Sonny's knight's tour problem for a 3x3 board
+PID 3014462: Sonny starts at row 0 and column 0 (move #1)
+PID 3014462: 2 possible moves after move #1; creating 2 child processes...
+PID 3014463: Dead end at move #8
+PID 3014464: Dead end at move #8
+PID 3014462: Search complete; best solution(s) visited 8 squares out of 9

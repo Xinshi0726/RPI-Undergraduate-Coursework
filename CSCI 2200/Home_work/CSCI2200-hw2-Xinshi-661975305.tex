@@ -1,0 +1,164 @@
+\documentclass{article}
+\title{CSCI 2200 HW1}
+\author{Xinshi,Wang}
+\usepackage[letterpaper,textwidth=5.5in,right=0.6in,textheight=9in,left=0.6in,top=0.7in,bottom=0.7in]{geometry}
+\usepackage{scrextend}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\begin{document}
+\noindent
+CSCI 2200 HW2\\
+Wang Xinshi\\
+
+%Q 3.6 starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 3.6. Kilam’s has 2GB of RAM Liamsi has 4GB of RAM. Which propositions are true? \\
+	\indent (a) if Kilam has more RAM than Liamsi then pigs ﬂy. (b) if Liamsi has more RAM than Kilam then pigs ﬂy. \\
+	\indent (c) Kilam has more RAM than Liamsi and pigs ﬂy. (d) Kilam has more RAM than Liamsi or pigs ﬂy.\\
+	\indent (e) Liamsi has more RAM than Kilam and pigs ﬂy. (f) Liamsi has more RAM than Kilam or pigs ﬂy.\\
+	
+	\textcolor{blue}{
+		The case $p \implies q$ is false is when p is T and q is F. We know that pigs can fly is invalid, so p must be False. Therefore $(a)$ is correct.}
+	
+	\textcolor{blue}{
+		The statement $p \land q$ is valid is only when p and q are both T. Since pigs cannot fly, no statment using and is correct.}
+	
+	\textcolor{blue}{
+		The statement $p \lor q$ is valid if either p or q is correct. Since pigs cannot fly, q is false. Therefore p has to be true. Hence $(f)$ is correct.
+	}
+
+	\textcolor{blue} {
+		Therefore, statement $(a)$ and statement $(f)$ is correct.
+	}
+
+\end{addmargin}
+%Q 3.6 ends here 
+
+\clearpage
+
+%Q 3.46 starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 3.46. Formulate the appropriate predicates, identify the domain of the predicate and give the “mathematical” version of the following statements.\\
+	 \indent (a) Every person has at most one job. \\
+	 \indent (b) Kilam has some grey hair.\\
+	 \indent (c) Everyone has some grey hair. \\
+	 \indent (d) Everyone is a friend of someone. \\
+	 \indent (e) All professors consider their students as a friend. \\
+	 \indent (f) No matter what integer you choose, there is always an integer that is larger.\\
+	 
+	 \textcolor{blue}{
+	 	$(a)$
+	 	\begin{addmargin}[4em]{0em}
+	 		 $p=\{p \mid \text{p is a person}\}$\\
+	 		 $p(A) = \text{person A has at most one job}$\\
+	 		 $\forall x \in p : P(A)$
+	 	\end{addmargin}
+	 }
+ 	
+ 	 \textcolor{blue}{
+ 		$(b)$
+ 		\begin{addmargin}[4em]{0em}
+ 			$k=\{k \mid \text{k is a person}\}$\\
+ 			$p(A) = \text{person A has some grey hair}$\\
+ 			$Q(A) = \text{person A is kilam}$\\
+ 			$\exists x \in k : (Q(A) \land P(A))$
+ 		\end{addmargin}
+ 	}
+ 
+ 	 \textcolor{blue}{
+ 		$(c)$
+ 		\begin{addmargin}[4em]{0em}
+ 			$k=\{k \mid \text{k is a person}\}$\\
+ 			$p(A) = \text{person A has some grey hair}$\\
+ 			$\forall x \in k : P(A)$
+ 		\end{addmargin}
+ 	}
+ 
+ 	 \textcolor{blue}{
+ 		$(d)$
+ 		\begin{addmargin}[4em]{0em}
+ 			$k=\{k \mid \text{k is a person}\}$\\
+ 			$p(a,b) = \text{person a is a friend of person b}$\\
+ 			$\forall x \in k :(\exists y \in k:p(x,y))$
+ 		\end{addmargin}
+ 	}
+ 	
+ 	 \textcolor{blue}{
+ 		$(e)$
+ 		\begin{addmargin}[4em]{0em}
+ 			$k=\{k \mid \text{k is a professor}\}$\\
+ 			$s = \{s \mid \text{s is a student}\} $\\
+ 			$p(a,b) = \text{person a is a student of professor b}$\\
+ 			$q(a,b) = \text{person a considers person b as a friend}$\\
+ 			$\forall x \in k : (\forall y \in s : p(y,x) \implies q(x,y))$
+ 		\end{addmargin}
+ 	}
+ 
+	 \textcolor{blue}{
+	 	$(e)$
+	 	\begin{addmargin}[4em]{0em}
+	 		$I = \{i \mid \text{i is an integer} \}$\\
+	 		$g(a,b) = \text{integer a is greater than integer b}$\\
+	 		$\forall x \in I : (\exists y \in I:g(y,x))$
+	 	\end{addmargin}
+ }
+\end{addmargin}
+
+%Q 3.46 ends here
+
+\clearpage
+
+%Q 3.57 starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 3.57. True or false. A counterexample to “all ravens are black” must be: (a) Non-raven. (b) Non-black.
+	
+	\textcolor{blue}{
+		\begin{addmargin}[2em]{2em}
+			The negation of a for all statement should be a there exists statement. Therefore the counter example should be there exists a raven that is not black. Therefore choose $(b)$.
+		\end{addmargin}
+	}
+\end{addmargin}
+%Q 3.57 ends here
+
+\clearpage
+%Q 4.16(d) starts from here
+\begin{addmargin}[2em]{2em}
+	Problem 4.16(d). Prove $\forall (a,b) \in \mathbb{R}^2:(a \neq b) \implies (a^2 + b^2 > 2ab ) $\\
+	\textcolor{blue}{
+		\begin{addmargin}[2em]{1em}
+			A direct proof could prove this problem.\\
+			we must show that when $a \neq b$ is True, $a^2+b^2 > 2ab$ could not be False.\\
+			Assume $a \neq b$ is True, we then have $(a-b)^2 > 0$. Since $a$ and $b$ are not equal the square could not be $0$.\\
+			$(a-b)^2$ is the same as $a^2 -2ab +b^2$ which is also greater than 0. This means $a^2 - 2ab +b^2 > 0$. Moving the 2ab to the right side gives us $a^2+b^2 > 2ab$.\\
+			Therefore the statement $a^2 + b^2 > 2ab$ is True when $a \neq b$.
+			\begin{flushright}
+				$\square$
+			\end{flushright}
+		\end{addmargin}
+}
+\end{addmargin}
+%Q 4.16(d) ends here
+
+\clearpage
+
+%Q 4.23 starts from here
+\begin{addmargin}[2em]{2em}
+Problem 4.23. A triangle is drawn on the plane. The vertices of the triangle have integer coordinates. Prove that the triangle cannot be equilateral.
+	\textcolor{blue}{
+	\begin{addmargin}[2em]{1em}
+		A contradiction proof could prove this problem.\\
+		Assume there's an equilateral triangle on the vertices of the integer coordinates, then we know that for the three sides of the triangle are all equal.\\
+		Let point A be $(0,0)$, point B be $(a,b)$ and point C be $(c,d)$. We can know that $L = a^2+b^2 = c^2 + d^2 = (a-c)^2+(b-d)^2$. Then $2L = a^2 + b^2 + c^2 + d^2$. From the last term we know that $L = a^2 - 2ac +c^2 + b^2 -2bd + d^2$. substract $2L$ by $L$ gives $L = 2ac + 2bd$. Therefore $L = a^2+b^2 = c^2 + d^2 = 2ac+2bd$.\\
+		From Brahmagupta–Fibonacci identity we know that $(a^2+b^2)(c^2+d^2) = (ac+bd)^2+(ad-bc)^2$. Let $L_1$ be $K$, therefore the identity could be expressed as $K^2=\frac{K^2}{4}+(ad-bc)^2$ which means $3K^2 = 4(ad-bc)^2$. 
+		Therefore $K^2 = \frac{4}{3}(ad-bc)^2$, which means $K = \pm \sqrt{\frac{4}{3}}(ad-bc)$. Hence, we found that K is irational since $\sqrt{\frac{4}{3}}$ is irational. However, $K = 2ac + 2bd$ where $a,b,c,d$ are all positive integers which means $K$ must be rational. We found a contradiction.\\
+		Therefore, there does not exist an equilateral triangle on the vertifes of the integer coordinates.
+		\begin{flushright}
+			$\square$
+		\end{flushright}
+	\end{addmargin}
+}
+\end{addmargin}
+%Q 4,23 ends here
+\end{document}

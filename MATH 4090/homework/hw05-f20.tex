@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsmath,amssymb}
+\pagestyle{empty}
+
+\begin{document}
+\noindent Xinshi,Wang 661975305\\
+\noindent{\bf Homework 5}
+\bigskip
+\bigskip
+
+
+\begin{enumerate}
+\item Let $x,y$ and $z$ be real numbers.  Do the following
+\begin{itemize}
+\item Prove that if $x \cdot z = y \cdot z$ and $z \neq 0$, then $x = y$.
+\item Prove that if $x \neq 0$ then $x^2 > 0$.
+\end{itemize}
+\bigskip
+\vspace{.15in}
+{1.\bf Proof:}
+\begin{align*}
+x \cdot y &= y \cdot z  ~~~~~~~~~~~~~~~~~~&&\\
+(x \cdot z) \cdot \dfrac{1}{z} &= (y \cdot z) \cdot \dfrac{1}{z} &&\text{by M1 since } x \cdot z = y \cdot z \text{ , } \dfrac{1}{z} = \dfrac{1}{z} \text{ , and } \dfrac{1}{z} \text{ exists since } z \neq 0\\
+x \cdot (z \cdot \dfrac{1}{z}) &= y \cdot (z \cdot \dfrac{1}{z}) &&\text{by M3}\\
+x \cdot 1 &= y \cdot 1 &&\text{by M5}\\
+x  &= y &&\text{by M4}\\
+\end{align*}
+\bigskip
+\bigskip
+
+{2.\bf Proof:}
+ By the trichotomy law, we consider three exhaustive cases. (i). $x>0$ (ii) $x=0$ (iii) $x<0$. Since in this case $x \neq 0$, we only need to consider two exhaustive cases where $x>0$ or $x<0$.\\\\
+ (i) $x>0$
+\begin{align*}
+	0 \cdot x &< x \cdot x ~~~~~~~~~~~~~~~~~~&&\text{by } O4 \text{ since } 0<x \text{ and } x>0\\
+	0 &< x \cdot x &&\text{by Theorem } 3.22(b) \\
+	0 &< x^2&&\text{by the definition of }x^2
+\end{align*}
+\indent Therefore we have shown that $x^2>0$ when $x>0$.\\
+ (ii) $x<0$
+\begin{align*}
+	x \cdot x &> 0 \cdot x~~~~~~~~~~~~~~~~~~&&\text{by Theorem } 3.22(b) \text{ since } x<0 \text{ and } x<0 \\
+	x \cdot x &> 0 &&\text{by Theorem} 3.22(b) \\
+	x^2 &> 0 &&\text{by the definition of }x^2
+\end{align*}
+\indent Therefore we have shown that $x^2>0$ when $x<0$.\\
+Therefore we have proved if $x \neq 0$ then $x^2 > 0$.\\
+\bigskip
+\item Let $S$ and $T$ be nonempty bounded subsets of $\mathbb{R}$ with $S \subseteq T$.
+Prove that $\inf(T) \le \inf(S)  \le \sup(S) \le \sup(T).$\\  
+\vspace{.15in}
+
+{\bf Proof:} In order to prove $\inf(T) \le \inf(S)  \le \sup(S) \le \sup(T)$, we need to show (i). $\inf(T) \le \inf(S)$ (ii). $\inf(S)  \le \sup(S)$ (iii).$\sup(S) \le \sup(T)$.\\
+
+First we prove $\inf(T) \le \inf(S)$. In oder to show $\inf(T) \le \inf(S)$, we assume $\inf(T) > \inf(S)$. Since $\inf(T) > \inf(S)$, there exists $s' \in S$ such that $s'<\inf(T)$ by the definition of infimum. Since $s \subseteq T$ and $s' \in S$, $s' \in T$. Because $\inf(T) \leq t$ for all $t \in T$ and $s' \in T$, $s'$ cannot be smaller than $\inf(T)$. Therefore $\inf(T) > \inf(S)$ leads to contradiction. Hence $\inf(T) \le \inf(S)$.\\
+
+Then we need to prove $\inf(S)  \le \sup(S)$. Let $s \in S$. By defintion of infimum, $\inf(S) \le s$. By definition of supremem, $s \le \sup(S)$. Therfore $\inf(S) \le s \le \sup(S)$. Hence we have shown $\inf(S) \le \sup(S)$.\\
+
+Finally we need to prove $\sup(S) \le \sup(T)$. In order to show $\sup(S) \le \sup(T)$, we assume $\sup(S) > \sup(T)$ which means $\sup(T) < \sup(S)$. By definition of supremem if $\sup(T) < \sup(S)$ then there exists $s' \in S$ such that $s' > \sup(T)$. Since $s \subseteq T$ and $s' \in S$, $s' \in T$. Because $\sup(T) \geq t$ for all $t \in T$ and $s' \in T$, $s'$ cannot be greater than $\inf(T)$. Therefore $\sup(S) > \sup(T)$ leads to contradiction. Hence $\sup(S) \le \sup(T)$.\\
+
+Therefore we have proved $\inf(T) \le \inf(S)  \le \sup(S) \le \sup(T)$.
+
+\newpage
+
+The function is clearly differentiable and thus continious on domain $[1,9]$ Thus the conditions of MVT is satisfied.
+\begin{align*}
+	f'(c) & = \dfrac{f(b)-f(a)}{b-a}\\
+	\dfrac{1}{2} \times \dfrac{1}{\sqrt{x}} & = \dfrac{3-1}{8}\\
+	\dfrac{1}{\sqrt{x}} & = \dfrac{1}{2}\\
+	x & = 2
+\end{align*}
+(b). NO
+Assume there exists a function f such that $f'(x)\geq10 \text{, }\forall x \in \mathbb{R}$. we know $\exists c \in \mathbb{R}$ such that $f'(c) = \dfrac{f(4)-f(0)}{4} = 1 \leq 10$. Therefore we found a contradiction thus there does not exist that function f such that $f'(x)\geq10 \text{, } \forall x \in \mathbb{R}$.
+\end{enumerate}
+
+\end{document}

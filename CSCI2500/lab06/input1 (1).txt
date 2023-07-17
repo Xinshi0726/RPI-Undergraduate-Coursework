@@ -1,0 +1,6 @@
+lw t0 s0 5
+lw s0 t0 -4
+add t0 t0 s0
+add s0 s0 s0
+j 12893
+j 582111

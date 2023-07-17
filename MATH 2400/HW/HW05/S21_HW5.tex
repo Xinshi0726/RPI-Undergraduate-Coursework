@@ -1,0 +1,178 @@
+\input{def}
+\pagestyle{empty}
+\begin{document}
+Wang Xinshi 661975305
+\begin{center}
+\large{ MATH-2400 \hspace{.25in}  INTRODUCTION TO DIFFERENTIAL EQUATIONS \hspace{.25in}SPRING 2021\\ Homework-5  \\ Assigned Friday March 5,2021 \\ Due 5 PM, Friday March 12, 2021}\end{center}
+
+\bigskip
+\n\ul{NOTES}
+\benum
+\item 
+Practice problems listed below and taken from the textbook are for your own practice, and are not to be turned in.
+\item 
+Legible, handwritten solutions will be acceptable, but the use of a typesetting system such as LaTeX is strongly recommended.  \blue{\bf Do not turn in your rough attempt at solving a problem; once you have worked out the solution, copy it neatly or typeset it before submission, after removing all false starts.}\nc
+\item 
+Please write your solutions clearly and coherently, with the work displayed in a sequential manner and sufficient explanation provided so that your strategy and approach are transparent to the reader. 
+\item 
+Figures, if any, should be neatly drawn by hand, properly labelled and captioned.  
+\item 
+The assignment is to be submitted electronically to LMS  as a single pdf file.  Be sure that the pages are properly oriented and well lighted.  \blue{\bf Please do not e-mail your homework submission to the TAs or the instructors.}\nc
+\eenum
+
+\bigskip
+
+
+\bc {\bf Practice Problems from the textbook (not to be turned in)} \ec
+
+\n Exercises from Chapter 3, pages 58-59: 1(d,f,h,p), 2(c,d,g), 3(c,j).
+
+\n Exercises from Chapter 3, page 63: 1(c,d,e), 3(b).
+
+\medskip
+
+\bc {\bf Subjective part: problems to be turned in} \ec
+
+\benum
+
+
+%Problem 1
+\item (20 points) Solve the initial-value problem
+\begin{equation*}
+y''-4y' = 4te^{4t} + 4t, \quad y(0)=1, \; y'(0)=1.
+\end{equation*}
+\textbf{solution:} Let us first consider the homogeneous DE first. Let $y = e^{rt}$, the characteristic equation is $$r^2-4r = 0$$
+which is equivalent to $r(r-4) = 0$. This gives us the result $r = 0$ or $r = 4$.
+
+Thus $y_h(t) = C_1+C_2e^{4t}$
+
+Next we need to find a particular solution of the DE. We observed that the forcing function of DE consists of 2 parts. Let us denote $y_{p1}$ as a particular solution to the DE $y''-4y' = 4te^{4t}$ and $y_{p2}$ as a particular solution to the DE $y''-4y' = 4t$. Then $y_p = y_{p1}+y_{p2}$.
+
+The guess for the solution to $y_{p1}$ is $y_{p1} = (a+bt)t$ (since there is no y) and the guess for $y_{p2}$ is $y_{p2} = (cte^{4t}+de^{4t})t$. Then the solution is $y_p = (a+bt)t + (cte^{4t}+de^{4t})t$.
+
+Then we have
+\begin{align*}
+	y'(t) &= a + 2bt + de^{4t}+4de^{4t}t+4ce^{4t}t^2+2e^{4t}t\\
+	y''(t)&=2b+c(2e^{4t}+16e^{4t}t^2+16e^{4t}t)+d(8e^{4t}+16e^{4t}t))\\
+\end{align*}
+Then let us substitute $y'(t)$ and $y''(t)$ into the DE,
+\begin{equation*}
+	y''-4y' = 4te^{4t} + 4t
+\end{equation*}
+\begin{equation*}
+	2b+c(2e^{4t}+16e^{4t}t^2+16e^{4t}t)+d(8e^{4t}+16e^{4t}t))-4(a + 2bt + de^{4t}+4de^{4t}t+4ce^{4t}t^2+2e^{4t}t) = 4te^{4t} + 4t
+\end{equation*}
+\begin{equation*}
+	-4a+2b+(4d+2c)e^{4t}-8bt+8ce^{4t}t = 4t+4e^{4t}t
+\end{equation*}
+Then we have the following system of equations
+\begin{align*}
+	-4a+2b = 0\\
+	4d + 2c = 0\\
+	-8 b = 4\\
+	8c = 4\\
+\end{align*}
+Then we have the following solutions $a = - \frac{1}{4}, b = - \frac{1}{2}, c = \frac{1}{2}$, and $d = -\frac{1}{4}$
+
+Thus $y_p = -\frac{t^2}{2}+\frac{1}{2}e^{4t}t^2-\frac{t}{4}-\frac{1}{4}e^{4t}t$
+
+Then we have $y(t) = y_p(t) + y_h(t)=  -\frac{t^2}{2}+\frac{1}{2}e^{4t}t^2-\frac{t}{4}-\frac{1}{4}e^{4t}t + C_1+C_2e^{4t}$.
+
+Substituting $y(0) = 1$ gives us $c_1+c_2 = 1$
+
+\begin{align}
+	y'(t) = - \frac{e^{4t}}{4} + 2e^{4t}t^2-t++4c_2e^{4t} - \frac{1}{4}
+\end{align}
+
+Substituting $y'(0)$ gives us $4c_2-\frac{1}{2} = 1$
+
+Thus we have $c_1 = \frac{5}{8}$ and $c_2 = \frac{3}{8}$
+
+Then we have  $y(t) = -\frac{t^2}{2}+\frac{1}{2}e^{4t}t^2-\frac{t}{4}-\frac{1}{4}e^{4t}t + \frac{5}{8}+\frac{3}{8}e^{4t}$
+
+After simplification we have $y(t) = \frac{1}{8}(-4t^2-2t+e^{4t}(4t^2-2t+3)+5)$
+
+\newpage
+%Problem 2
+\item (20 points)  Find the solution of the IVP
+\begin{equation*}
+y''+4y'+5y= 4 e^{-2t} \cos t, \quad y(0)= 2,\;\; y'(0)=0.
+\end{equation*}
+\textbf{solution:} Let us first consider the homogeneous DE first. Let $y = e^{rt}$, the characteristic equation is $$r^2 + 4r + 5 = 0$$
+Let us obtain the roots using the formula $\frac{-b \pm \sqrt{b^2-4ac}}{2a}$. Thus the roots are $-2 \pm i$.
+
+For $r = -2 + i$ the complex solution is 
+$$Y_1(t) = e^{(-2+i)t} = e^{-2t}cost+ie^{-2t}sint $$
+
+Thus the general solution is $y_h(t) = C_1e^{-2t}cost+C_2e^{-2t}sint$.
+
+Next we need to find a particular solution of the DE. We make an educated guess. Let $y_p = t(ae^{-2t}cost+be^{-2t}sint)$. Then we calculate $y_p'$
+\begin{equation*}
+	y_p' = ae^{-2t}cos(t)- 2a e^{-2t}tcos(t) - ae^{-2t}tsin(t)+be^{-2t}tcos(t)+be^{-2t}sin(t)-2be^{-2t}tsin(t)
+\end{equation*}
+	$y_p'' = -ae^{-2t}tcos(t)+acos(t)(-4e^{-2t}+4e^{-2t}t) - 2a(e^{-2t}-2e^{-2t}t)sin(t) + 2bcos(t)(e^{-2t}-2e^{-2t}t)$\\ 
+	$- be^{-2t}tsin(t)+b(-4e^{-2t}+4e^{-2t}t)sin(t)$
+
+Substitute into the DE gives us:
+$$y_p''+4y_p'+5y_p = 4e^{-2t}cos(t)$$
+	$-ae^{-2t}tcos(t)+acos(t)(-4e^{-2t}+4e^{-2t}t) - 2a(e^{-2t}-2e^{-2t}t)sin(t) + 2bcos(t)(e^{-2t}-2e^{-2t}t)$\\
+	$- be^{-2t}tsin(t)+b(-4e^{-2t}+4e^{-2t}t)sin(t)+ 4(ae^{-2t}cos(t)- 2a e^{-2t}tcos(t) - ae^{-2t}tsin(t)+be^{-2t}tcos(t)+be^{-2t}sin(t)-2be^{-2t}tsin(t))+5(t(ae^{-2t}cost+be^{-2t}sint)) = 4e^{-2t}cos(t)$
+
+After simplication we have: $2be^{-2t}cos(t)-2ae^{-2t}sin(t) = 4e^{-2t}cos(t)$
+
+Then we know $2b = 4 \land -2a = 0$. Thus $a = 0 \land b = 2$. Therefore the particular solution is 
+$y_p(t) = 2e^{-2t}tsin(t)$
+
+Then the solution is $y(t) = C_1e^{-2t}cost+C_2e^{-2t}sint + 2e^{-2t}tsin(t)$.
+
+Substitute $y(0) = 2$ in gives us $c_1 = 2$
+
+We take the derivative of $y$, which gives us $y'(t) = 2e^{-2t}tcos(t)+2e^{-2t}sin(t)-4e^{-2t}tsin(t)-2c_1e^{-2t}cos(t)-c_1e^{-2t}sin(t)+c_2e^{-2t}cos(t)-2c_2e^{-2t}sin(t)$ 
+Substitute $y'(0) = 0$ in gives us $-2c_1+c_2 = 0$
+
+Thus $c_1 = 2$ and $c_2 = 4$
+
+Thus the DE is $y(t) = 2e^{-2t}(cos(t)+(t+2)sin(t))$
+
+\newpage
+
+%Problem 3
+\item (20 points)  Consider the DE
+\begin{equation*}
+ty'' - (1+t) y' + y = t^2 e^{2t}, \;\; t>0.		
+\end{equation*}
+\benum
+\item Check that $y_1(t) = 1+t$ and $y_2(t) = e^t$ are solutions of the homogeneous DE.
+$y_1' = 1 \land y_1'' = 0 \land y_2' = e^t \land y_2'' = e^t$
+
+Substitution:
+	$t \times 0 -(1+t)+(1+t) == 0$\\
+	$te^t-(1+t)e^t+e^t == 0$
+Thus they are the solution for homogenous DE.
+\item Use variation of parameters to find the general solution of the DE.
+
+We seek the solution in the form $y_p=u(t)(1+t)+v(t)e^t$.
+
+The DE can be written as $y''-(\frac{1+t}{t})y'+(\frac{1}{t}y) = te^{2t}$
+
+Then the wrosnskian gives us $e^t-e^t(t+1) = -te^t = y_1y_1'-y_2y_1'$
+
+Then $u' = \frac{t^2e^{2t}(e^t)}{-te^{t}}$
+,$v' = \frac{t^2e^{2t}(t+1)}{-te^{t}}$
+
+Therefore $u = \int \frac{t^2e^{2t}(e^t)}{-te^{t}} = \frac{1}{4}(1-2t)$ (perform an integrate by parts, where f = t,df = dt, g = $\frac{e^{2t}}{2}$, dg= $e^{2t}$ dt)
+$v = \int \frac{t^2e^{2t}(t+1)}{-te^{t}} = e^t(t^2-t+1)$
+
+Thus $y_p = \frac{1}{4}(1-2t)+e^t(t^2-t+1)$
+
+Thus $y = C_1(1+t)+C_2e^t+ \frac{1}{4}(1-2t)+e^t(t^2-t+1)$  
+
+
+\eenum
+
+\eenum
+
+
+
+
+\end{document}

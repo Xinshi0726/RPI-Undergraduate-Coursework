@@ -1,0 +1,3 @@
+/Users/xinshiwang/Documents/Operating System/HW/hw3/cmake-build-debug/CMakeFiles/hw3-main.c.dir
+/Users/xinshiwang/Documents/Operating System/HW/hw3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/xinshiwang/Documents/Operating System/HW/hw3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

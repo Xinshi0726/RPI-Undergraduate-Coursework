@@ -1,0 +1,56 @@
+Q8.
+	wp(z = 10, y+z>0) = {y > -10}
+	z = 10
+	wp(x = y+z, x>0) = {y+z>0}
+	z = y+z
+	Condition2: wp(z = 10, y+z>0) = {y>-10}
+	{x > 0}
+
+Q9.
+	{y>1}
+	z = 10
+	{y>1 && z=10}
+	x = y-z
+	{x>-9 && y>1 && z=10}
+
+Q10. 
+	wp(if();else(), False||{y<=1}) = {False && x = 0 || x!=0 && y<=-1} = {x!=0 && y<=-1}
+	if (x = 0){
+		wp(y = 2, y<=0) = {False}
+		y = 2;
+		{y<=0}
+	}
+	else{
+		wp(y = y+1, y<=0) = {y+1<=0} = {y<=-1}
+		y = y+1;
+		{y<=0}
+	}
+	{y <= 0}
+
+Q11. TBD
+
+Q12.
+
+Q13.
+	a. sum = ((i+1)*i)/2 && 0<=i<=n+1
+	b. Base Case:
+		(i = 0 && n>= 0)==> i <= m
+		(i = 0 && sum = 0) ==> sum = 0 = (0+1)*0/2 = ((i+1)*i)/2
+	c. Inductive step:
+		Assume LI holds at the k iteration, prove it holds at the k+1 iteration
+		sum_{k+1} = sum_{k} + i_{k+1}
+				  = ((i_k+1)*i_k)/2+i_{k+1}
+				  = ((i_k)^2+i_k)/2+(2*(i_{k+1}))/2
+				  = ((i_k)^2+i_{k+1})/2
+		Since i_{k+1} = i_k+1
+		sum_{k+1} = ((i_k)^2+i_k+2)/2
+				  = ((i_k+2)*ik)/2
+				  = (i_{k+1}*(i_{k+1}+1))/2
+	d. ~(i<=n) && sum = ((i+1)*i)/2 && 0<=i<=n+1
+		= (i>n) && sum = ((i+1)*i)/2 && 0<=i<=n+1
+		= i = n+1 && sum = ((i+1)*i)/2 
+		==> sum = (n+1(n))/2
+Q17.
+	requires: a is not null && a.length>0 && all elements in a is an int
+	modifies: Nothing
+	effect: return the average the sum of elements in list a

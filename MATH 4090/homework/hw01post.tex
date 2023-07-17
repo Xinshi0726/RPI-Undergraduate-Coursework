@@ -1,0 +1,94 @@
+\documentclass[11pt]{article}   
+
+%This specifies a larger right margin to permit grader remarks to be added.
+\usepackage[letterpaper,textwidth=5.5in,right=1.75in,textheight=9in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{scrextend}
+\pagestyle{empty}
+
+\begin{document}
+\noindent{\bf Homework 1 \hfill }\\
+\noindent{\bf Wang Xinshi \hfill }\\
+\noindent{\bf wangx47@rpi.edu \hfill }\\
+There are three problems in this homework set. The expectation is that students
+will submit a very high quality proof for each problem. The problem solutions must be written
+in LaTeX. Follow the instructions on LMS for how to submit the homework assignment.
+
+
+\begin{enumerate}
+\item Prove the following statement. 
+Suppose $a,b,c,d$ are real numbers. 
+If $a < b < c < d$ then $ (b,c) \subseteq (a,c) \cap (b,d) $.\\\\\
+	Assume $(b,c)$ is a non-empty set, else the result follows because the empty set is a subset of every set. Let $x \in (b,c)$.Since we have $x \in (b,c)$ we have $b < x < c$. Because $a < b$  we know that $a < x < c$. Hence $x \in (a,c)$. Likewise since $c < d$ we have that $b < x < d$. Hence $x \in (b,d)$ and $x \in (a,c)$, thus we know that $x \in (a,c)\cap (b,d)$. Since our choice of $x$ is arbitrary, this holds for any $x \in (b,c)$. Thus we have shown $(b,c)\subseteq (a,c) \cap (b,d)$.
+\bigskip 
+\item Prove that $A \cap (B \cup C) = (A \cap B) \cup (A \cap C) $. \\
+
+ In order to prove $A \cap (B \cup C) = (A \cap B) \cup (A \cap C) $, we need to show that $A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)$ and $(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C).$ 
+ 
+ \begin{addmargin}[3em]{0em}
+ 	 In order to prove $A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)$, assume $A \cap (B \cup C)$ is a non-empty set, else the result follows and let $x \in A \cap (B \cup C)$ which means $x \in A$ and $x \in (B \cup C)$. Since $x \in (B \cup C)$, $x \in B$ or $x \in C$. Consider two exhaustive cases.
+ 	 \begin{addmargin}[1em]{0em}
+ 	 	If $x \in B$, then $x \in A$ and $x \in B$. \\
+ 	 	If $x \in C$, then $x \in A$ and $x \in C$. 
+ 	 \end{addmargin}
+   	Therefore we have shown that if $x \in A \cap (B \cup C)$, then ($x \in A$ and $x \in B$) or ($x \in A$ and $x \in C$) which means $x \in (A \cap B) \cup (A \cap C).$ Hence $A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C).$ \\\\
+   	 In order to prove $(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)  $, assume $(A \cap B) \cup (A \cap C) $ is a non-empty set, else the result follows and let $x \in (A \cap B) \cup (A \cap C).$ Then $x \in A \cap B$ or $x \in A \cap C.$ Consider two exhaustive cases. 
+   	 \begin{addmargin}[1em]{0em}
+   	 	If $x \in A \cap B$, then $x \in A$ and $x \in B$. Therefore $x \in A$ and $x \in B \cup C.$ \\
+   	 	If $x \in A \cap C$, then $x \in A$ and $x \in C$. Therefore $x \in A$ and $x \in B \cup C.$
+   	 \end{addmargin}
+     	Therefore for all $x \in (A \cap B) \cup (A \cap C)$, we have shown that if $x \in (A \cap B) \cup (A \cap C)$ then $x \in A$ and $x \in B \cup C$ which means $x \in A \cap (B \cup C)$. Hence we have proved that $(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C).$
+ \end{addmargin}
+    We have proved that $A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)$ and $(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C).$ Therefore $A \cap (B \cup C) = (A \cap B) \cup (A \cap C).$
+\bigskip
+
+\clearpage
+
+\indent \item Let A and B be subsets of a universal set $U.$ Prove $(A\setminus B) \cup (B\setminus A) = (A \cup B)\setminus (A \cap B).$
+
+\bigskip
+In order to prove $(A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \cap B)$, we need to show $(A \setminus B) \cup (B \setminus A) \subseteq (A \cup B) \setminus (A \cap B)$ and  $(A \cup B) \setminus (A \cap B) \subseteq (A \setminus B) \cup (B \setminus A).$
+\begin{addmargin}[2em]{0em}
+	In order to prove $(A \setminus B) \cup (B \setminus A) \subseteq (A \cup B) \setminus (A \cap B)$, assume $(A \setminus B) \cup (B \setminus A)$ is a non-empty set, else the result follows and let $x \in (A \setminus B) \cup (B \setminus A)$ which means $x \in (A \setminus B)$ or $x \in (B \setminus A)$. Consider two exhaustive cases.
+	\begin{addmargin}[2em]{0em}
+		If $x \in (A \setminus B)$, then $x \in A$ and $x \notin B$. Since $x \in A$, $x \in A \cup B$. In order to prove $x \in A \cup B$ and $x \notin A \cap B$, we need to prove $x \notin A \cap B$.
+		\begin{addmargin}[2em]{0em}
+			Suppose $x \in A \cap B$, then $x \in A$ and $x \in B$. Since $x \notin B$, there's a contradiction. Therefore $x \notin A \cap B$.
+		\end{addmargin}
+		Hence $x \in A \cup B$ and $x \notin A \cap B$ which means $x \in (A \cup B) \setminus (A \cap B)$ when $x \in (A \setminus B)$.
+		
+		If $x \in (B \setminus A)$, then $x \in B$ and $x \notin A$. Since $x \in B$, $x \in A \cup B$. In order to prove $x \in A \cup B$ and $x \notin A \cap B$, we need to prove $x \notin A \cap B$.
+		\begin{addmargin}[2em]{0em}
+			Suppose $x \in A \cap B$, then $x \in A$ and $x \in B$. Since $x \notin A$, there's a contradiction. Therefore $x \notin A \cap B$.
+		\end{addmargin}
+		Hence $x \in A \cup B$ and $x \notin A \cap B$ which means $x \in (A \cup B) \setminus (A \cap B)$. 
+	\end{addmargin}
+	Therefore we have prove that if $x \in (A \setminus B) \cup (B \setminus A)$, then $x \in (A \cup B) \setminus (A \cap B)$. Hence we have showed that $(A \setminus B) \cup (B \setminus A) \subseteq (A \cup B) \setminus (A \cap B)$.
+\end{addmargin}
+\bigskip
+	\begin{addmargin}[2em]{0em}
+			In order to prove $(A \cup B) \setminus (A \cap B) \subseteq (A \setminus B) \cup (B \setminus A) $, assume $(A \cup B) \setminus (A \cap B)$ is a non-empty set, else the result follows and let $x \in (A \cup B) \setminus (A \cap B)$ which means $x \in (A \cup B)$ and $x \notin (A \cap B))$. Because $x \in (A \cup B)$, $x \in A$ or $x \in B$. Consider two exhaustive cases.
+				\begin{addmargin}[2em]{0em}
+				If $x \in A$, we need to prove $x \notin B$. 
+				\begin{addmargin}[2em]{0em}
+					suppose $x \in B$, then $x \in A$ and $x \in B$. Hence $x \in A \cap B$ which leads to a contradiction because $x \notin A \cap B$. Therefore $x \notin B$.
+				\end{addmargin}
+			Hence if $x \in A$ then $x \in A$ and $x \notin B$.\\
+			If $x \in B$, we need to prove $x \notin A$. 
+			\begin{addmargin}[2em]{0em}
+				suppose $x \in A$, then $x \in A$ and $x \in B$. Hence $x \in A \cap B$ which leads to a contradiction because $x \notin A \cap B$. Therefore $x \notin A$.
+			\end{addmargin}
+			Hence if $x \in B$ then $x \in B$ and $x \notin A$.
+			\end{addmargin}
+		Therefore we have proved that for all $x \in (A \cup B)$, we have $(x \in A$ and $x \notin B)$ or  $(x \notin A$ and $x \in B)$ which means $x \in (A \setminus B) \cup (B \setminus A)$. Hence $(A \cup B) \setminus (A \cap B) \subseteq (A \setminus B) \cup (B \setminus A).$
+\end{addmargin}
+Therefore, we have proved  $(A \setminus B) \cup (B \setminus A) \subseteq (A \cup B) \setminus (A \cap B)$ and  $(A \cup B) \setminus (A \cap B) \subseteq (A \setminus B) \cup (B \setminus A).$ Hence $(A \setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \cap B)$.\\
+
+{\em Note that proofs involving sets in this class must be done on an element level as presented both in lecture and in the book.}
+
+\end{enumerate}
+
+\end{document}
+
+
+

@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsmath,amssymb}
+\pagestyle{empty}
+
+\begin{document}
+\noindent{\bf Homework 6}\\
+Wang Xinshi 661975305
+
+\bigskip
+\bigskip
+
+
+\begin{enumerate}
+\item Use the formal definition of convergent sequence (and theorem 4.1.8) to prove that the sequence 
+$\displaystyle \left( \frac{5n^2+3n}{4n^2-2n} \right)$ converges to $\displaystyle \frac{5}{4}.$ 
+\vspace{1.5em}
+
+\text{\bf Proof:} Let $\epsilon>0$ be given.
+By the archmedian property  we can choose $N \in \mathbb{N}$ so $N > \dfrac{11}{\epsilon}$.\\
+If $n \in \mathbb{N}$ and $n \geq N$ then $n \geq \max \{N,2\}$ which means $n \geq N$ and $n \geq 2$ so $\dfrac{11}{n}<\epsilon$.\\
+So if $n \in \mathbb{N}$ and $n \geq N$ and $n \geq 2$ then $|S_n - S| = \left |\dfrac{5n^2+3n}{4n^2-2n}-\dfrac{5}{4} \right | = \left |\dfrac{20n^2+12n}{4(4n^2-2n)}-\dfrac{20n^2-10n}{4(4n^2-2n)} \right | = \left |\dfrac{22n}{4(4n^2-2n)} \right |$. Since $n \geq 2$, then $n^2 \geq 2n$ and $4n^2-2n \geq 3n^2$. Therefore $\left |\dfrac{22n}{4(4n^2-2n)} \right | \leq \dfrac{22n}{4(3n^2)}= \dfrac{11}{6n} \leq \dfrac{11}{n} \leq \dfrac{11}{N} < \epsilon$.
+
+\item Suppose that $\lim s_n = s$ with $s > 0$. Prove there exists $N \in \mathbb{N}$ such that $s_n > 0$ for all $n \ge N$.\\
+\vspace{1.5em}
+
+\text{\bf Proof:} Our goal here is to show there exists $N \in \mathbb{N}$ such that $s_n > 0$ for all $n \ge N$. Since $\lim s_n = s$ with $s > 0$, by definition we have for all $\epsilon>0$, there exists $N_1 \in \mathbb{N}$ such that for all $n \in \mathbb{N}$, $n \geq N_1$ implies $\left | s_n -s \right |<\epsilon$. Assume there exists an $N = N_1$ and we need to show $s_n > 0$ for all $n \geq \mathbb{N}$. We consider three exhuastive cases. (i). $s_n > s$ for all $n \geq N$ (ii). $s_n <s$ for all $n \geq N$.\\\\
+Since $s_n > s$ for all $n \geq N$ and $s > 0$, $s_n > 0$ for all $n \geq N$.\\\\
+If $s_n<s$ for all $n \geq N$, then $\left | s_n -s \right | = s - s_n < \epsilon$. Rearranging the terms gives us $s_n > s+\epsilon$. since $s>0$ and $\epsilon>0$, $s+ \epsilon>0$. Thus $s_n > s+\epsilon>0$.\\\\
+If $s_n = s$, since $s>0$, $s_n>0$\\\\
+Thus we have shown there exists an $N = N_1$ such that $s_n > 0$ for all $n \geq \mathbb{N}$.
+
+
+\item Use the definition of a sequence $(s_n)$ diverging to $-\infty$ to prove that $\displaystyle \lim \left( \frac{2+n-n^2 }{2+3n} \right) = - \infty$.
+\vspace{1.5em}
+
+\text{\bf Proof:} Given any $M \in \mathbb{R}$, take $N > \max \{1,\dfrac{2}{M} \}$. Then $n \geq N$ implies that $n >1$ and $n>\dfrac{2}{M}$. Since $n>1$, we have $n-n^2<0$. Thus for $n \geq N$ we have
+$$\dfrac{2+n-n^2}{2+3n}\leq \dfrac{2+0}{3n} \leq \dfrac{2}{n} < M$$.\\
+Hence $\lim \left ( \frac{2+n-n^2 }{2+3n} \right) = - \infty$.
+
+\vskip .1in
+\end{enumerate}
+\end{document}

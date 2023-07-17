@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Editor version="1.0">
+   <File absPath="/MATLAB Drive" lastWrittenTime="1675573365292" name="quadMin_gd.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/matp hw1" lastWrittenTime="1675830006241" name="quadMin_gd.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/matp hw3" lastWrittenTime="1676587751225" name="quadMin_cg.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/matp hw3" lastWrittenTime="1676672606435" name="quadMin_pcg.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/matp hw3" lastWrittenTime="1676689900844" name="test_pcg.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/matp hw3" lastWrittenTime="1676694254266" name="pcg_linsolv.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw4" lastWrittenTime="1677817276180" name="quadMin_BB.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw4" lastWrittenTime="1677860871957" name="newton_method.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw4" lastWrittenTime="1677863716947" name="newtonmethod.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw4" lastWrittenTime="1677864331039" name="quadMin_DFP.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw5" lastWrittenTime="1679342856036" name="quadMin_pg.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw5" lastWrittenTime="1679342870227" name="test_pg.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw5" lastWrittenTime="1679360428743" name="test_Lasso.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw5" lastWrittenTime="1679360809906" name="PG_Lasso.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw5" lastWrittenTime="1679370476092" name="APG_Lasso.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw6" lastWrittenTime="1680126807321" name="quadMin_AltMin.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw6" lastWrittenTime="1680321197412" name="penalty_qp.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw6" lastWrittenTime="1680321308513" name="test_penalty_qp.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw7" lastWrittenTime="1681191682066" name="test_alm_qp.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw7" lastWrittenTime="1681193287160" name="alm_qp.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code_hw8" lastWrittenTime="1681855878666" name="ADMM_LAD.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code" lastWrittenTime="1682456442642" name="test_model_SVM_rho08.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code" lastWrittenTime="1682460362744" name="test_model_SVM_rho02.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code" lastWrittenTime="1682550569521" name="test_model_SVM_spam.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="/MATLAB Drive/code" lastWrittenTime="1682560313488" name="ALM_SVM_s.m">
+      <CodeFolds version="1.0"/>
+   </File>
+</Editor>

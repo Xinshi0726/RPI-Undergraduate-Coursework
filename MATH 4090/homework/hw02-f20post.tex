@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,fullpage}
+\usepackage{scrextend}
+
+\pagestyle{empty}
+
+\begin{document}
+\noindent{\bf Homework Set 2}
+
+There are three homework problems. The expectation is that students
+will submit a very high quality proof for each problem. The homework set solutions must be written
+in LaTeX. Follow the instructions on LMS for how to submit the homework set and what file(s) to submit.
+
+
+\begin{enumerate}
+\bigskip
+\item  Let $J$ be a non-empty index set and let $\{A_j:j \in J\}$ be an indexed family of sets and suppose $B$ is a set. 
+Prove that $$B  \setminus \bigcap_{j \in J} A_j = \bigcup_{j \in J} \left(B \setminus A_j\right)$$  
+\bigskip
+\vspace{.15in}
+%Note the spacing used here to help set the proof apart from the problem statement.
+
+% Insert solution here
+\noindent {\bf Proof.} In order to prove $ B  \setminus \bigcap_{j \in J} A_j = \bigcup_{j \in J} (B \setminus A_j)$ we need to show (i) $B \setminus \bigcap_{j \in J} A_j  \subseteq \bigcup_{j \in J} (B \setminus A_j) $  and (ii) $\bigcup_{j \in J} (B \setminus A_j)  \subseteq B \setminus \bigcap_{j \in J} A_j$. \\
+
+First we need to prove $B \setminus \bigcap_{j \in J} A_j  \subseteq \bigcup_{j \in J} (B \setminus A_j) $. Assume $B \setminus \bigcap_{j \in J} A_j$ is non-empty, else the result follows. Let $x \in B \setminus \bigcap_{j \in J} A_j$ which means $x \in B \text{ and } x \notin \bigcap_{j \in J}A_j$. Thus it is false that $x \in j \text{ for all } j \in J$. Therefore there exist $j \in J$ such that $x \notin A_j$ which implies $x \in B \setminus A_{j}$ for some $j \in J$. So $x \in \bigcup_{j \in J} B \setminus A_j$. Therefore we have shown that $B \setminus \bigcap_{j \in J} A_j  \subseteq \bigcup_{j \in J} (B \setminus A_j) $.\\
+                    
+Then we need to prove $\bigcup_{j \in J} (B \setminus A_j)  \subseteq B \setminus \bigcap_{j \in J} A_j$. Assume $\bigcup_{j \in J} (B \setminus A_j)$ is non-empty else the result follows. Let $x \in \bigcup_{j \in J} (B \setminus A_j)$ which means $x \in B \text{ and } x \notin A_j \text{ for some } j \in J$. Therefore it is false that for all $j \in J$, $x \in A_j$. Hence, $x \notin \bigcap_{j \in J} A_j$. Then we can conclude that $x \in B \setminus \bigcap_{j \in J} A_j$. Therefore we have shown that  $\bigcup_{j \in J} (B \setminus A_j)  \subseteq B \setminus \bigcap_{j \in J} A_j$.\\
+
+\noindent Since we have shown (i) and (ii) we  have shown that $ B \setminus \bigcap_{j \in J} A_j = \bigcup_{j \in J} (B \setminus A_j)$.\\
+
+\item Prove or give a counterexample that $(A \times C) \setminus (B \times C )= (A \setminus B) \times C$. 
+\bigskip
+\vspace{.15in}
+%Note the spacing used here to help set the proof apart from the problem statement.
+
+\noindent {\bf Proof.} In order to prove $(A \times C) \setminus (B \times C) = (A \setminus B) \times C$, we need to show $(A \times C) \setminus (B \times C) \subseteq (A \setminus B) \times C$ and $(A \setminus B) \times C \subseteq (A \times C) \setminus (B \times C)$.\\
+
+First we need to prove $(A \times C) \setminus (B \times C) \subseteq (A \setminus B) \times C$. Assume $(A \times C) \setminus (B \times C)$ is non-empty else the result follows. Let $(x,y) \in (A \times C) \setminus (B \times C)$. Then we know $(x,y) \in (A \times C) \setminus (B \times C)$ which means $(x,y) \in (A \times C)$ and $(x,y) \notin (B \times C)$. Hence we can conclude (i). $x \in A \text{ and } y \in C$  (ii). $x \notin B \text{ or } y \notin C$. Since we know $y \in C$, $y \notin C$ is false. Hence, $x \notin B$ is true. We know $x \in A \setminus B$ and $y \in c$ which means $(x,y) \in (A \setminus B) \times C$. Therefore, $(A \times C) \setminus (B \times C) \subseteq (A \setminus B) \times C$.\\
+
+Then we need to prove $(A \setminus B) \times C \subseteq (A \times C) \setminus (B \times C)$. Assume $(A \setminus B) \times C$ is non-empty, else the result follows. Let $(x, y) \in (A \setminus B) \times C$, which means $x \in (A \setminus B)$ and $y \in C$. Then we know $x \in A$ and $x \notin B$, and $y \in C$. Therefore $(x, y) \in A \times C$ and $(x, y) \notin (B \times C)$. Hence we can conclude $(x, y) \in (A \times C) \setminus (B \times C)$. Therefore we have proved  $(A \setminus B) \times C \subseteq (A \times C) \setminus (B \times C)$.\\
+
+Since $(A \times C) \setminus (B \times C) \subseteq (A \setminus B) \times C$ and $(A \setminus B) \times C \subseteq (A \times C) \setminus (B \times C)$, we have proved $(A \times C) \setminus (B \times C) = (A \setminus B) \times C$.\\
+
+\bigskip
+\item Define a relation $\text{\bf R}$ on the set of all integers $\mathbb{Z}$ by $x \text{\bf R} y $ if and only if $x - y = 3k$ for some integer $k$.  \begin{itemize}
+\item Prove that $\text{\bf R}$ satisfy the properties reflexive, symmetric, and transitive on $\mathbb{Z}$ and thus is an equivalence relation on $\mathbb{Z}$.
+\item Describe the equivalence class of $E_5$. How many distinct equivalence classes are there for $\text{\bf R}$?
+\item Define a new relation $\text{\bf R}_2$ on the set of all integers $\mathbb{Z}$ by $x \text{\bf R}_2 y $ if and only if $x + y = 3k$ for some integer $k$.  Does $\text{\bf R}_2$ satisfy all three properties reflexive, symmetric and transitive? Explain, {\it proof not required}.
+\end{itemize}
+\bigskip
+\vspace{.15in}
+
+$\text{\bf 1.Proof:}$
+	\begin{addmargin}[1.5cm]{0cm}
+		In order to prove $\text{\bf R}$ is an equivalence class, we need to show $\text{\bf R}$ satisfies all three properties reflexive, symmetric and transitive.\\
+		(i).Reflexive: $x \text{\bf R} x$
+		\begin{addmargin}[0.5cm]{0cm}
+			$x - x = 3k$\\
+			$0 = 2k$\\
+			When k = 0, this statements holds and $0 \in \mathbb{Z}$.
+		\end{addmargin}
+	\end{addmargin}
+	
+	\begin{addmargin}[1.5cm]{0cm}
+		(i).Symmetric: $x \text{\bf R} y \implies y \text{\bf R} x$
+		\begin{addmargin}[0.5cm]{0cm}
+			$x \text{\bf R} y:$ $x - y = 3k_1$\\
+			$y - x = - (x - y) = -3k_1 = 3k_2$\\
+			Therefore $k_1 = -k_2$. Since $k_1 \in \mathbb{Z}$, $k_2 \in \mathbb{Z}.$\\
+			$\therefore y \text{\bf R} x:$ $y - x = 3k_2$ is true when $x \text{\bf R} y$ is true\\
+			Hence $x \text{\bf R} y \implies y \text{\bf R} x$\\ 
+		\end{addmargin}
+	\end{addmargin}
+	
+	\begin{addmargin}[1.5cm]{0cm}
+		(i).Transitive: If $x \text{\bf R} y$ and $y \text{\bf R} x$, then $x \text{\bf R} z$
+		\begin{addmargin}[0.5cm]{0cm}
+			$x \text{\bf R} y:$ $x - y = 3k_1$\\
+			$y \text{\bf R} z:$ $y - z = = 3k_2$\\
+			$x-y+y-z = 3k_1+3k_2 = x-z$ \\
+			Assume $k_3 = k_1 + k_2$. Since $k_1 \in \mathbb{Z}$ and $k_2 \in \mathbb{Z}$, $3k_3 = 3(k_1+k_2) \in \mathbb{Z}$.\\
+			$\therefore x \text{\bf R} z:$ $x - z = 3k_3$\\
+			Therefore we have proved if $x \text{\bf R} y$ and $y \text{\bf R} x$, then $x \text{\bf R} z$.
+		\end{addmargin}
+		Hence we have proved $\text{\bf R}$ is an equivalence class
+	\end{addmargin}
+
+\bigskip
+\vspace{.15in}
+
+$\text{\bf 2.}$ $E_5 = \{y \in \mathbb{R} : y-5 = 3k, k \in \mathbb{Z}\}$. For all $y$ in real numbers such that $y - 5$ is a multiple of $3$ with some integer $k$. $E_5 = \{...,-1,2,5,8,11,...\}$ and the increment between each numbers in the set is 3. Therefore there should be other two sets that are equivalence class of $\text{\bf R}$, $E_3 = \{...,-3,0,3,6,8,...\}$ and $E_4=\{...,-2,1,3,5,9,...\}$. All the other equivalence classes are identical to any of these three sets.
+
+\bigskip
+\vspace{.15in}
+
+$\text{\bf 3.}$ $x+x = x+x$, so $x \text{R} x$. $(x+y) = (y+x)$, so $x \text{R} y$. $x+y = 3k_1$ and $y+z = 3k_2$ however does not imply $x+z= 3k_3$. For example, $x = 2$ , $y = 4$, $z = 5$, so $x+y = 6 = 3_k1$ and $y+z = 9 = 3k_2$. However $x + z = 7 \neq 3k_3$. The only requirement here is the sum of $x$ and $y$ is equal to $3$ times an integer, but there's no restriction on either of them. Therefore $\text{R}$ is not transitive.      
+\end{enumerate}
+
+\end{document}

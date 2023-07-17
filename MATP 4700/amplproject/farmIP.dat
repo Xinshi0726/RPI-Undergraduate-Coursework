@@ -1,0 +1,254 @@
+set CROPS := wheat sorghum soybeans endive romaine strawberries;
+set TECHNOLOGIES := monitoring fertilizer pollinators labor water;
+set TECHlimited := fertilizer pollinators labor;
+set FIELDS := 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20;
+set FIELDSa := 1 2 3 4 5 6 7 8 9 10;
+set FIELDSb := 11 12 13 14 15 16 17 18 19 20;
+
+param improve:
+       monitoring fertilizer pollinators labor water :=
+wheat       0.2     0.2         0          0     0.2
+sorghum     0.2     0.1         0          0     0.1
+soybeans    0.2     0.1        0.1         0.1   0.2
+endive      0.2     0.2         0          0.1   0.2
+romaine     0.2     0.1         0          0.1   0.1
+strawberries 0.2    0.3         0.3        0.3   0.2
+;
+
+param availability :=
+monitoring  400
+fertilizer  500
+pollinators 100
+labor       800
+water       500
+;
+
+#param yield[i in CROPS, j in FIELDS] := cropbaseline[i] * fieldbaseline[j] * (0.9+ 0.2*Uniform01());
+param yield :=
+endive       1    303.222
+endive       2    339.816
+endive       3    259.024
+endive       4    348.528
+endive       5    397.756
+endive       6    528.064
+endive       7    238.037
+endive       8    361.987
+endive       9    277.321
+endive       10   286.807
+endive       11   303.552
+endive       12   339.787
+endive       13   296.123
+endive       14   323.073
+endive       15   334.959
+endive       16   515.326
+endive       17   246.409
+endive       18   363.579
+endive       19   259.273
+endive       20   299.447
+romaine      1    339.4
+romaine      2    387.654
+romaine      3    283.379
+romaine      4    338.111
+romaine      5    377.565
+romaine      6    515.481
+romaine      7    267.515
+romaine      8    377.819
+romaine      9    287.735
+romaine      10   320.143
+romaine      11   332.941
+romaine      12   401.28
+romaine      13   292.686
+romaine      14   362.365
+romaine      15   362.368
+romaine      16   506.112
+romaine      17   270.069
+romaine      18   324.715
+romaine      19   307.519
+romaine      20   339.543
+sorghum      1    325.771
+sorghum      2    361.198
+sorghum      3    273.81
+sorghum      4    354.277
+sorghum      5    358.406
+sorghum      6    463.579
+sorghum      7    247.435
+sorghum      8    373.539
+sorghum      9    296.094
+sorghum      10   336.28
+sorghum      11   319.151
+sorghum      12   348.667
+sorghum      13   296.895
+sorghum      14   350.46
+sorghum      15   369.631
+sorghum      16   522.617
+sorghum      17   250.383
+sorghum      18   384.176
+sorghum      19   293.311
+sorghum      20   336.659
+soybeans     1    287.102
+soybeans     2    363.791
+soybeans     3    263.401
+soybeans     4    333.367
+soybeans     5    399.795
+soybeans     6    504.981
+soybeans     7    240.149
+soybeans     8    366.34
+soybeans     9    293.458
+soybeans     10   299.865
+soybeans     11   322.505
+soybeans     12   371.967
+soybeans     13   260.046
+soybeans     14   369.689
+soybeans     15   396.691
+soybeans     16   538.862
+soybeans     17   246.996
+soybeans     18   348.208
+soybeans     19   310.707
+soybeans     20   342.849
+strawberries 1    272.297
+strawberries 2    325.359
+strawberries 3    235.136
+strawberries 4    268.081
+strawberries 5    301.96
+strawberries 6    420.298
+strawberries 7    211.472
+strawberries 8    325.763
+strawberries 9    265.084
+strawberries 10   296.348
+strawberries 11   243.137
+strawberries 12   321.985
+strawberries 13   258.265
+strawberries 14   319.608
+strawberries 15   335.137
+strawberries 16   397.784
+strawberries 17   212.873
+strawberries 18   268.317
+strawberries 19   243.325
+strawberries 20   269.296
+wheat        1    306.553
+wheat        2    337.671
+wheat        3    292.782
+wheat        4    360.172
+wheat        5    331.612
+wheat        6    500.554
+wheat        7    242.474
+wheat        8    314.367
+wheat        9    261.879
+wheat        10   294.435
+wheat        11   309.913
+wheat        12   365.458
+wheat        13   293.869
+wheat        14   320.993
+wheat        15   324.222
+wheat        16   504.537
+wheat        17   237.605
+wheat        18   308.228
+wheat        19   285.538
+wheat        20   320.269
+;
+
+
+#param techfieldcost[j in FIELDS, k in TECHNOLOGIES]
+#  := fieldbaseline[j] * techbaseline[k] * (0.9+ 0.2*Uniform01());
+param techfieldcost :=
+1  fertilizer     52.132
+1  labor          85.0711
+1  monitoring     18.5152
+1  pollinators    83.2656
+1  water          39.8596
+2  fertilizer     56.5341
+2  labor          96.684
+2  monitoring     22.2637
+2  pollinators    96.265
+2  water          45.0106
+3  fertilizer     46.9922
+3  labor          78.6657
+3  monitoring     18.2798
+3  pollinators    66.2919
+3  water          38.413
+4  fertilizer     51.4895
+4  labor          92.2031
+4  monitoring     20.0958
+4  pollinators    90.9312
+4  water          46.0795
+5  fertilizer     64.9279
+5  labor         103.644
+5  monitoring     24.5556
+5  pollinators    90.3379
+5  water          50.7702
+6  fertilizer     87.7615
+6  labor         138.429
+6  monitoring     32.3237
+6  pollinators   134.82
+6  water          63.5601
+7  fertilizer     39.2328
+7  labor          70.0981
+7  monitoring     17.1404
+7  pollinators    61.498
+7  water          34.9489
+8  fertilizer     60.1156
+8  labor          87.1781
+8  monitoring     24.0308
+8  pollinators    79.6805
+8  water          48.2421
+9  fertilizer     43.697
+9  labor          67.1718
+9  monitoring     16.5679
+9  pollinators    76.4225
+9  water          37.6808
+10 fertilizer     48.9679
+10 labor          72.2563
+10 monitoring     20.2892
+10 pollinators    85.5496
+10 water          39.6195
+11 fertilizer     46.9462
+11 labor          79.2312
+11 monitoring     18.1151
+11 pollinators    74.7562
+11 water          38.7889
+12 fertilizer     57.9469
+12 labor          87.2368
+12 monitoring     22.2361
+12 pollinators    92.9677
+12 water          49.176
+13 fertilizer     45.404
+13 labor          72.6016
+13 monitoring     18.1745
+13 pollinators    70.2637
+13 water          34.4872
+14 fertilizer     51.088
+14 labor          91.8297
+14 monitoring     20.4894
+14 pollinators    87.9714
+14 water          40.876
+15 fertilizer     58.9875
+15 labor          89.7097
+15 monitoring     24.0068
+15 pollinators    94.7132
+15 water          48.8273
+16 fertilizer     83.0103
+16 labor         123.351
+16 monitoring     35.1945
+16 pollinators   115.684
+16 water          58.3183
+17 fertilizer     37.7578
+17 labor          67.8498
+17 monitoring     15.1681
+17 pollinators    57.6997
+17 water          28.8509
+18 fertilizer     51.8206
+18 labor          93.3339
+18 monitoring     21.4979
+18 pollinators    90.7018
+18 water          48.2224
+19 fertilizer     45.0458
+19 labor          72.4562
+19 monitoring     18.0041
+19 pollinators    75.1785
+19 water          37.4639
+20 fertilizer     49.1101
+20 labor          84.2963
+20 monitoring     19.9799
+20 pollinators    76.0714
+20 water          36.3001
+;

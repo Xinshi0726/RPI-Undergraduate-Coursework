@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,fullpage}
+\usepackage{scrextend}
+
+\pagestyle{empty}
+
+\begin{document}
+	\noindent{\bf Problem Presentation 1}
+	
+	{\it Problem statement:}  Define a relation $\mathsf{R}$ on $\mathbb{Z}$ by $x \mathsf{R} y$ iff $x-y = 4k$ for some integer $k$.  Verify that $\mathsf{R}$ is an equivalence relation and describe the equivalence class $E_5$.  How many distinct equivalence classes are there? \\
+	
+	\vspace{.15in}
+
+	\noindent {\bf Proof.} In order to prove $\mathsf{R}$ is an equivalence relation, we need to show $\mathsf{R}$ is reflexive, symmetric, and transitive.\\
+	
+	In order to prove $\mathsf{R}$ is reflexive, we need to show $x \text{\bf $\mathsf{R}$} x$. Substuting x into the relation gives us $x - x = 4k$ which means $0 = 4k$. When $k = 0$, this statements hold and $0 \in \mathbb{Z}$.\\
+	
+	In order to prove $\mathsf{R}$ is symmetric, we need to show $x \mathsf{R} y \implies y \mathsf{R} x$. Substuting $x$ and $y$ into $x \mathsf{R} y$ gives us $x \mathsf{R} y: x - y = 4k_{1}$. Multiplying both sides of the equation gives us $y-x=-4k_1$. Let us assume there exists a $k_2$ such that $k_2 = - k_1$. Therefore $y - x = 4k_2$ which means $y \mathsf{R} x$ holds. Hence we have proved  $x \mathsf{R} y \implies y \mathsf{R} x$.\\
+	
+	In order to prove $\mathsf{R}$ is transitive, we need to show if $x \mathsf{R} y$ and $y \mathsf{R} z$, then $x \mathsf{R} z$. Substituting $x$ and $y$ into $x \mathsf{R} y$ gives us $x \mathsf{R} y: x - y = 4k_1$. Substituting $y$ and $z$ into $y \mathsf{R} z$ gives us $y \mathsf{R} z: y - z = 4k_2$. Adding these two equations together gives us $x-y+y-z = 4k_1 + 4k_2 = 4(k_1 + k_2) = x-z$. Let $k_3 = k_1 + k_2$. Since $k_3$ is the sum of two integers, $k_3$ is also an integer. Therefore $x - z = 4k_3$ which means $x \mathsf{R} y$. Hence we have proved  $x \mathsf{R} y$ and $y \mathsf{R} z$, then $x \mathsf{R} z$.\\
+	
+	Therefore we have proved $\mathsf{R}$ is reflexive, symmetric, and transitive. Thus $\mathsf{R}$ is an equivalence relation.\\
+	
+	\begin{flushright}
+		$\square$
+	\end{flushright}
+	
+	$E_{5} = \{y \in \mathbb{Z}: y \mathsf{R} 5: y - 5 = 4k , k \in \mathbb{Z} \} = \{...,-3, 1, 5, 9, 13,...\}$. For all $y$ in real numbers such that $y - 5$ is a multiple of $4$ with some integer $k$. The increment between each numbers in the set is 4. Therefore there should be other three sets that are equivalence class of $\text{\bf R}$, $E_3 = \{...,-5,-1,3,7,11,...\}$ and $E_4=\{...,-4,0,4,8,12,...\}$, and $E_6 = \{...,-2,2,6,10,14,...\}$. All the other equivalence classes are identical to any of these four sets.
+	
+\end{document}

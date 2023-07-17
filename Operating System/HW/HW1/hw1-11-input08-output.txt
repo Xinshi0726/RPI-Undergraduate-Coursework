@@ -1,0 +1,21 @@
+Read 10 => cache index 10 (calloc)
+Read 1 => cache index 1 (calloc)
+Read 2 => cache index 2 (calloc)
+Read 4 => cache index 4 (calloc)
+Read 8 => cache index 8 (calloc)
+Read 16 => cache index 5 (calloc)
+Read 32 => cache index 10 (realloc)
+Read 64 => cache index 9 (calloc)
+Read 128 => cache index 7 (calloc)
+Read 1248 => cache index 5 (realloc)
+Read 777 => cache index 7 (realloc)
+Read 777 => cache index 7 (skipped)
+========================================
+Cache index 1 => [ 1 ]
+Cache index 2 => [ 2 ]
+Cache index 4 => [ 4 ]
+Cache index 5 => [ 16, 1248 ]
+Cache index 7 => [ 128, 777 ]
+Cache index 8 => [ 8 ]
+Cache index 9 => [ 64 ]
+Cache index 10 => [ 10, 32 ]

@@ -1,0 +1,3 @@
+PID 3014531: Solving Sonny's knight's tour problem for a 3x10 board
+PID 3014531: Sonny starts at row 0 and column 0 (move #1)
+PID 3014531: Search complete; found 416 open tours and 32 closed tours

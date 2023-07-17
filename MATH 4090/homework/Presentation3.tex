@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,fullpage}
+\usepackage{scrextend}
+
+\pagestyle{empty}
+
+\begin{document}
+	\noindent{\bf Problem Presentation 3}
+	
+	For each set and metric space combination listed below, determine if the set is compact or not. For each set
+	that is compact, explain how you know it is compact. For each set that is not compact, describe an open
+	cover with no finite subcover.\\
+	
+	\noindent $\mathbb{R}$ with the usual metric, $S = \{1+\dfrac{1}{n}:n \in \mathbb{N}\}$\\
+	
+	The set is not compact. We could find an open cover $\mathcal{F} = \{(1+\dfrac{1}{n},3):n \in \mathbb{N}\}$ such that $S \subseteq \bigcup_{A \in \mathcal{F}} A$ and $S$ has no finite subcover. In order to show $\mathcal{F}$ covers $S$, let $x \in S$, we have $1<x\leq 2$. Thus $1<x\leq 3$ holds and therefore $x \in \mathcal{F}$. Hence $S \subseteq \bigcup{A \in \mathcal{F}} A$. Since $\mathcal{F}$ has open intervals, it is open. Therefore, we know $\mathcal{F}$ is an open cover of $S$. A subcollection of $\mathcal{F}$ has the form $\mathcal{G} = \{(1+\dfrac{1}{M},3):M=1,2,...,n \land n<|\mathbb{N}|\}$. We can find a number $1+\dfrac{1}{n+1} \in S$ but $\notin \mathcal{G}$. Therefore $\mathcal{G}$ does not cover all the points in $S$. Thus $S$ is not compact. \\
+	
+	\noindent $\mathbb{R}$ with the usual metric, $S = [1, 2] \cup [5, 8]$\\
+	
+	From the Heine-Borel Theorem, we know a subset $S$ of $\mathbb{R}$ with the Euclidean metric is compact if $S$ is (i). closed and (ii). bounded.\\
+	
+	In order to prove $S$ is closed, we need to prove $X \setminus S$ is open. Thus we need to find an $\epsilon > 0$ such that $N(x;\epsilon) \subseteq X \setminus S$. Let $x \in X \setminus ([1,2] \cup [5,8])$ be given. Thus $x \in X \setminus [1,2]$ or $x \in X \setminus [5,8]$. Consider two exhaustive cases: (i). $x \in X \setminus [1,2]$ (ii). $x \in X \setminus [5,8]$.\\
+	
+	First we prove $S$ is closed. Let $x \in X \setminus [1,2]$ be given. Pick $\epsilon$ = $\min \{|x-1|,|x-2|\}$. We argue that $N(x;\epsilon) \subseteq X \setminus ([1,2] \cup [5,8])$. By definition we know $N(x;\epsilon) = \{y \in \mathbb{R}:|x-y|<\epsilon\}$. Let $y \in N(x;\epsilon)$, then we have $|y-x|<\epsilon$.Thus we know
+	\begin{align*}
+		-\epsilon<&y-x<\epsilon\\
+		x-\epsilon<&y<\epsilon+x
+	\end{align*}
+	Since $x \in X \setminus [1,2]$, $x \in X$ and $x \notin [1,2]$. Thus $x \leq 1$ or $x \geq 2$. Consider two exhaustive cases: (i). $x \leq 1$ (ii). $x \geq 2$. If $x \leq 1$, then $\epsilon = |x-1| = 1-x$. Thus $1-\epsilon<y<1-x+x=1$. Therefore $1-\epsilon<y<1$ so $1-\epsilon<y \leq 1$ holds. Hence we can conclude $y \notin [1,2]$ and $y \in X \setminus [1,2]$. If $x \geq 2$, $\epsilon = |x-2| = x-2$. Thus we have $x-x+2<y<\epsilon+2$. Thus $2<y<\epsilon+2$ which implies $2<y \leq \epsilon+2$. Hence we can conclude $y \notin [1,2]$ and $y \in X \setminus [1,2]$. Since both cases holds, we can conclude $N(x;\epsilon) \subseteq X \setminus [1,2]$, which implies $N(x;\epsilon) \subseteq \setminus ([1,2] \cup [5,8])$.\\
+	
+	Let $x \in X \setminus [5,8]$ be given. Pick $\epsilon$ = $\min \{|x-5|,|x-8|\}$. We argue that $N(x;\epsilon) \subseteq X \setminus ([1,2] \cup [5,8])$. By definition we know $N(x;\epsilon) = \{y \in \mathbb{R}:|x-y|<\epsilon\}$. Let $y \in N(x;\epsilon)$, then we have $|y-x|<\epsilon$.Thus we know
+	\begin{align*}
+		-\epsilon<&y-x<\epsilon\\
+		x-\epsilon<&y<\epsilon+x
+	\end{align*}
+	Since $x \in X \setminus [5,8]$, $x \in X$ and $x \notin[5,8]$. Thus $x \leq 5$ or $x \geq 8$. Consider two exhaustive cases: (i). $x \leq 5$ (ii). $x \geq 8$. If $x \leq 5$, then $\epsilon = |x-5| = 5-x$. Thus $5-\epsilon<y<5-x+x=5$. Therefore $5-\epsilon<y<5$ so $5-\epsilon<y \leq 5$ holds. Hence we can conclude $y \notin [5,8]$ and $y \in X \setminus [5,8]$. If $x \geq 8$, $\epsilon = |x-8| = x-8$. Thus we have $x-x+8<y<\epsilon+8$. Thus $8<y<\epsilon+8$ which implies $8<y \leq \epsilon+8$. Hence we can conclude $y \notin [5,8]$ and $y \in X \setminus [5,8]$. Since both cases holds, we can conclude $N(x;\epsilon) \subseteq X \setminus [5,8]$, which implies $N(x;\epsilon) \subseteq \setminus ([1,2] \cup [5,8])$.\\
+	
+	Since our choice of $x$ is arbitrary, we have proved set $S$ is closed.\\
+	
+	Next we prove $S$ is bounded. In order to prove $S$ is bounded, we need to show $S$ is bounded above and bounded below.\\
+	
+	First we show $S$ is bounded above. Let $s = 9$ be given. We know $s>2$ and $s>8$. Thus $s>x$ for all $x \in [1,2]$ and $s>x$ for all $x \in [5,8]$, which means $s>x$ for all $x \in [1,2] \cup [5,8]$ and $s$ is a lower bound for S. Since our choice of $x$ is arbitrary, we can conclude $x$ is bounded above.\\ 
+	
+	Then we show $S$ is bounded below. Let $s = 0$ be given. We know $s<1$ and $s<5$. Thus $s<x$ for all $x \in [1,2]$ and $s>x$ for all $x \in [5,8]$, which means $s<x$ for all $x \in [1,2] \cup [5,8]$ and $s$ is a lower bound for S. Since our choice of $x$ is arbitrary, we can conclude $x$ is bounded below.\\ 
+	
+	Since our choice of $x$ is arbitray, we can conclude $x$ is bounded above.\\
+	
+	Since $S$ is bounded and closed in $\mathbb{R}$ with the usual metric, we can conclude $S$ is compact according to the Heine-Borel Theorem.\\
+	
+	\noindent $\mathbb{R}$ with the usual metric, $S = [0, 2] \setminus \mathbb{Q}$\\
+	
+	The set is not compact. We know $1 \in [0,2]$ and $1 \in \mathbb{Q}$. Thus $1 \notin [0,2] \setminus \mathbb{Q}$. Therefore we can reform the set as $\{[0,1-\dfrac{1}{n}) \cup (1,2]:n \in \mathbb{N}\}$. Thus we can cover $S$ with $\mathcal{F} = \{(-1,1-\dfrac{1}{n}) \cup (1,3): n \in \mathbb{N}\}$ since $(-1,1-\dfrac{1}{n})$ covers $[0,1-\dfrac{1}{n})$ and $(1,3)$ covers $(1,2]$. $\mathcal{F}$ is open since it consists of only open sets. Therefore $\mathcal{F}$ is an open cover of $S$. A subcollection of $\mathcal{F}$ has the form $\mathcal{G} = \{(-1,1-\dfrac{1}{M}) \cup (1,3)\:M=1,2,...,n \land n<|\mathbb{N}|\}$. We can find a irrational number q between $1-\dfrac{1}{n}$ and $1-\dfrac{1}{n+1}$ and $q \in S$ but $q \notin \mathcal{G}$. Therefore $\mathcal{G}$ does not cover all the points in $S$. Thus $S$ is not compact. \\
+	
+    \noindent $\mathbb{R}$ with the discrete metric, $S = [-1, 2] \cup [3, 5]$\\
+	
+	The set is not compact. Let $S = [-1, 2] \cup [3, 5]$ be given. We know $S$ is infinite since there are infinitely many points in $S$. Let $\mathcal{F} = \{x:x \in S\}$. We know $\mathcal{F}$ is open since singletons are open. $\mathcal{F}$ covers $S$ since $\bigcup_{A \in \mathcal{F}} A = S$ and $S \subseteq S$. Every sub collection of $\mathcal{F}$ has the form $\mathcal{G}=\{{x_i}:x_i \in S \land i = 1,2,3,...,n,n \in \mathbb{N},n<|S|\}$. $\mathcal{G}$ does not cover $S$ since $\{x_{n+1}\}$ is not an element of $\mathcal{G}$, $\mathcal{G}$ does not cover $S$. Thus $S = [-1, 2] \cup [3, 5]$ is not compact.\\
+	
+	Presentation Link:\\
+	https://rensselaer.webex.com/rensselaer/ldr.php?RCID=67ba134696feb9aff722b482437b202f\\
+	
+	I used RECGO because you can directly record a video on ipad and edit it.
+\end{document}

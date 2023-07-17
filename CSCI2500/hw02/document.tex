@@ -1,0 +1,117 @@
+
+\documentclass[12pt]{article}
+\usepackage[letterpaper,textwidth=5.5in,right=0.6in,textheight=9in,left=0.6in,top=0.7in,bottom=0.7in]{geometry}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+	\noindent Xinshi Wang\\
+	661975305\\
+	hw02\\
+	
+	\noindent 1.6 
+	
+	From the problem description, we know class A executes $10^6 \times 10\% = 10^5$ instructions, class B executes $10^6 \times 20\% = 2 \times 10^5$ instructions, class C executes $10^6 \times 50\% = 5 \times 10^5$ instructions, and class D executes $10^6 \times 20\% = 2 \times 10^5$ instructions.
+	
+	We have the following formula: $\text{CPU Clock Cycles} = \sum_{i=1}^n (CPI_i) \times C_i$. Then we can compute the correspoinding the following $\text{CPU Clock Cycles}$.
+	
+	${P_1}_{\text{CPU Clock Cycles}} = (10^5)+(2 \times 2 \times 10^5)+(3 \times 5 \times 10^5) + (3 \times 2 \times 10^5) = 2.6 \times 10^6$.
+	
+	${P_2}_{\text{CPU Clock Cycles}} = (2 \times 10^5)+(2 \times 2 \times 10^5)+(2 \times 5 \times 10^5) + (2 \times 2 \times 10^5) = 2 \times 10^6$.
+	
+	Then the corresponding cpi equals to $\dfrac{\text{CPU Clock Cycles}}{\text{number of total instructions}}$.
+	
+	Thus $CPI_{P_1} = \dfrac{2.6 \times 10^6}{10^6} = 2.6$
+	
+	$CPI_{P_2} = \dfrac{2 \times 10^6}{10^6} = 2$\\\\\\
+	(a). $CPI_{P_1} = 2.6$, $CPI_{P_2} = 2$.\\
+	(b). 	${P_1}_{\text{CPU Clock Cycles}} = 2.6 \times 10^6$, ${P_2}_{\text{CPU Clock Cycles}} = 2 \times 10^6$\\
+	
+	\noindent 1.9\\\\
+	1.9.1
+	
+	1 processor: Clock Cycle = $(2.56 \times 10^9) \times 1 + (1.28 \times 10^9) \times 12 + (2.56 \times 10^8) \times 5 = 1.92 \times 10^{10}$.
+	
+	Thus execution time = $\dfrac{1.92 \times 10^{10}}{2 \times 10^9} = 9.6$.
+	
+	For p processors, we have $\text{clock cycles}_p = \dfrac{2.56 \times 10^9}{0.7p} \times 1 + \dfrac{1.28 \times 10^9}{0.7p} \times 12 + 256 \times 10^6 \times 5 = \dfrac{2.56 \times 10^{10}}{p} + 1.28 \times 10^9$.  
+	
+	Therefore execution time for p processors is $\dfrac{\text{clock cycles}_p}{\text{clock rate}} = \dfrac{12.8}{p}+0.64$.\\
+	\begin{tabular}{rrr}
+		Core &  execution time &  speed up \\
+		1 &            9.60 &      1.00 \\
+		2 &            7.04 &      1.36 \\
+		4 &            3.84 &      2.50 \\
+		8 &            2.24 &      4.29 \\
+	\end{tabular}
+	
+	1.9.2\\
+	clock cycles = $(2.56 \times 10 ^9) \times 2 + (1.28 \times 10^9) \times 12 + (2.56 \times 10^8) \times 5 = 2.176 \times 10^{10}$
+	
+	Expected time for 1 cpu: $\dfrac{2.176 \times 10^{10}}{2 \times 10 ^9} = 10.88$.
+	
+	Let p be the number of processors. Then we have clock cycles = $\dfrac{2.56 \times 10^9}{0.7p} \times 2 + \dfrac{1.28 \times 10^9}{0.7p}\times 12 + 256 \times 10^6 \times 5 = \dfrac{2.93 \times 10^{10}}{p}+1.28 \times 10^9$.
+	
+	Then execution time $= \dfrac{\dfrac{2.93 \times 10^{10}}{p}+1.28 \times 10^9}{2 \times 10^9} = \dfrac{14.65}{p}+0.64$.
+	
+	Thus we have:
+	\begin{tabular}{rrr}
+	
+		Core &  execution time &  speed up \\
+	
+		1 &           10.88 &      1.13 \\
+		2 &            7.97 &      1.13 \\
+		4 &            4.30 &      1.12 \\
+		8 &            2.47 &      1.11 \\
+	
+	\end{tabular}
+	
+	1.9.3:\\
+	3 times.
+	Execution time = $3.84s$\\
+	We have Execution time = $\dfrac{clock cycles}{clock rate}$.
+	Then:
+	$\dfrac{\text{clock cycles}}{2Ghz} = 3.84s$\\
+	Clock cycles = $7.68 \times 10^9 = 2.56 \times 10^9 + 1.28 \times 10^9 \times CPI + (2.57 \times 10^8)\times 5$
+	Thus $CPI = \dfrac{7.68 \times 10^9 -3.84 \times 10^9}{1.28 \times 10^9} = 3$.\\
+	1.12:\\
+	1.12.1: 
+	
+	CPU time $= \dfrac{\text{number of instuctions} \times CPI}{clock rate}$
+	
+	$CPU_1 = \dfrac{5 \times 10^9 \times 0.9}{4 GHz}= 1.125s$\\
+	$CPU_1 = \dfrac{1 \times 10^9 \times 0.75}{3 GHz}= 0.25s$
+	
+	$P_2$ is faster
+	
+	1.12.2:
+	
+	CPU time = $\dfrac{10^9 \times 0.9}{4GHz} = 0.225s$\\
+	$\dfrac{instructionsP_2 \times 0.75}{3 GHz} = 0.225s$\\
+	$\text{number of instructions}=\dfrac{0.225 \times 3 \times 10^9}{0.75}=9 \times 10^8$
+	
+	1.14:\\
+	1.14.1
+	execution time  = $\dfrac{\text{number of instructions} \times CPI}{Clock rate}$
+	There are in total $50 \times 106 = 5300$ FP instructions, $110 \times 106 = 11660$ INT instructions, and $80 \times 106 = 8480$ LS instructions, and $16 \times 106 = 1696$ instructions.
+	
+	Execution time = $\dfrac{5300 + 11600 + 8480 \times 4 + 1696 \times 2}{2GHz} = 27 \mu s$.
+	
+	To cut that in half, we need cpi equal to:
+	\begin{align*}
+		13.5 \mu a = \dfrac{5300 \times CPI + 11600 + 8480 \times 4 + 1696 \times 2}{2 \times 10^9}
+	\end{align*}
+	Thus CPI = -4.13.
+	Which is impossible
+	
+	1.14.2:
+	 \begin{align*}
+	 	13.5 \mu a = \dfrac{5300 + 11600 + 8480 \times CPI + 1696 \times 2}{2 \times 10^9}
+	 \end{align*}
+ Thus CPI = 0.79. We need to reduce it from 4 to 0.79.
+ 
+ 	1.14.3:
+execution time = $\dfrac{5300 \times 0.6 + 11600 \times 0.6 + 8480 \times 2.8 + 1696 \times 1.4}{2GHz} = 18 \mu s$\\
+$\dfrac{18}{27} = 0.66$. Then spped up $33.3 \%$.
+	\end{document}

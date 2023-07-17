@@ -1,0 +1,5 @@
+PID 1248819: Solving Sonny's knight's tour problem for a 3x3 board
+PID 1248819: Sonny starts at row 0 and column 0 (move #1)
+PID 1248819: 2 possible moves after move #1; creating 2 child processes...
+PID 1248820: Dead end at move #8
+PID 1248821: Dead end at move #8

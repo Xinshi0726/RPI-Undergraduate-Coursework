@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsmath,amssymb}
+\pagestyle{empty}
+\newcommand{\D}{\displaystyle}
+\begin{document}
+\noindent{\bf Homework 7}\\
+Wang Xinshi\\
+661975305\\
+wangx47@rpi.edu\\
+
+\begin{enumerate}
+\item Suppose $s_1 = 2$ and $\displaystyle s_{n+1} = \frac{1}{5} \left(2s_n +7 \right)$ for $n \geq 1$.  
+\begin{enumerate}
+\item Prove that  $(s_n)$ is monotone 
+\item Prove that $(s_n)$ is bounded.
+\item Find $\lim s_n$.
+\end{enumerate}
+\vskip .1in
+\vspace{1.5em}
+
+(a). \text{\bf Proof:} In order to prove $(s_n)$ is monotone, we prove $(s_n)$ is increasing. Suppose $n \in \mathbb{N}$. Let $P(n)$ be the statement $s_{n} \leq s_{n+1}$ for all $n \in \mathbb{N}$. We prove this by mathematical induction.\\
+
+\indent We first show $P(1): s_1 \leq s_2$ is true by substuting $n=1$ into the LHS and showing $2 \leq \dfrac{1}{5}(2 \times 2 + 7) = \dfrac{11}{5}$. Thus $P(1): s_1 \leq s_2$ holds.\\
+
+\indent Next we let $k \in \mathbb{N}$ and assume $p(k):s_k \leq s_{k+1}$ is true and try to prove $p(k+1):s_{k+1} \leq s_{k+2}$ is true. 
+\begin{align*}
+	s_{k+1} &\geq s_{k}\\
+	2s_{k+1} &\geq 2s_{k}\\
+	2s_{k+1}+7 &\geq 2s_{k}+7\\
+	\dfrac{1}{5} (2s_{k+1}+7) &\geq \dfrac{1}{5} (2s_{k}+7)\\
+	s_{k+2} &\geq s_{k+1}
+\end{align*}
+Thus we have shown $P(n): s_{n} \leq s_{n+1}$ for all $n \in \mathbb{N}$ is true.\\
+\vspace{1.5em}
+
+(b). \text{\bf Proof:} In order to prove $(s_n)$ is bounded, we need to show there exists constants b and a such that $a \leq s_n \leq b$ for all $n \in \mathbb{N}$. Let $s_n$ be defined by $s_1 = 1$ and $s_{n+1} = \dfrac{1}{5}(2s_n+7)$, we need to show there exists $a$ and $b$ such that (i).$s_n \geq a$ and (ii).$s_n \leq b$.\\
+
+Let $a = 0$, we have $s_1 \geq a$ because $2 \geq 0$. Since we know $s_n$ is an increasing sequence in part(a), $s_n \geq s_1 \geq a$ for all $n \in \mathbb{N}$. Thus $s_n \geq a$ for all $n \in \mathbb{N}$.\\
+
+Let $b = 3$. Suppose $n \in \mathbb{N}$. Let $P(n)$ be the statement $s_{n} \leq b$ for all $n \in \mathbb{N}$. We prove this by mathematical induction. We first show $P(1): s_1 \leq b$ is true by substituting $n=1$ into the LHS and showing $2 \leq 3$. Thus $P(1): s_1 \leq b$ holds. Next we let $k \in \mathbb{N}$ and assume $p(k):s_k \leq b$ is true and try to prove $p(k+1):s_{k+1} \leq b$ is true. 
+\begin{align*}
+	s_{k} &\leq 3\\
+	2s_{k} &\leq 6\\
+	2s_{k}+7 &\leq 13\\
+	\dfrac{1}{5} (2s_{k}+7) &\leq \dfrac{13}{5}\\
+	s_{k+1} &\leq \dfrac{13}{5} \leq 3 \leq b
+\end{align*}
+
+Thus we have shown there exists $a = 0$ and $b = 3$ such that $a \leq s_n \leq b$ for all $n \in \mathbb{N}$.\\
+\vspace{1.5em}
+
+(c). \text{\bf Proof:} Since we have shown $s_n$ is bounded and monotone, we know by the monotone convergence theorem that there exists $s \in \mathbb{R}$ such that $\lim s_n = s$. Let $s_n$ be defined by $s_1 = 1$ and $s_{n+1} = \dfrac{1}{5}(2s_n+7)$, then we have
+\begin{align*}
+	\lim_{n \to \infty} s_{n+1} &= \lim_{n \to \infty} \dfrac{1}{5}(2s_n+7)\\
+	\lim_{n \to \infty} s_{n+1} &= \dfrac{2}{5} \lim_{n \to \infty} s_n+\dfrac{7}{5}\\
+	s  &= \dfrac{2}{5}s +\dfrac{7}{5}\\
+	\dfrac{3}{5}s &= \dfrac{7}{5}\\
+	s &= \dfrac{7}{3}\\
+\end{align*} 
+Thus $\lim s_n = \dfrac{7}{3}$.\\
+\vspace{1.5em}
+
+\item Let $S$ be a bounded infinite set  and let $x = \sup(S)$.  Prove that if $x \notin S$, then $x$ is an accumulation point of $S$.\\
+\vspace{1.5em}
+
+\text{\bf Proof:} Our goal here is to prove if $x \notin S$, then $x$ is an accumulation point of $S$. Let $\gamma > 0$ be given. A deleted neighborhood of $x$ is $N^*(x,\gamma) = (x-\gamma,x) \cup (x,x+\gamma)$ by definition. Since $x = \sup(S)$ and $x \notin S$, we have $x > s$ for all $s \in S$. Because $x-\gamma < x$, there exists $s' \in S$ such that $s' > x-\gamma$. Thus we have $x-\gamma<s<x$ which means $s' \in (x-\gamma,x)$. Therefore $s' \in (x-\gamma,x) \cup (x,x+\gamma)$ and $s' \in S$. Since $S$ is an infinite set, $S \neq \emptyset$. Thus $(x-\gamma,x) \cup (x,x+\gamma) \cap S \neq \emptyset$ which means $N^*(x,\gamma) \cap S \neq \emptyset$. Hence we have shown $x$ is an accumulation point of S if $x \notin S$. \\
+Let $(t_n)$ be a sequence of real numbers.\\ Define $A= \{t_n:n \in \mathbb{N}\}$ and note that $A$ is the range of $(t_n)$﻿﻿﻿.﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿ 
+\vskip .1in
+\end{enumerate}
+\end{document}
+

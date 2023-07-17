@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{fullpage}
+
+\pagestyle{empty}
+
+\begin{document}
+\noindent{\bf Homework 8}\\
+Wang Xinshi\\
+RIN 6612975305\\
+
+
+\begin{enumerate}
+\item Let $X = \mathbb{R} \times \mathbb{R} \times \mathbb{R}$, denoted $\mathbb{R}^3$. 
+Let ${\bf x}=(x_1,x_2,x_3) $ and ${\bf y} = (y_1,y_2,y_3)$ be elements of $X$ and defined $d: X \times X \to \mathbb{R}$ by $d({\bf x},{\bf y}) =  max\{\big|x_1-y_1\big|,\big|x_2-y_2\big|,\big|x_3-y_3\big|\}.$
+\begin{enumerate}
+\item Prove that $d$ is a metric.\\
+\text{\bf Proof:}
+In order to prove d is a metric space, we need to show (i).$d({\bf x},{\bf y}) \geq 0$ (ii).$d({\bf x},{\bf y}) = 0$ iff ${\bf x}={\bf y}$. (iii). $d({\bf x},{\bf y}) = d({\bf y},{\bf x})$ (iv)$d({\bf x},{\bf y}) \leq d({\bf x},{\bf z})+d({\bf z},{\bf y})$.\\\\ 
+(i). Consider three exhaustive cases, $d({\bf x},{\bf y}) = |x_1-y_1|$, $d({\bf x},{\bf y}) = |x_2-y_2|$, and $d({\bf x},{\bf y}) = |x_3-y_3|$. For those three cases, we have all of them greater than or equal to 0 since they are in the absolute value sign. Thus we have $d({\bf x},{\bf y}) \geq 0$\\\\
+(ii). We need to show (i). $d({\bf x},{\bf y}) = 0$ implies ${\bf x}={\bf y}$ and (ii). ${\bf x}={\bf y}$ implies $d({\bf x},{\bf y}) = 0$. 
+
+\qquad (i). Consider three exhuastive Cases: (a). $d({\bf x},{\bf y}) = |x_1 - y_1|$ (b). $d({\bf x},{\bf y}) = |x_2 - y_2|$ (c). $d({\bf x},{\bf y}) = |x_3 - y_3|$. In (a), we have  $d({\bf x},{\bf y}) = |x_1 - y_1| = 0$. Thus we have $x_1 = y_1$. Likewise we have $x_2 = y_2$ and $x_3 = y_3$. Therefore we have ${\bf x}={\bf y}$ if $d({\bf x},{\bf y}) = 0$.
+
+\qquad (ii). Consider three exhuastive Cases: (a). $d({\bf x},{\bf y}) = |x_1 - y_1|$ (b). $d({\bf x},{\bf y}) = |x_2 - y_2|$ (c). $d({\bf x},{\bf y}) = |x_3 - y_3|$. If ${\bf x}={\bf y}$, we have $x_1 = y_1$, $x_2 = y_2$ and $x_3 = y_3$. Thus $d({\bf x},{\bf y}) = 0$ for all three cases. Thus we have $d({\bf x},{\bf y}) = 0$ if ${\bf x}={\bf y}$.\\\\
+(iii)Consider three exhuastive Cases: (a). $d({\bf x},{\bf y}) = |x_1 - y_1|$ (b). $d({\bf x},{\bf y}) = |x_2 - y_2|$ (c). $d({\bf x},{\bf y}) = |x_3 - y_3|$. In case (a) we have $d({\bf x},{\bf y}) = |x_1 - y_1| = |-(x_1-y_1)| = |y_1-x_1|$ . Likewise, we can apply to $x_2, y_2$ and $x_3,y_3$. Thus $d({\bf x},{\bf y}) =  max\{\big|y_1-x_1\big|,\big|y_2-x_2\big|,\big|y_3-x_3\big|\} = d({\bf y},{\bf x}).$\\\\
+(iv)We have $d({\bf x},{\bf y}) =  \max \{\big|x_1-y_1\big|,\big|x_2-y_2\big|,\big|x_3-y_3\big|\} \leq \max \{\big|x_1-z_1\big|+\big|z_1-y_1\big|,\big|x_2-z_2\big|+\big|z_2-y_2\big|,\big|x_3-z_3\big|+\big|z_3-y_3\big|\}.$ Consider three exhuastive Cases: (a). $d({\bf x},{\bf y}) = |x_1 - y_1|$ (b). $d({\bf x},{\bf y}) = |x_2 - y_2|$ (c). $d({\bf x},{\bf y}) = |x_3 - y_3|$. In case (a), we have $|x_1-z_1| \leq \max \{|x_1-z_1|,|x_2-z_2|, |x_3-z_3|\} = d({\bf x},{\bf z})$. $|z_1-y_1| \leq \max \{|z_1-y_1|,|z_2-y_2|, |z_3-y_3|\} = d({\bf z},{\bf y})$. Thus we have $|x_1-z_1|+|z_1-y_1| = d({\bf x},{\bf z}) \leq d({\bf x},{\bf z})+d({\bf z},{\bf y})$. Likewise, we can apply to $x_2, y_2$ and $x_3,y_3$. Thus $d({\bf x},{\bf y}) \leq d({\bf x},{\bf z})+d({\bf z},{\bf y})$ holds.\\\\
+Since all of the properties holds, d is a metric space.\\\\
+\item For the metric $d$, describe $N((0,0,0);1)$ as a geometric shape. {\em Description must be typed out in sentence(s). Additionally, you may choose to include a  hand-drawn sketch of the neighborhood.}  \\\\
+It is a cube centered at the origin in three dimensional space, with each edge having a distance of $1$ from the corresponding axis.\\\\
+\end{enumerate}
+
+\item Suppose that $X=Y=\mathbb{R}^2$ and the metric $d_1$ is defined on $X$ by $$d_1\left( (x_1,x_2), (y_1,y_2) \right) = max\{|x_1 -y_1|, |x_2 -y_2|\}$$
+  and the metric $d_2$ is defined on $Y$ by $$d_2\left( (x_1,x_2), (y_1,y_2) \right) = |x_1 -y_1|+ |x_2 -y_2|.$$
+  Suppose $f$ is a function that maps the metric space $(X,d_1)$ to the metric space $(Y,d_2)$ is defined by $$f\left( (x_1,x_2) \right) = \left( 3x_1 - 4x_2, 5x_1 +9x_2\right).$$
+Use the definition of continuity on metric spaces to prove that $f$ is continuous on $X$.\\\\
+
+\text{\bf Proof:} Let $\epsilon > 0 $ be given, we pick $\delta = \dfrac{\epsilon}{18}$ such that for all $z \in X$, $d_1((x_1,x_2),(z_1,z_2)) < \delta$. Thus we have $|x_1 -z_1|<\delta$ and $|x_2 -z_2|<\delta$. Then it follows that 
+\begin{align*}
+	d_2(f(x_1,x_2),f(z_1,z_2)) &= d_2((3x_1-4x_2,5x_1+9x_2),(3z_1-4z_2,5z_1+9z_2))\\
+	& = |3x_1-4x_2-3z_1+4z_2|+|5x_1+9x_2-5z_1-9z_2|\\
+	& = |3(x_1-z_1)-4(x_2-z_2)| + |5(x_1-z_1)+9(x_2-z_2)|\\
+	& < 4|(x_1-z_1)-(x_2-z_2)| + 9|(x_1-z_1)+(x_2-z_2)|\\
+	& < 9(|(x_1-z_1)-(x_2-z_2)| + |(x_1-z_1)+(x_2-z_2)|)\\
+	& \leq 9(|(x_1-z_1)|+|-(x_2-z_2)| + |(x_1-z_1)|+|(x_2-z_2)|)\\
+	& <9(2(|(x_1-z_1)|+|(x_2-z_2)|))\\
+	& <18 \delta\\
+	&<\epsilon
+\end{align*}
+Since our choice of $\epsilon$ is arbitrary, we have proved $f$ is continuous on $X$.\\\\
+
+
+
+\end{enumerate}
+
+\end{document}

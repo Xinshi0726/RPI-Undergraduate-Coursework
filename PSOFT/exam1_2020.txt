@@ -1,0 +1,32 @@
+Q4.
+   Condition 10: rez<01
+   Condition 9: wp(rez = x*x*x, rez<-1) ==> {x*x*x<-1} 
+   Condition 8: x*x*x<-1
+   Condition 7: wp(do nothing, x*x*x<-1 && x<=0) ==> {x*x*x<-1}
+   Condition 6: x*x*x< -1
+   Condition 5: wp(x = -x, x*x*x<-1) ==> {x*x*x > 1}
+   Condition 4: wp(if()else(), (x*x*x > 1 && x > 0)||(x*x*x<-1 && x<=0) && x!=0)==> {(x*x*x > 1 && x > 0)||(x*x*x<-1 && x<0)}
+   Condition 3: rez<-1 
+   Condition 2: wp(rez = 1, rez < -1)==>False 
+   Condition 1: wp(if()else, False||((x*x*x > 1 && x > 0)||(x*x*x<-1 && x<0))) ==> {(x*x*x > 1 && x > 0)||(x*x*x<-1 && x<0)}
+
+ Q5.
+ 	1.
+ 	Condition 1: {y_0 = 5 && |x_0|>5} ==> {|x_0| > y_0}
+ 	Condition 2: {x_1 = x_0 *3 && |x| > 5} ==> {|x_1| > 15 && |x_1| > 3*y_0} 
+ 	Condition 3: {x_2 = x_1 - 2 && |x_1| > 15 && |x_1| > 3*y_0} ==> {x_2 < -17 || x_2 > 13}
+ 	2.
+ 	 Condition 1: {x>0 && z>4 && x<5 && z<x} ==> {0<x<5 && 4<z<x}==> {False}
+ 	 Condition 2: {y = z+x && False} ==> {False}
+ 	 Condition 3: {x>0 && z>4}
+
+Q7.
+	1. False
+	2. False
+	3. False
+	4. False
+	5. False
+	6. True
+	7. False
+
+Q8.
